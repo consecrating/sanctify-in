@@ -1,0 +1,10 @@
+# robots.txt for https://www.sanctify.in
+
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /search?
+Disallow: /*?utm_
+Allow: /ai-about-sanctify.json
+
+Sitemap: https://www.sanctify.in/sitemaps.xml

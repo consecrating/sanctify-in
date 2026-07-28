@@ -1,0 +1,11 @@
+# Quarantined by Kiro 2026-07-28
+# Reason: unconfigured "UIForm - Universal Form Builder" (CodeIgniter) with a LIVE
+# unauthenticated elFinder 2.0rc1 file-manager connector and a LIVE installer.
+# Critical security exposure. Access blocked pending permanent removal.
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>

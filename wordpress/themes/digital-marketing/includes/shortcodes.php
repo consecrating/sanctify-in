@@ -864,7 +864,7 @@ function parallax_section($atts, $content = null) {
 	$parallaxes = get_post_meta(get_the_ID(), "qode_parallaxes", true);
 	$html = "";
 	
-	foreach($parallaxes as $parallax) 
+	foreach((is_array($parallaxes) ? $parallaxes : array()) as $parallax) 
 	{	
 		if($parallax['imageid'] == $id) 
 			{

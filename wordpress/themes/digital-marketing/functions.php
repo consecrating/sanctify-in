@@ -245,7 +245,7 @@ function qode_comment($comment, $args, $depth) {
                              
                 
 <?php if ($comment->comment_approved == '0') : ?>
-<p><em><?php _e('Your comment is awaiting moderation.', qode); ?></em></p>
+<p><em><?php _e('Your comment is awaiting moderation.', 'qode'); ?></em></p>
 <?php endif; ?>                
 
 <?php 

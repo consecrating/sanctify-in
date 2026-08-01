@@ -1,0 +1,482 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style id="sfy2-css">
+.sfy2{
+  --pink:#ff0066; --mag:#c8177f; --vio:#6d28d9; --grape:#4c1d95;
+  --ink:#140b22; --body:#4b445c; --muted:#7a7388;
+  --line:rgba(20,11,34,.09); --line2:rgba(20,11,34,.06);
+  --paper:#ffffff; --mist:#f7f2fb; --mist2:#efe7f7;
+  --grad:linear-gradient(120deg,#ff0066 0%,#d21a86 45%,#7b2ff7 100%);
+  --grad-soft:linear-gradient(120deg,#ff0066,#7b2ff7);
+  --r:22px; --r-lg:30px; --maxw:1160px;
+  --shadow:0 1px 2px rgba(20,11,34,.05),0 18px 40px -22px rgba(76,29,149,.35);
+  --shadow-hi:0 30px 70px -30px rgba(200,23,127,.5);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  color:var(--body); line-height:1.65; font-size:17px;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.sfy2 *{box-sizing:border-box}
+.sfy2 h1,.sfy2 h2,.sfy2 h3,.sfy2 h4{font-family:'Sora',var(--sfy-fallback,inherit);color:var(--ink);
+  line-height:1.08;letter-spacing:-.02em;margin:0 0 .4em;font-weight:800}
+.sfy2 p{margin:0 0 1em}
+.sfy2 a{color:inherit;text-decoration:none}
+.sfy2 img,.sfy2 svg{display:block;max-width:100%}
+.sfy-wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.sfy-sec{padding:74px 0}
+.sfy-grad-txt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---- buttons ---- */
+.sfy-btn{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:15.5px;
+  padding:15px 28px;border-radius:999px;transition:.28s cubic-bezier(.2,.7,.3,1);cursor:pointer;
+  border:1px solid transparent;letter-spacing:.01em;white-space:nowrap}
+.sfy-btn svg{width:18px;height:18px}
+.sfy-btn.p{background:var(--grad);color:#fff;box-shadow:0 12px 26px -10px rgba(255,0,102,.6)}
+.sfy-btn.p:hover{transform:translateY(-2px);box-shadow:0 20px 40px -12px rgba(255,0,102,.7)}
+.sfy-btn.g{background:rgba(255,255,255,.7);color:var(--ink);border-color:var(--line);backdrop-filter:blur(6px)}
+.sfy-btn.g:hover{border-color:var(--pink);color:var(--pink);transform:translateY(-2px)}
+.sfy-btn.w{background:#fff;color:var(--ink)}
+.sfy-btn.w:hover{transform:translateY(-2px);box-shadow:0 16px 34px -14px rgba(0,0,0,.4)}
+.sfy-btn.o{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.sfy-btn.o:hover{background:rgba(255,255,255,.12);border-color:#fff}
+
+/* ---- chips / eyebrow ---- */
+.sfy-eyebrow{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:12.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--mag);
+  background:rgba(255,0,102,.08);border:1px solid rgba(255,0,102,.18);
+  padding:8px 16px;border-radius:999px}
+.sfy-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--grad);
+  box-shadow:0 0 0 4px rgba(255,0,102,.15)}
+
+/* ---- HERO ---- */
+.sfy-hero{position:relative;border-radius:var(--r-lg);overflow:hidden;margin-top:26px;
+  background:
+    radial-gradient(120% 120% at 88% -10%,rgba(123,47,247,.20),transparent 55%),
+    radial-gradient(120% 130% at 6% 4%,rgba(255,0,102,.16),transparent 52%),
+    radial-gradient(90% 90% at 55% 120%,rgba(123,47,247,.12),transparent 60%),
+    linear-gradient(180deg,#fdf9ff,#f4ecfb);
+  border:1px solid rgba(123,47,247,.12);
+  box-shadow:0 40px 90px -50px rgba(76,29,149,.5)}
+.sfy-hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(20,11,34,.05) 1px,transparent 1px);background-size:22px 22px;
+  -webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.sfy-hero-in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;
+  padding:60px 56px 64px}
+.sfy-hero h1{font-size:clamp(34px,5vw,58px);font-weight:800;margin:18px 0 0}
+.sfy-hero .lead{font-size:clamp(16px,1.5vw,19px);color:var(--body);margin:20px 0 30px;max-width:34em}
+.sfy-hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.sfy-hero-trust{display:flex;align-items:center;gap:14px;margin-top:26px;flex-wrap:wrap}
+.sfy-stars{display:inline-flex;gap:2px;color:#ff9d00}
+.sfy-stars svg{width:17px;height:17px}
+.sfy-hero-trust small{color:var(--muted);font-size:13.5px;font-weight:500}
+.sfy-hero-trust b{color:var(--ink)}
+
+/* ---- device: shared glass ---- */
+.sfy-art{position:relative;display:flex;justify-content:center;align-items:center;min-height:340px}
+.sfy-glass{position:relative;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);
+  border-radius:22px;box-shadow:var(--shadow),0 40px 80px -40px rgba(76,29,149,.55);
+  backdrop-filter:blur(14px)}
+.sfy-float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 20px 40px -18px rgba(20,11,34,.35);padding:11px 14px;display:flex;align-items:center;gap:9px;
+  font-size:13px;font-weight:700;color:var(--ink);animation:sfy-bob 5s ease-in-out infinite}
+.sfy-float .fi{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;color:#fff}
+.sfy-float svg{width:16px;height:16px}
+@keyframes sfy-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* phone (SMM) */
+.sfy-phone{width:270px;height:540px;border-radius:44px;background:linear-gradient(160deg,#1b1030,#0e0720);
+  padding:12px;box-shadow:0 50px 90px -40px rgba(20,11,34,.7),inset 0 0 0 2px rgba(255,255,255,.06);position:relative}
+.sfy-phone::after{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);
+  width:96px;height:22px;background:#0e0720;border-radius:0 0 16px 16px;z-index:3}
+.sfy-scr{position:relative;height:100%;border-radius:34px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.sfy-ptop{display:flex;align-items:center;gap:9px;padding:14px 12px 10px}
+.sfy-pav{width:34px;height:34px;border-radius:50%;background:var(--grad);flex:0 0 auto;
+  box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(255,0,102,.4)}
+.sfy-ptop b{font-size:13px;color:var(--ink);display:block;line-height:1.1}
+.sfy-ptop small{font-size:11px;color:var(--muted)}
+.sfy-pimg{flex:1;background:
+    radial-gradient(90% 70% at 30% 20%,rgba(255,0,102,.5),transparent 60%),
+    linear-gradient(150deg,#ff5aa8,#a34bff 60%,#6d28d9);position:relative}
+.sfy-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;
+  background:rgba(255,255,255,.9);display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.4)}
+.sfy-play::after{content:"";width:0;height:0;margin-left:4px;border-left:16px solid #6d28d9;
+  border-top:10px solid transparent;border-bottom:10px solid transparent}
+.sfy-pact{display:flex;gap:16px;padding:12px 14px;color:var(--ink)}
+.sfy-pact svg{width:22px;height:22px}
+.sfy-pcap{padding:0 14px 16px;font-size:12px;color:var(--body);line-height:1.4}
+.sfy-pcap b{color:var(--ink)}
+
+/* map card (Local SEO / city) */
+.sfy-mapcard{width:360px;max-width:100%;overflow:hidden}
+.sfy-map{height:196px;position:relative;
+  background:
+   linear-gradient(90deg,rgba(123,47,247,.10) 1px,transparent 1px) 0 0/40px 40px,
+   linear-gradient(rgba(123,47,247,.10) 1px,transparent 1px) 0 0/40px 40px,
+   radial-gradient(140% 120% at 70% 20%,#efe7fb,#e5f6ef);}
+.sfy-road{position:absolute;background:#fff;box-shadow:0 0 0 1px rgba(20,11,34,.05)}
+.sfy-road.r1{height:12px;left:-10px;right:-10px;top:64px;transform:rotate(-6deg)}
+.sfy-road.r2{width:14px;top:-10px;bottom:-10px;left:120px;transform:rotate(8deg)}
+.sfy-road.r3{height:9px;left:-10px;right:-10px;top:132px;transform:rotate(3deg)}
+.sfy-pin{position:absolute;top:58px;left:150px;width:34px;height:34px;transform:translate(-50%,-100%);
+  background:var(--grad);border-radius:50% 50% 50% 0;rotate:-45deg;
+  box-shadow:0 10px 20px -6px rgba(255,0,102,.7);display:grid;place-items:center}
+.sfy-pin::after{content:"";width:11px;height:11px;background:#fff;border-radius:50%}
+.sfy-pin.p2{top:120px;left:250px;width:22px;height:22px;opacity:.55}
+.sfy-pin.p3{top:150px;left:70px;width:22px;height:22px;opacity:.45}
+.sfy-pack{padding:14px 16px 16px;background:#fff}
+.sfy-pack h5{font-family:'Sora';font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.sfy-prow{display:flex;align-items:center;gap:11px;padding:9px 0;border-top:1px solid var(--line2)}
+.sfy-prow:first-of-type{border-top:0}
+.sfy-prank{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-weight:800;font-size:13px;flex:0 0 auto;
+  font-family:'Sora'}
+.sfy-prow.top .sfy-prank{background:var(--grad);color:#fff}
+.sfy-prow:not(.top) .sfy-prank{background:var(--mist);color:var(--muted)}
+.sfy-prow .nm{font-weight:700;color:var(--ink);font-size:13.5px;line-height:1.2}
+.sfy-prow .rt{font-size:11.5px;color:var(--muted)}
+.sfy-prow .rt b{color:#ff9d00}
+
+/* google ads card (PPC) */
+.sfy-adcard{width:370px;max-width:100%;padding:18px}
+.sfy-searchbar{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:10px 16px;
+  box-shadow:0 6px 16px -10px rgba(20,11,34,.3);background:#fff}
+.sfy-searchbar .q{font-weight:600;color:var(--ink);font-size:14px}
+.sfy-gdot{width:14px;height:14px;border-radius:50%;
+  background:conic-gradient(#4285F4 0 25%,#EA4335 0 50%,#FBBC05 0 75%,#34A853 0)}
+.sfy-adres{margin-top:16px;border:1px solid var(--line);border-radius:14px;padding:14px}
+.sfy-adtag{display:inline-block;font-weight:800;font-size:11px;color:#0a7d33;margin-right:8px}
+.sfy-adres .u{font-size:12px;color:var(--muted)}
+.sfy-adres .t{color:#1a0dab;font-weight:700;font-size:15px;margin:3px 0}
+.sfy-adres .d{font-size:12.5px;color:var(--body);margin:0}
+.sfy-adstats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.sfy-adstat{background:var(--mist);border-radius:12px;padding:12px 14px}
+.sfy-adstat b{font-family:'Sora';font-size:22px;color:var(--ink);display:block}
+.sfy-adstat span{font-size:11.5px;color:var(--muted);font-weight:600}
+.sfy-bars{display:flex;align-items:flex-end;gap:6px;height:44px;margin-top:12px}
+.sfy-bars i{flex:1;background:var(--grad);border-radius:5px 5px 0 0;opacity:.85}
+
+/* serp/content card */
+.sfy-serpcard{width:372px;max-width:100%;padding:18px}
+.sfy-serprow{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:14px}
+.sfy-serprow.win{background:linear-gradient(120deg,rgba(255,0,102,.07),rgba(123,47,247,.07));
+  border:1px solid rgba(123,47,247,.16)}
+.sfy-serprk{width:28px;height:28px;border-radius:8px;background:var(--grad);color:#fff;display:grid;place-items:center;
+  font-weight:800;font-family:'Sora';font-size:13px;flex:0 0 auto}
+.sfy-serprow:not(.win) .sfy-serprk{background:var(--mist);color:var(--muted)}
+.sfy-serprow .st{font-size:12px;color:#1a0dab;font-weight:700}
+.sfy-serprow.win .st{color:var(--ink)}
+.sfy-serprow .sl{height:7px;background:var(--line);border-radius:5px;margin-top:7px;width:90%}
+.sfy-serprow .sl.s2{width:64%;margin-top:6px}
+.sfy-spark{margin-top:14px;background:var(--mist);border-radius:14px;padding:12px 14px}
+.sfy-spark .lab{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:8px}
+.sfy-spark .lab b{font-family:'Sora';font-size:18px;color:var(--ink)}
+
+/* ---- marquee ---- */
+.sfy-marq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  margin-top:0;padding:16px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.sfy-marq .tr{display:inline-flex;gap:0;white-space:nowrap;animation:sfy-marq 28s linear infinite;font-weight:700;
+  color:var(--ink);font-size:15px}
+.sfy-marq .tr span{padding:0 22px;display:inline-flex;align-items:center;gap:22px}
+.sfy-marq .tr b{color:var(--pink)}
+@keyframes sfy-marq{to{transform:translateX(-50%)}}
+
+/* ---- trusted-by ---- */
+.sfy-trust{text-align:center}
+.sfy-trust .cap{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:18px}
+.sfy-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.sfy-logo{font-family:'Sora';font-weight:700;color:var(--ink);opacity:.72;font-size:15px;
+  border:1px solid var(--line);border-radius:999px;padding:9px 18px;background:#fff;transition:.25s}
+.sfy-logo:hover{opacity:1;border-color:rgba(255,0,102,.3);transform:translateY(-2px)}
+
+/* ---- section head ---- */
+.sfy-head{max-width:720px;margin:0 auto 44px;text-align:center}
+.sfy-kicker{display:inline-block;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mag);margin-bottom:14px}
+.sfy-head h2{font-size:clamp(28px,3.6vw,42px)}
+.sfy-head p{font-size:17px;color:var(--body);margin:14px 0 0}
+.sfy-head.left{margin-left:0;text-align:left}
+
+/* ---- bento / service grid ---- */
+.sfy-bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.sfy-tile{grid-column:span 2;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px;position:relative;overflow:hidden;transition:.3s cubic-bezier(.2,.7,.3,1)}
+.sfy-tile:hover{transform:translateY(-6px);border-color:rgba(123,47,247,.22);box-shadow:var(--shadow-hi)}
+.sfy-tile.feat{grid-column:span 3;grid-row:span 2;color:#fff;border:0;
+  background:linear-gradient(150deg,#ff0066,#c8177f 45%,#6d28d9)}
+.sfy-tile.feat h3,.sfy-tile.feat p{color:#fff}
+.sfy-tile.feat .sfy-ic{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.25)}
+.sfy-tile.wide{grid-column:span 3}
+.sfy-badge{position:absolute;top:18px;right:18px;font-size:10.5px;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;background:rgba(255,255,255,.2);color:#fff;padding:6px 11px;border-radius:999px}
+.sfy-ic{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;margin-bottom:18px;
+  background:linear-gradient(150deg,rgba(255,0,102,.12),rgba(123,47,247,.12));
+  color:var(--pink);border:1px solid rgba(255,0,102,.14)}
+.sfy-ic svg{width:26px;height:26px}
+.sfy-tile h3{font-size:19px;margin:0 0 8px}
+.sfy-tile.feat h3{font-size:26px}
+.sfy-tile p{font-size:14.5px;color:var(--body);margin:0}
+.sfy-tile.feat p{font-size:15.5px;color:rgba(255,255,255,.9)}
+.sfy-tile .spacer{flex:1}
+
+/* ---- metrics ---- */
+.sfy-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  background:linear-gradient(120deg,#fff,var(--mist));border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:38px 30px;box-shadow:var(--shadow)}
+.sfy-metric{text-align:center;position:relative}
+.sfy-metric+.sfy-metric::before{content:"";position:absolute;left:-10px;top:14%;height:72%;width:1px;background:var(--line)}
+.sfy-metric b{font-family:'Sora';font-size:clamp(30px,4vw,46px);line-height:1;display:block;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.sfy-metric span{font-size:13.5px;color:var(--muted);font-weight:600;margin-top:8px;display:block}
+
+/* ---- why / feature cards ---- */
+.sfy-why{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.sfy-wcard{display:flex;gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;transition:.3s}
+.sfy-wcard:hover{border-color:rgba(123,47,247,.22);box-shadow:var(--shadow);transform:translateY(-3px)}
+.sfy-chk{width:42px;height:42px;border-radius:12px;flex:0 0 auto;display:grid;place-items:center;color:#fff;background:var(--grad)}
+.sfy-chk svg{width:22px;height:22px}
+.sfy-wcard b{font-family:'Sora';font-size:17px;color:var(--ink);display:block;margin-bottom:4px}
+.sfy-wcard span{font-size:14.5px;color:var(--body)}
+
+/* ---- process ---- */
+.sfy-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.sfy-steps::before{content:"";position:absolute;top:26px;left:8%;right:8%;height:2px;
+  background:linear-gradient(90deg,var(--pink),var(--vio));opacity:.35}
+.sfy-step{position:relative;text-align:left}
+.sfy-snum{width:54px;height:54px;border-radius:16px;background:#fff;border:1px solid var(--line);
+  display:grid;place-items:center;font-family:'Sora';font-weight:800;font-size:20px;color:var(--pink);
+  box-shadow:var(--shadow);margin-bottom:18px;position:relative}
+.sfy-snum::after{content:"";position:absolute;inset:-1px;border-radius:16px;padding:1px;
+  background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:.5}
+.sfy-step h4{font-size:17px;margin:0 0 6px}
+.sfy-step p{font-size:14px;color:var(--body);margin:0}
+
+/* ---- FAQ ---- */
+.sfy-faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.sfy-q{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s}
+.sfy-q[open]{border-color:rgba(123,47,247,.28);box-shadow:var(--shadow)}
+.sfy-q summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:19px 22px;font-family:'Sora';font-weight:700;color:var(--ink);font-size:16px}
+.sfy-q summary::-webkit-details-marker{display:none}
+.sfy-qi{width:30px;height:30px;border-radius:9px;flex:0 0 auto;display:grid;place-items:center;background:var(--mist);color:var(--pink);transition:.3s}
+.sfy-qi svg{width:18px;height:18px}
+.sfy-q[open] .sfy-qi{background:var(--grad);color:#fff;transform:rotate(135deg)}
+.sfy-a{padding:0 22px 20px;font-size:15px;color:var(--body)}
+.sfy-a p{margin:0}
+
+/* ---- CTA band ---- */
+.sfy-cta{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:64px 40px;text-align:center;color:#fff;
+  background:radial-gradient(120% 130% at 12% 0%,rgba(255,0,102,.55),transparent 55%),
+    radial-gradient(120% 130% at 90% 100%,rgba(123,47,247,.6),transparent 55%),
+    linear-gradient(140deg,#2a0f3f,#160a26)}
+.sfy-cta::before{content:"";position:absolute;inset:0;opacity:.35;
+  background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:24px 24px}
+.sfy-cta h2{position:relative;color:#fff;font-size:clamp(26px,3.4vw,40px)}
+.sfy-cta p{position:relative;color:rgba(255,255,255,.82);font-size:17px;max-width:36em;margin:14px auto 26px}
+.sfy-cta .sfy-hero-cta{position:relative;justify-content:center}
+.sfy-cta .mini{font-size:14px;color:rgba(255,255,255,.72);margin-top:22px}
+.sfy-cta .mini a{color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.4)}
+
+/* ---- reveal (visible by default; JS enhances) ---- */
+.sfy2.sfy-js .r{opacity:0;transform:translateY(22px)}
+.sfy2.sfy-js .r.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+@media (prefers-reduced-motion:reduce){
+  .sfy2.sfy-js .r{opacity:1;transform:none}
+  .sfy-float,.sfy-marq .tr{animation:none}
+}
+
+/* ---- responsive ---- */
+@media(max-width:900px){
+  .sfy-hero-in{grid-template-columns:1fr;gap:34px;padding:44px 30px 48px}
+  .sfy-art{min-height:0;order:2}
+  .sfy-bento{grid-template-columns:repeat(2,1fr)}
+  .sfy-tile,.sfy-tile.feat,.sfy-tile.wide{grid-column:span 1;grid-row:auto}
+  .sfy-tile.feat{grid-column:span 2}
+  .sfy-metrics{grid-template-columns:repeat(2,1fr);gap:26px}
+  .sfy-metric+.sfy-metric::before{display:none}
+  .sfy-why{grid-template-columns:1fr}
+  .sfy-steps{grid-template-columns:repeat(2,1fr)}
+  .sfy-steps::before{display:none}
+}
+@media(max-width:560px){
+  .sfy2{font-size:16px}
+  .sfy-sec{padding:52px 0}
+  .sfy-hero-in{padding:34px 20px 40px}
+  .sfy-bento{grid-template-columns:1fr}
+  .sfy-tile.feat{grid-column:span 1}
+  .sfy-steps{grid-template-columns:1fr}
+  .sfy-hero-cta .sfy-btn{flex:1;justify-content:center}
+}
+</style>
+
+<div class="sfy2">
+
+<section class="sfy-hero r">
+  <div class="sfy-hero-in">
+    <div class="sfy-hero-left">
+      <span class="sfy-eyebrow"><span class="dot"></span>PPC &amp; Google Ads · Goa</span>
+      <h1>Ad spend that comes back as <span class="sfy-grad-txt">revenue</span>.</h1>
+      <p class="lead">Certified Google Ads and Meta management for Goa businesses. Search, Shopping, Performance Max and paid social &ndash; engineered around conversions, cost-per-lead and return on ad spend, not clicks.</p>
+      <div class="sfy-hero-cta">
+        <a class="sfy-btn p" href="https://www.sanctify.in/contact/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2M9 11a10 10 0 0 1 8-8c1 0 2 0 2 2a10 10 0 0 1-8 8"/><path d="M9 11l4 4M8.5 14.5L6 14l1-2M9.5 15.5l.5 2.5 2-1"/><circle cx="14.5" cy="9.5" r="1.3"/></svg>Get a Free Proposal</a>
+        <a class="sfy-btn g" href="#sfy-work">See What We Do</a>
+      </div>
+      <div class="sfy-hero-trust"><span class="sfy-stars"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.8 6.3.7-4.7 4.3 1.3 6.2L12 17.8 6.1 20.9l1.3-6.2L2.7 9.5l6.3-.7z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.8 6.3.7-4.7 4.3 1.3 6.2L12 17.8 6.1 20.9l1.3-6.2L2.7 9.5l6.3-.7z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.8 6.3.7-4.7 4.3 1.3 6.2L12 17.8 6.1 20.9l1.3-6.2L2.7 9.5l6.3-.7z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.8 6.3.7-4.7 4.3 1.3 6.2L12 17.8 6.1 20.9l1.3-6.2L2.7 9.5l6.3-.7z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.8 6.3.7-4.7 4.3 1.3 6.2L12 17.8 6.1 20.9l1.3-6.2L2.7 9.5l6.3-.7z"/></svg></span><small><b>4.9/5</b> client rating &nbsp;·&nbsp; Since 2012 · Vasco &amp; Panjim, Goa</small></div>
+    </div>
+    <div class="sfy-art"><div class="sfy-glass sfy-adcard">
+      <div class="sfy-searchbar"><span class="sfy-gdot"></span><span class="q">digital marketing agency near me</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+      <div class="sfy-adres"><span class="sfy-adtag">Ad</span><span class="u">www.sanctify.in</span>
+        <div class="t">Digital Marketing Agency in Goa | Sanctify</div>
+        <p class="d">Data-driven Google Ads &amp; PPC that turn clicks into calls, bookings and sales.</p></div>
+      <div class="sfy-adstats">
+        <div class="sfy-adstat"><b>6.8x</b><span>Avg. return on ad spend</span></div>
+        <div class="sfy-adstat"><b>&#8377;19</b><span>Avg. cost per lead</span></div></div>
+      <div class="sfy-bars"><i style="height:34%"></i><i style="height:46%"></i><i style="height:40%"></i><i style="height:58%"></i><i style="height:66%"></i><i style="height:74%"></i><i style="height:88%"></i></div></div>
+    <span class="sfy-float" style="top:-14px;left:-24px;animation-delay:.5s"><span class="fi" style="background:linear-gradient(135deg,#00b37e,#0a7d33)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></span>Conversions &#8593; 143%</span></div>
+  </div>
+</section>
+<div class="sfy-marq"><div class="tr"><span>&nbsp;Google Search Ads&nbsp;<b>•</b>&nbsp;Performance Max&nbsp;<b>•</b>&nbsp;Shopping&nbsp;<b>•</b>&nbsp;Meta Ads&nbsp;<b>•</b>&nbsp;Remarketing&nbsp;<b>•</b>&nbsp;Conversion Tracking&nbsp;<b>•</b></span><span>&nbsp;Google Search Ads&nbsp;<b>•</b>&nbsp;Performance Max&nbsp;<b>•</b>&nbsp;Shopping&nbsp;<b>•</b>&nbsp;Meta Ads&nbsp;<b>•</b>&nbsp;Remarketing&nbsp;<b>•</b>&nbsp;Conversion Tracking&nbsp;<b>•</b></span></div></div>
+
+<section class="sfy-sec"><div class="sfy-wrap sfy-trust r">
+  <div class="cap">Trusted by brands across Goa &amp; beyond &mdash; since 2012</div>
+  <div class="sfy-logos"><span class="sfy-logo">Mercedes-Benz Goa</span><span class="sfy-logo">Kenkre Dental</span><span class="sfy-logo">Hotel Supreme Grande</span><span class="sfy-logo">BITS Pilani Goa</span><span class="sfy-logo">My Taxi Goa</span><span class="sfy-logo">GoaPolitan</span><span class="sfy-logo">Akshaya Jewellery</span></div>
+</div></section>
+
+<section class="sfy-sec" id="sfy-work"><div class="sfy-wrap">
+  <div class="sfy-head r"><span class="sfy-kicker">What we do</span><h2>Full-funnel <span class="sfy-grad-txt">paid media</span>, managed end-to-end.</h2><p>From first click to booked customer &ndash; campaigns built, tracked and optimised for measurable return.</p></div>
+  <div class="sfy-bento"><div class="sfy-tile feat r"><span class="sfy-badge">Most requested</span>
+      <span class="sfy-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.1a4.4 4.4 0 0 1-1.9 2.9v2.4h3.1c1.8-1.7 2.7-4.1 2.7-7.1z" fill="currentColor" stroke="none"/><path d="M12 21c2.5 0 4.6-.8 6.1-2.3l-3.1-2.4c-.9.6-2 .9-3 .9-2.3 0-4.3-1.6-5-3.7H3.8v2.4A9 9 0 0 0 12 21z" fill="currentColor" stroke="none"/><path d="M7 13.5a5.4 5.4 0 0 1 0-3.4V7.7H3.8a9 9 0 0 0 0 8.1z" fill="currentColor" stroke="none"/><path d="M12 6.4c1.3 0 2.5.5 3.4 1.4l2.6-2.6A9 9 0 0 0 3.8 7.7L7 10.1c.8-2.1 2.7-3.7 5-3.7z" fill="currentColor" stroke="none"/></svg></span><h3>Google Search &amp; PMax</h3><p>High-intent Search, Performance Max and Shopping campaigns that capture people actively looking for what you sell.</p></div><div class="sfy-tile r wide"><span class="sfy-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span><h3>Meta &amp; Instagram Ads</h3><p>Prospecting and retargeting that fills the funnel.</p></div><div class="sfy-tile r"><span class="sfy-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 14l4-4"/><circle cx="12" cy="18" r="1.2" fill="currentColor" stroke="none"/></svg></span><h3>Conversion Tracking</h3><p>Proper GA4 and pixel setup so every rupee is measured.</p></div><div class="sfy-tile r"><span class="sfy-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg></span><h3>Landing Pages</h3><p>Fast, focused pages that turn clicks into leads.</p></div><div class="sfy-tile r wide"><span class="sfy-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></span><h3>Remarketing</h3><p>Win back visitors who didn&rsquo;t convert the first time.</p></div><div class="sfy-tile r"><span class="sfy-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16"/><path d="M7 14l3-3 3 3 5-6"/></svg></span><h3>ROAS Reporting</h3><p>Transparent reporting on spend, leads and return.</p></div></div>
+</div></section>
+<section class="sfy-sec"><div class="sfy-wrap"><div class="sfy-metrics r"><div class="sfy-metric"><b data-to="6.8" data-suf="x">6.8x</b><span>Avg. return on ad spend</span></div><div class="sfy-metric"><b data-to="500" data-suf="+">500+</b><span>Campaigns delivered</span></div><div class="sfy-metric"><b data-to="14" data-suf="+">14+</b><span>Years managing ad budgets</span></div><div class="sfy-metric"><b data-to="100" data-suf="%">100%</b><span>Certified in-house team</span></div></div></div></section>
+<section class="sfy-sec"><div class="sfy-wrap">
+      <div class="sfy-head r"><span class="sfy-kicker">Why Sanctify</span><h2>Paid media with <span class="sfy-grad-txt">nothing wasted</span>.</h2></div>
+      <div class="sfy-why"><div class="sfy-wcard r"><span class="sfy-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <span><b>Certified &amp; hands-on</b><span>Real specialists manage your account daily &ndash; not a dashboard on autopilot.</span></span></div><div class="sfy-wcard r"><span class="sfy-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <span><b>Conversion-first setup</b><span>We fix tracking before we spend, so decisions are based on real leads and sales.</span></span></div><div class="sfy-wcard r"><span class="sfy-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <span><b>Creative + media together</b><span>In-house creative means ads and landing pages are built as one system.</span></span></div><div class="sfy-wcard r"><span class="sfy-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <span><b>Clear, honest reporting</b><span>You always know what you spent, what it returned and what we&rsquo;re changing next.</span></span></div></div></div></section>
+<section class="sfy-sec"><div class="sfy-wrap">
+      <div class="sfy-head r"><span class="sfy-kicker">How we work</span><h2>Our PPC process</h2></div>
+      <div class="sfy-steps"><div class="sfy-step r"><div class="sfy-snum">1</div><h4>Audit &amp; Plan</h4><p>We review your account, tracking and competitors, then build a plan.</p></div><div class="sfy-step r"><div class="sfy-snum">2</div><h4>Build</h4><p>Campaigns, keywords, creative and landing pages set up properly.</p></div><div class="sfy-step r"><div class="sfy-snum">3</div><h4>Launch &amp; Track</h4><p>Go live with full conversion tracking from day one.</p></div><div class="sfy-step r"><div class="sfy-snum">4</div><h4>Optimise</h4><p>Weekly optimisation to lower cost-per-lead and grow ROAS.</p></div></div></div></section>
+<section class="sfy-sec"><div class="sfy-wrap">
+      <div class="sfy-head r"><span class="sfy-kicker">FAQ</span><h2>Frequently asked questions</h2></div>
+      <div class="sfy-faq"><details class="sfy-q"><summary>What&rsquo;s the minimum ad budget to start?<span class="sfy-qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="sfy-a"><p>It depends on your industry and goals, but we work with a wide range of Goa budgets and will tell you honestly what a realistic starting spend looks like for your market.</p></div></details><details class="sfy-q"><summary>Is the ad spend separate from your fee?<span class="sfy-qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="sfy-a"><p>Yes &ndash; ad spend is paid directly to Google or Meta. Our management fee is separate and scaled to the work and budget involved.</p></div></details><details class="sfy-q"><summary>How soon will I see leads?<span class="sfy-qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="sfy-a"><p>Search campaigns can generate enquiries within days of launch because they target people actively searching. We then optimise to bring the cost-per-lead down over the following weeks.</p></div></details><details class="sfy-q"><summary>Do you handle both Google and social ads?<span class="sfy-qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="sfy-a"><p>We do &ndash; and they work best together. We often pair Google Ads with <a href='https://www.sanctify.in/sanctify-facility/social-media-marketing-agency-goa/'>social media marketing</a> for full-funnel coverage.</p></div></details></div></div></section>
+<section class="sfy-sec"><div class="sfy-wrap"><div class="sfy-cta r">
+      <h2>Turn your ad budget into booked customers.</h2><p>Get a free account audit and a paid-media plan built around your cost-per-lead and ROAS targets.</p>
+      <div class="sfy-hero-cta">
+        <a class="sfy-btn w" href="https://www.sanctify.in/contact/">Get a Free Proposal</a>
+        <a class="sfy-btn o" href="https://www.sanctify.in/sanctify-facility/">View All Services</a>
+      </div><p class="mini">Related: <a href="https://www.sanctify.in/sanctify-facility/social-media-marketing-agency-goa/">Social Media Marketing</a> · <a href="https://www.sanctify.in/sanctify-facility/local-seo-services-goa/">Local SEO</a> · <a href="https://www.sanctify.in/sanctify-facility/content-marketing-agency-goa/">Content Marketing</a></p></div></div></section>
+</div>
+
+<script>
+(function(){
+  var root=document.currentScript&&document.currentScript.closest?document.currentScript.parentNode.querySelector('.sfy2'):document.querySelector('.sfy2');
+  root=document.querySelector('.sfy2');
+  if(!root||root.dataset.sfyInit)return; root.dataset.sfyInit='1';
+  root.classList.add('sfy-js');
+  // reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  root.querySelectorAll('.r').forEach(function(el){io.observe(el);});
+  // count-up
+  function ease(t){return 1-Math.pow(1-t,3);}
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return; cio.unobserve(e.target);
+    var el=e.target,raw=el.getAttribute('data-to'),num=parseFloat(raw),suf=el.getAttribute('data-suf')||'',dec=(raw.split('.')[1]||'').length,t0=null,dur=1400;
+    function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),v=num*ease(p);el.textContent=(dec?v.toFixed(dec):Math.round(v))+suf;if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  });},{threshold:.5});
+  root.querySelectorAll('[data-to]').forEach(function(el){cio.observe(el);});
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/#service",
+      "name": "PPC &amp; Google Ads Management",
+      "serviceType": "PPC &amp; Google Ads Management",
+      "url": "https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Goa, India"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Sanctify",
+        "url": "https://www.sanctify.in/",
+        "areaServed": "Goa, India"
+      },
+      "description": "A PPC & Google Ads agency in Goa that turns ad spend into calls, bookings and sales. Search, Shopping, Performance Max and Meta Ads managed by a certified in-house team, measured on ROAS."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What&rsquo;s the minimum ad budget to start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your industry and goals, but we work with a wide range of Goa budgets and will tell you honestly what a realistic starting spend looks like for your market."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the ad spend separate from your fee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes &ndash; ad spend is paid directly to Google or Meta. Our management fee is separate and scaled to the work and budget involved."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How soon will I see leads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Search campaigns can generate enquiries within days of launch because they target people actively searching. We then optimise to bring the cost-per-lead down over the following weeks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle both Google and social ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We do &ndash; and they work best together. We often pair Google Ads with social media marketing for full-funnel coverage."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/#bc",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.sanctify.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Facility",
+          "item": "https://www.sanctify.in/sanctify-facility/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PPC &amp; Google Ads Agency in Goa",
+          "item": "https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/"
+        }
+      ]
+    }
+  ]
+}
+</script>

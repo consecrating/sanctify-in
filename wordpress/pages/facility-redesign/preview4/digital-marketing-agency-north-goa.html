@@ -1,0 +1,242 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap' rel=stylesheet><style>body{margin:0;background:#fff;}</style></head><body><style id="sf-facility-css">
+.sf-page{font-family:'Poppins',-apple-system,Segoe UI,Roboto,sans-serif;color:#241c2b;max-width:1200px;margin:0 auto;padding:0 20px 10px;overflow:hidden;}
+.sf-page *{box-sizing:border-box;}
+.sf-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c20b58;background:linear-gradient(135deg,#ffe3ef,#f4e0ff);padding:7px 14px;border-radius:999px;margin-bottom:16px;}
+.sf-eyebrow-lt{color:#fff;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);}
+.sf-h2{font-size:34px;font-weight:800;margin:8px 0 12px;letter-spacing:-.01em;color:#1f1526;line-height:1.12;}
+.sf-sec-head{text-align:center;max-width:660px;margin:0 auto 36px;}
+.sf-sec-head p{color:#7a6e83;font-size:15px;line-height:1.65;font-weight:300;margin:0;}
+.sf-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:13px 24px;border-radius:999px;text-decoration:none;transition:transform .2s,box-shadow .2s,opacity .2s;cursor:pointer;}
+.sf-btn .sf-arw{transition:transform .2s;}.sf-btn:hover .sf-arw{transform:translateX(4px);}
+.sf-btn-p{background:linear-gradient(135deg,#c20b58,#7a00df);color:#fff !important;box-shadow:0 14px 30px -12px rgba(122,0,223,.6);}
+.sf-btn-g{background:#fff;color:#c20b58 !important;border:1.5px solid #f0d4e3;}
+.sf-btn-w{background:#fff;color:#c20b58 !important;}
+.sf-btn-go{background:rgba(255,255,255,.14);color:#fff !important;border:1.5px solid rgba(255,255,255,.4);}
+.sf-btn-p:hover,.sf-btn-g:hover,.sf-btn-w:hover,.sf-btn-go:hover{transform:translateY(-2px);}
+/* LIGHT HERO */
+.sf-hero{position:relative;margin:22px 0 10px;padding:40px;border-radius:26px;background:radial-gradient(120% 140% at 100% 0,#fdeef6 0,#f7edff 42%,#ffffff 100%);border:1px solid #f2e4ee;}
+.sf-hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;}
+.sf-h1{font-size:44px;line-height:1.08;font-weight:800;margin:0 0 16px;letter-spacing:-.01em;color:#1f1526;}
+.sf-h1 span{background:linear-gradient(120deg,#c20b58,#7a00df);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.sf-lead{font-size:16px;line-height:1.7;color:#5c5064;font-weight:300;margin:0 0 26px;}
+.sf-lead strong{font-weight:600;color:#3a2f42;}
+.sf-hero-cta{display:flex;flex-wrap:wrap;gap:12px;}
+.sf-hero .sf-stats,.sf-hero-text .sf-stats{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap;}
+.sf-hero-text .sf-stats div{display:flex;flex-direction:column;}
+.sf-hero-text .sf-stats b{font-size:26px;font-weight:800;background:linear-gradient(120deg,#c20b58,#7a00df);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+.sf-hero-text .sf-stats span{font-size:12px;color:#8a7c92;font-weight:500;margin-top:4px;text-transform:uppercase;letter-spacing:.05em;}
+.sf-hero-media{position:relative;}
+.sf-hero-media img{width:100%;border-radius:20px;display:block;box-shadow:0 40px 70px -30px rgba(60,10,45,.5);position:relative;z-index:1;}
+.sf-glow{position:absolute;inset:-10% -6% -14% -6%;background:radial-gradient(closest-side,rgba(194,11,88,.4),transparent 70%),radial-gradient(closest-side,rgba(122,0,223,.35),transparent 70%);filter:blur(28px);z-index:0;}
+/* DARK PARALLAX HERO + BAND */
+.sf-px{position:relative;overflow:hidden;border-radius:26px;margin:22px 0;display:grid;place-items:center;text-align:center;}
+.sf-px-hero{min-height:60vh;}
+.sf-px-band{min-height:320px;margin:52px 0;}
+.sf-px-bg{position:absolute;left:0;right:0;top:-16%;height:132%;background-size:cover;background-position:center;will-change:transform;z-index:0;}
+.sf-px-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,4,22,.5),rgba(18,4,22,.34) 42%,rgba(70,6,50,.58));}
+.sf-px-ov-d{background:linear-gradient(120deg,rgba(120,0,90,.72),rgba(60,0,120,.68));}
+.sf-px-inner{position:relative;z-index:3;padding:56px 26px;max-width:820px;}
+.sf-px-h1{font-size:50px;font-weight:800;color:#fff;margin:0 0 14px;letter-spacing:-.02em;line-height:1.06;text-shadow:0 4px 26px rgba(0,0,0,.3);}
+.sf-px-h1 span{background:linear-gradient(110deg,#ff8fc0,#c79bff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.sf-px-sub{color:rgba(255,255,255,.94);font-size:17px;line-height:1.6;font-weight:300;margin:0 auto;max-width:620px;text-shadow:0 2px 14px rgba(0,0,0,.32);}
+.sf-stats-lt{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;}
+.sf-stats-lt div{display:flex;flex-direction:column;align-items:center;min-width:120px;}
+.sf-stats-lt b{font-size:40px;font-weight:800;line-height:1;color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.3);}
+.sf-stats-lt span{color:rgba(255,255,255,.9);font-size:13px;margin-top:8px;font-weight:400;letter-spacing:.03em;}
+/* TWO COLUMN */
+.sf-two{display:grid;grid-template-columns:1.45fr .9fr;gap:40px;align-items:center;margin:56px 0;}
+.sf-two-l p{color:#5c5064;font-size:15px;line-height:1.75;font-weight:300;margin:0 0 15px;}
+.sf-two-l p strong{color:#3a2f42;font-weight:600;}
+.sf-two-l a{color:#c20b58;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(194,11,88,.3);}
+.sf-quote{position:relative;background:linear-gradient(150deg,#fdeef6,#f4ecff);border:1px solid #f0e0ec;border-radius:20px;padding:34px 28px 30px;}
+.sf-quote:before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:4px;border-radius:4px;background:linear-gradient(#c20b58,#7a00df);}
+.sf-qmark{font-size:70px;line-height:.7;color:#e39bc4;font-family:Georgia,serif;display:block;height:34px;}
+.sf-quote p{font-size:19px;font-weight:700;font-style:italic;color:#3a2340;line-height:1.42;margin:6px 0 14px;}
+.sf-qby{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c20b58;}
+/* SECTIONS */
+.sf-services{margin:58px 0;}
+.sf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.sf-card{display:flex;flex-direction:column;gap:14px;background:#fff;border:1px solid #eee3ec;border-radius:18px;padding:24px 22px;text-decoration:none;color:inherit;position:relative;transition:transform .28s cubic-bezier(.4,0,.2,1),box-shadow .28s,border-color .28s;overflow:hidden;}
+.sf-card:before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,#c20b58,#7a00df);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.sf-card:hover{transform:translateY(-6px);box-shadow:0 30px 50px -26px rgba(90,10,60,.4);border-color:#f0cfe1;}
+.sf-card:hover:before{transform:scaleX(1);}
+.sf-ic{flex:0 0 52px;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#ffe3ef,#f4e0ff);color:#c20b58;transition:.28s;}
+.sf-ic svg{width:25px;height:25px;}
+.sf-card:hover .sf-ic,.sf-step:hover .sf-ic{background:linear-gradient(135deg,#c20b58,#7a00df);color:#fff;transform:rotate(-6deg) scale(1.06);}
+.sf-card h3{font-size:17.5px;font-weight:700;margin:0 0 6px;color:#241c2b;line-height:1.25;}
+.sf-card p{font-size:13.4px;line-height:1.6;color:#7d7188;margin:0;font-weight:300;}
+.sf-more{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:10px;font-size:13px;font-weight:700;color:#c20b58;}
+.sf-more .sf-arw{transition:transform .22s;}.sf-card:hover .sf-more .sf-arw{transform:translateX(5px);}
+/* STEPS */
+.sf-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.sf-step{position:relative;background:#fff;border:1px solid #eee3ec;border-radius:18px;padding:26px 20px 22px;transition:transform .28s,box-shadow .28s,border-color .28s;outline:none;}
+.sf-step:hover,.sf-step:focus{transform:translateY(-6px);box-shadow:0 28px 46px -26px rgba(90,10,60,.42);border-color:#f0cfe1;}
+.sf-step .sf-ic{margin-bottom:14px;}
+.sf-step-no{position:absolute;top:16px;right:18px;font-size:30px;font-weight:800;color:#f3e3ee;letter-spacing:-.02em;transition:.28s;}
+.sf-step:hover .sf-step-no{color:#f3cfe2;}
+.sf-step h3{font-size:16.5px;font-weight:700;margin:0 0 7px;color:#241c2b;}
+.sf-step p{font-size:13px;line-height:1.6;color:#7d7188;margin:0;font-weight:300;}
+/* CHIPS */
+.sf-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.sf-chip{font-size:14px;font-weight:600;color:#3a2f42;background:#fff;border:1.5px solid #f0dfea;padding:11px 20px;border-radius:999px;transition:.22s;}
+.sf-chip:hover{background:linear-gradient(135deg,#c20b58,#7a00df);color:#fff;border-color:transparent;transform:translateY(-3px);box-shadow:0 14px 26px -14px rgba(122,0,223,.6);}
+/* FAQ */
+.sf-faq{max-width:820px;margin:0 auto;}
+.sf-faq details{background:#fff;border:1px solid #eee3ec;border-radius:14px;margin-bottom:12px;overflow:hidden;transition:.2s;}
+.sf-faq details[open]{border-color:#f0cfe1;box-shadow:0 20px 40px -28px rgba(90,10,60,.4);}
+.sf-faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:700;font-size:15.5px;color:#241c2b;display:flex;justify-content:space-between;align-items:center;gap:14px;}
+.sf-faq summary::-webkit-details-marker{display:none;}
+.sf-faq summary:after{content:"+";font-size:24px;font-weight:400;color:#c20b58;transition:.25s;line-height:1;}
+.sf-faq details[open] summary:after{transform:rotate(45deg);}
+.sf-faq .sf-faq-a{padding:0 22px 20px;color:#6a5f74;font-size:14px;line-height:1.72;font-weight:300;}
+/* CTA */
+.sf-cta{margin:52px 0 26px;border-radius:26px;background:linear-gradient(135deg,#c20b58,#7a00df);padding:52px 30px;text-align:center;position:relative;overflow:hidden;}
+.sf-cta:before,.sf-cta:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.1);}
+.sf-cta:before{width:220px;height:220px;top:-90px;right:-60px;}.sf-cta:after{width:160px;height:160px;bottom:-70px;left:-40px;}
+.sf-cta-in{position:relative;z-index:1;}
+.sf-cta h2{color:#fff;font-size:31px;font-weight:800;margin:0 0 10px;}
+.sf-cta p{color:rgba(255,255,255,.92);font-size:15px;margin:0 0 24px;font-weight:300;}
+.sf-cta .sf-hero-cta{justify-content:center;}
+/* REVEAL + HERO ANIM */
+.sf-reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms);}
+.sf-reveal.sf-in{opacity:1;transform:none;}
+@keyframes sfUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes sfPop{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes sfFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes sfPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+.sf-hero-anim .sf-eyebrow{animation:sfUp .7s .05s both cubic-bezier(.2,.7,.2,1);}
+.sf-hero-anim .sf-h1{animation:sfUp .75s .16s both cubic-bezier(.2,.7,.2,1);}
+.sf-hero-anim .sf-lead{animation:sfUp .75s .3s both cubic-bezier(.2,.7,.2,1);}
+.sf-hero-anim .sf-hero-cta{animation:sfUp .75s .44s both cubic-bezier(.2,.7,.2,1);}
+.sf-hero-anim .sf-hero-text .sf-stats{animation:sfUp .75s .58s both cubic-bezier(.2,.7,.2,1);}
+.sf-hero-anim .sf-hero-media{animation:sfPop .9s .26s both cubic-bezier(.2,.7,.2,1);}
+.sf-hero-anim .sf-hero-media img{animation:sfPop .9s .26s both cubic-bezier(.2,.7,.2,1),sfFloat 6.5s 1.2s ease-in-out infinite;}
+.sf-glow{animation:sfPulse 5.5s ease-in-out infinite;}
+/* one H1 per page: hide theme title bar (loads only on these pages) */
+.title{display:none !important;}
+@media(prefers-reduced-motion:reduce){.sf-hero-anim *,.sf-glow,.sf-hero-media img{animation:none !important;}.sf-reveal{opacity:1 !important;transform:none !important;}.sf-px-bg{transform:none !important;}}
+@media(max-width:960px){
+ .sf-hero{padding:28px;}.sf-hero-inner{grid-template-columns:1fr;gap:26px;}.sf-hero-media{order:-1;}
+ .sf-h1{font-size:32px;}.sf-px-h1{font-size:36px;}.sf-h2{font-size:27px;}
+ .sf-two{grid-template-columns:1fr;gap:26px;}
+ .sf-steps{grid-template-columns:repeat(2,1fr);}
+ .sf-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+ .sf-px-hero{min-height:52vh;}
+}
+@media(max-width:560px){
+ .sf-page{padding:0 14px;}
+ .sf-hero{padding:22px 18px;border-radius:20px;}.sf-px{border-radius:18px;}
+ .sf-h1{font-size:27px;}.sf-px-h1{font-size:29px;}.sf-px-sub,.sf-lead{font-size:15px;}
+ .sf-grid,.sf-steps{grid-template-columns:1fr;}
+ .sf-stats-lt{gap:22px 30px;}.sf-stats-lt b{font-size:32px;}
+ .sf-cta{padding:38px 20px;}.sf-cta h2{font-size:24px;}
+ .sf-btn{width:100%;justify-content:center;}
+ .sf-px-band{min-height:280px;}
+}
+</style>
+<div class="sf-page sf-facility">
+<section class="sf-hero sf-hero-anim">
+ <div class="sf-hero-inner">
+  <div class="sf-hero-text">
+   <span class="sf-eyebrow">Digital Marketing · North Goa</span>
+   <h1 class="sf-h1">Digital marketing for <span>North Goa brands</span></h1>
+   <p class="sf-lead">From Calangute to Mapusa, we help North Goa businesses grow their visibility, leads and sales online - all under one roof.</p>
+   <div class="sf-hero-cta">
+    <a class="sf-btn sf-btn-p" href="https://www.sanctify.in/contact/">Get a Free Consultation <svg class="sf-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="sf-btn sf-btn-g" href="https://wa.me/919923352923" target="_blank" rel="noopener">WhatsApp Us</a>
+   </div>
+   <div class="sf-stats"><div><b>14+</b><span>Years</span></div><div><b>18</b><span>Services</span></div><div><b>500+</b><span>Projects</span></div><div><b>100%</b><span>In-house</span></div></div>
+  </div>
+  <div class="sf-hero-media"><span class="sf-glow"></span><img src="https://www.sanctify.in/wp-content/uploads/2026/08/sanctify-digital-marketing-agency-north-goa-hero.jpg" alt="Digital marketing agency in North Goa - Sanctify" loading="eager" width="1024" height="1024"></div>
+ </div>
+</section>
+<section class="sf-two">
+ <div class="sf-two-l sf-reveal">
+  <span class="sf-eyebrow">North Goa</span>
+  <h2 class="sf-h2">Marketing built for the North Goa market</h2>
+  <p>North Goa moves fast - hospitality, cafes, retail, real estate and events all competing for the same attention. Standing out takes more than a nice logo; it takes a <strong>coordinated digital strategy</strong>.</p><p>As an award-winning Goa agency since 2012, we bring SEO, social, ads, web and branding together so North Goa brands grow with one clear plan. Explore our full <a href="https://www.sanctify.in/sanctify-facility/">services</a> or our <a href="https://www.sanctify.in/sanctify-facility/digital-marketing-agency-south-goa/">South Goa</a> page.</p>
+ </div>
+ <aside class="sf-quote sf-reveal" style="--d:120ms">
+  <span class="sf-qmark">&ldquo;</span>
+  <p>Local insight paired with national standards is what helps a North Goa brand truly stand out.</p>
+  <span class="sf-qby">The Sanctify Philosophy</span>
+ </aside>
+</section>
+<section class="sf-services">
+ <div class="sf-sec-head sf-reveal">
+  <span class="sf-eyebrow">What we do</span>
+  <h2 class="sf-h2">Everything your brand needs, under one roof</h2>
+  <p>A complete digital marketing suite tailored to North Goa businesses.</p>
+ </div>
+ <div class="sf-grid"><a class="sf-card sf-reveal" style="--d:0ms" href="https://www.sanctify.in/sanctify-facility/best-search-engine-optimization-seo-company-in-goa-india/"><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span><span class="sf-card-b"><h3>Search Engine Optimization</h3><p>Rank higher on Google with technical, on-page and content SEO.</p><span class="sf-more">Learn more <svg class="sf-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="sf-card sf-reveal" style="--d:70ms" href="https://www.sanctify.in/sanctify-facility/social-media-marketing-agency-goa/"><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></span><span class="sf-card-b"><h3>Social Media Marketing</h3><p>Instagram, Facebook &amp; reels content that grows and engages your audience.</p><span class="sf-more">Learn more <svg class="sf-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="sf-card sf-reveal" style="--d:140ms" href="https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/"><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="sf-card-b"><h3>Google &amp; Meta Ads</h3><p>Search, Performance Max &amp; social ads managed for qualified enquiries.</p><span class="sf-more">Learn more <svg class="sf-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="sf-card sf-reveal" style="--d:0ms" href="https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/"><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M9 9v11"/></svg></span><span class="sf-card-b"><h3>Web Design &amp; Development</h3><p>Fast, responsive, conversion-focused websites that sell around the clock.</p><span class="sf-more">Learn more <svg class="sf-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="sf-card sf-reveal" style="--d:70ms" href="https://www.sanctify.in/sanctify-facility/local-seo-services-goa/"><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 1114 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span class="sf-card-b"><h3>Local SEO &amp; Map Pack</h3><p>Google Business Profile and local rankings that bring nearby customers.</p><span class="sf-more">Learn more <svg class="sf-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="sf-card sf-reveal" style="--d:140ms" href="https://www.sanctify.in/sanctify-facility/content-marketing-agency-goa/"><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/></svg></span><span class="sf-card-b"><h3>Content &amp; Branding</h3><p>Strategy-led content and visual identity that build authority.</p><span class="sf-more">Learn more <svg class="sf-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a></div>
+</section>
+<section class="sf-services">
+ <div class="sf-sec-head sf-reveal">
+  <span class="sf-eyebrow">Areas we serve</span>
+  <h2 class="sf-h2">Across North Goa</h2>
+  <p>We work with businesses right across the North Goa belt.</p>
+ </div>
+ <div class="sf-chips"><span class="sf-chip sf-reveal" style="--d:0ms">Calangute</span><span class="sf-chip sf-reveal" style="--d:45ms">Baga</span><span class="sf-chip sf-reveal" style="--d:90ms">Anjuna</span><span class="sf-chip sf-reveal" style="--d:135ms">Candolim</span><span class="sf-chip sf-reveal" style="--d:180ms">Mapusa</span><span class="sf-chip sf-reveal" style="--d:225ms">Panaji</span><span class="sf-chip sf-reveal" style="--d:270ms">Porvorim</span><span class="sf-chip sf-reveal" style="--d:315ms">Assagao</span></div>
+</section>
+<section class="sf-px sf-px-band" data-px>
+ <div class="sf-px-bg" style="background-image:url('https://www.sanctify.in/wp-content/uploads/2026/07/sanctify-about-abstract-bg.png')"></div>
+ <div class="sf-px-ov sf-px-ov-d"></div>
+ <div class="sf-px-inner"><div class="sf-stats sf-stats-lt"><div><b data-count="14" data-suf="+">0</b><span>Years of excellence</span></div><div><b data-count="500" data-suf="+">0</b><span>Projects delivered</span></div><div><b data-count="18" data-suf="">0</b><span>Services in-house</span></div><div><b data-count="6" data-suf="+">0</b><span>Industries served</span></div></div></div>
+</section>
+<section class="sf-services">
+ <div class="sf-sec-head sf-reveal">
+  <span class="sf-eyebrow">How we work</span>
+  <h2 class="sf-h2">A simple, proven process</h2>
+  <p>From first conversation to compounding results - a clear path to growth.</p>
+ </div>
+ <div class="sf-steps"><div class="sf-step sf-reveal" style="--d:0ms" tabindex="0"><span class="sf-step-no">01</span><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><h3>Discover</h3><p>We learn your brand, market and goals across the North Goa landscape.</p></div><div class="sf-step sf-reveal" style="--d:90ms" tabindex="0"><span class="sf-step-no">02</span><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span><h3>Strategy</h3><p>We build a focused plan across the channels that will move the needle.</p></div><div class="sf-step sf-reveal" style="--d:180ms" tabindex="0"><span class="sf-step-no">03</span><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></span><h3>Execute</h3><p>Our in-house team delivers design, content, SEO, ads and social.</p></div><div class="sf-step sf-reveal" style="--d:270ms" tabindex="0"><span class="sf-step-no">04</span><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></span><h3>Optimise</h3><p>We measure, refine and scale what works - month after month.</p></div></div>
+</section>
+<section class="sf-services">
+ <div class="sf-sec-head sf-reveal">
+  <span class="sf-eyebrow">FAQ</span>
+  <h2 class="sf-h2">Frequently asked questions</h2>
+  <p>Answers to the questions Goa businesses ask us most.</p>
+ </div>
+ <div class="sf-faq"><details><summary>Which North Goa areas do you cover?</summary><div class="sf-faq-a">We work with businesses across North Goa including Calangute, Baga, Anjuna, Candolim, Mapusa, Panaji, Porvorim and Assagao.</div></details><details><summary>Do you work with hospitality and restaurant brands?</summary><div class="sf-faq-a">Yes - hospitality, cafes, restaurants, retail, real estate and events are among the North Goa sectors we regularly serve.</div></details><details><summary>Can you handle everything in-house?</summary><div class="sf-faq-a">Yes. SEO, social, ads, web design, content and branding are all delivered by our own in-house team - no fragmented hand-offs.</div></details><details><summary>Do you also serve South Goa?</summary><div class="sf-faq-a">We do. See our dedicated South Goa page, or talk to us about statewide campaigns.</div></details></div>
+</section>
+<section class="sf-cta sf-reveal">
+ <div class="sf-cta-in">
+  <h2>Ready to grow your North Goa brand?</h2>
+  <p>Let&#x27;s build a digital strategy that gets your business noticed across North Goa.</p>
+  <div class="sf-hero-cta">
+   <a class="sf-btn sf-btn-w" href="https://www.sanctify.in/contact/">Start a Project <svg class="sf-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   <a class="sf-btn sf-btn-go" href="tel:+919923352923">Call +91 99233 52923</a>
+  </div>
+ </div>
+</section>
+</div>
+<noscript><style>.sf-facility .sf-reveal{opacity:1 !important;transform:none !important;}</style></noscript>
+<script>
+(function(){
+ function ready(fn){if(document.readyState!=='loading'){fn();}else{document.addEventListener('DOMContentLoaded',fn);}}
+ ready(function(){
+  var root=document.querySelector('.sf-facility');if(!root)return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function countTo(b,tgt,suf){if(reduce){b.textContent=tgt+suf;return;}var st=null;function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/1200,1);b.textContent=Math.floor(p*tgt)+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('sf-in');io.unobserve(x.target);}});},{threshold:.14,rootMargin:'0px 0px -6% 0px'}):null;
+  var rev=root.querySelectorAll('.sf-reveal');
+  if(io){rev.forEach(function(el){io.observe(el);});}else{rev.forEach(function(el){el.classList.add('sf-in');});}
+  var band=root.querySelector('.sf-px-band');
+  if(band){
+   if('IntersectionObserver' in window){var io2=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.querySelectorAll('b[data-count]').forEach(function(b){countTo(b,+b.getAttribute('data-count'),b.getAttribute('data-suf')||'');});io2.unobserve(x.target);}});},{threshold:.3});io2.observe(band);}
+   else{band.querySelectorAll('b[data-count]').forEach(function(b){b.textContent=b.getAttribute('data-count')+(b.getAttribute('data-suf')||'');});}
+  }
+  if(!reduce){
+   var pxs=[].slice.call(root.querySelectorAll('[data-px] .sf-px-bg'));
+   var ticking=false;
+   function upd(){ticking=false;var vh=window.innerHeight;pxs.forEach(function(bg){var s=bg.parentNode.getBoundingClientRect();var center=s.top+s.height/2;var off=((vh/2)-center)*0.18;bg.style.transform='translate3d(0,'+off.toFixed(1)+'px,0)';});}
+   function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(upd);}}
+   window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);upd();
+  }
+ });
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Digital Marketing Agency in North Goa", "provider": {"@type": "Organization", "name": "Sanctify", "url": "https://www.sanctify.in"}, "areaServed": {"@type": "Place", "name": "Goa, India"}, "url": "https://www.sanctify.in/digital-marketing-agency-north-goa/", "description": "Digital marketing agency serving North Goa - Calangute, Baga, Anjuna, Candolim, Mapusa & Panaji. SEO, social media, Google Ads, web design & branding by Sanctify."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which North Goa areas do you cover?", "acceptedAnswer": {"@type": "Answer", "text": "We work with businesses across North Goa including Calangute, Baga, Anjuna, Candolim, Mapusa, Panaji, Porvorim and Assagao."}}, {"@type": "Question", "name": "Do you work with hospitality and restaurant brands?", "acceptedAnswer": {"@type": "Answer", "text": "Yes - hospitality, cafes, restaurants, retail, real estate and events are among the North Goa sectors we regularly serve."}}, {"@type": "Question", "name": "Can you handle everything in-house?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. SEO, social, ads, web design, content and branding are all delivered by our own in-house team - no fragmented hand-offs."}}, {"@type": "Question", "name": "Do you also serve South Goa?", "acceptedAnswer": {"@type": "Answer", "text": "We do. See our dedicated South Goa page, or talk to us about statewide campaigns."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.sanctify.in/"}, {"@type": "ListItem", "position": 2, "name": "Facility", "item": "https://www.sanctify.in/sanctify-facility/"}, {"@type": "ListItem", "position": 3, "name": "Digital Marketing Agency in North Goa", "item": "https://www.sanctify.in/digital-marketing-agency-north-goa/"}]}</script>
+</body></html>

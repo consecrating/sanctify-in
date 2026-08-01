@@ -293,11 +293,11 @@
 .sfy-cta .mini{font-size:14px;color:rgba(255,255,255,.72);margin-top:22px}
 .sfy-cta .mini a{color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.4)}
 
-/* ---- reveal (visible by default; JS enhances) ---- */
-.sfy2.sfy-js .r{opacity:0;transform:translateY(22px)}
-.sfy2.sfy-js .r.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+/* ---- reveal: pure on-load CSS animation, ALWAYS ends visible (no JS / observer dependency) ---- */
+@keyframes sfy-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.sfy2 .r{animation:sfy-in .7s cubic-bezier(.2,.7,.3,1) both}
 @media (prefers-reduced-motion:reduce){
-  .sfy2.sfy-js .r{opacity:1;transform:none}
+  .sfy2 .r{animation:none}
   .sfy-float,.sfy-marq .tr{animation:none}
 }
 
@@ -392,14 +392,9 @@
 
 <script>
 (function(){
-  var root=document.currentScript&&document.currentScript.closest?document.currentScript.parentNode.querySelector('.sfy2'):document.querySelector('.sfy2');
-  root=document.querySelector('.sfy2');
+  var root=document.querySelector('.sfy2');
   if(!root||root.dataset.sfyInit)return; root.dataset.sfyInit='1';
-  root.classList.add('sfy-js');
-  // reveal
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
-  root.querySelectorAll('.r').forEach(function(el){io.observe(el);});
-  // count-up
+  // count-up (default DOM text already shows the real value, so this only enhances)
   function ease(t){return 1-Math.pow(1-t,3);}
   var cio=new IntersectionObserver(function(es){es.forEach(function(e){
     if(!e.isIntersecting)return; cio.unobserve(e.target);

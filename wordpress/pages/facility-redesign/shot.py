@@ -8,10 +8,7 @@ OUT = "/projects/sandbox/.kiro/artifacts/screenshots"
 os.makedirs(OUT, exist_ok=True)
 CHROME = glob.glob("/opt/playwright/chromium-*/chrome-linux64/chrome")[0]
 
-FORCE = """() => {
-  document.querySelectorAll('.sfy2').forEach(r=>r.classList.add('sfy-js'));
-  document.querySelectorAll('.r').forEach(e=>e.classList.add('in'));
-}"""
+FORCE = """() => { /* no force: test real visibility */ return true; }"""
 
 def shot(slug, device="desktop"):
     path = os.path.join(PREVIEW, slug + ".html")

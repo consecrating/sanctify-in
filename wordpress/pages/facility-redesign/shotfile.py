@@ -9,7 +9,10 @@ def shot(path, out, device="desktop"):
         vp = {"width":1280,"height":900} if device=="desktop" else {"width":390,"height":844}
         pg = b.new_page(viewport=vp, device_scale_factor=1 if device=="desktop" else 2)
         pg.goto("file://"+os.path.abspath(path), wait_until="networkidle")
-        pg.wait_for_timeout(1200)
+        pg.wait_for_timeout(600)
+        # force-reveal all sections + finalize counters so full-page capture shows everything
+        pg.evaluate("document.querySelectorAll('.sf-reveal').forEach(e=>e.classList.add('sf-in'));document.querySelectorAll('b[data-count]').forEach(b=>b.textContent=b.getAttribute('data-count')+(b.getAttribute('data-suf')||''));")
+        pg.wait_for_timeout(2600)
         pg.screenshot(path=os.path.join(OUT,out), full_page=True)
         b.close(); print("saved", out)
 if __name__=="__main__":

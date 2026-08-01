@@ -133,7 +133,7 @@ def dark_services(eb, h2, p, cards):
             f'<p>{e(txt)}</p>{tag_c}')
     return f'''<section class="sf-dark">
  <div class="sf-dark-bg"></div>
- <canvas id="sf-smoke2" class="sf-smoke" aria-hidden="true"></canvas>
+ <canvas id="sf-smoke-white" class="sf-smoke" aria-hidden="true"></canvas>
  <div class="sf-dark-in">
   <div class="sf-sec-head sf-reveal sf-sec-head-lt">
    <span class="sf-eyebrow sf-eyebrow-lt">{e(eb)}</span>
@@ -523,7 +523,7 @@ CSS = r"""<style id="sf-facility-css">
 /* SMOKE: header = site WebGL mouse-fluid (magenta, unchanged) via screen blend; section 2 = natural white ambient */
 .sf-smoke{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
 .sf-px-hero .sf-smoke{z-index:2;mix-blend-mode:screen;}
-.sf-dark .sf-smoke{z-index:1;mix-blend-mode:screen;}
+.sf-dark .sf-smoke{z-index:1;mix-blend-mode:screen;opacity:.2;}
 @property --sfa{syntax:"<angle>";inherits:false;initial-value:0deg;}
 /* DARK GLOW-CARD SERVICES (new layout) */
 .sf-dark{position:relative;overflow:hidden;border-radius:26px;margin:56px 0;padding:62px 40px;}
@@ -582,6 +582,8 @@ NOSCRIPT = "<noscript><style>.sf-facility .sf-reveal{opacity:1 !important;transf
 # Site's WebGL mouse-fluid smoke (mu-plugin) - not auto-enqueued on these pages, so load it explicitly.
 # It self-initializes on #sf-smoke / #sf-smoke2 and binds pointer splats to document.body.
 SMOKE_SCRIPT = '<script src="https://www.sanctify.in/wp-content/mu-plugins/sanctify-smoke.js" defer></script>'
+# WHITE-palette copy of the same WebGL fluid engine, initialises ONLY on #sf-smoke-white (section 2).
+WHITE_SMOKE_SCRIPT = '<script src="https://www.sanctify.in/wp-content/uploads/sanctify-smoke-white.js?v=5" defer></script>'
 
 def schema(d, pid):
     url = f"{SITE}/sanctify-facility/{d['slug']}/" if d['slug'] not in ("digital-marketing-agency-north-goa","digital-marketing-agency-south-goa") else f"{SITE}/{d['slug']}/"
@@ -614,7 +616,8 @@ def render(pid, d):
     parts.append(cta(*d["cta"]))
     parts.append('</div>')
     body = "\n".join(parts)
-    content = CSS + "\n" + body + "\n" + NOSCRIPT + "\n" + JS + "\n" + SMOKE_SCRIPT + "\n" + schema(d, pid)
+    top_smoke = SMOKE_SCRIPT if d["hero"] == "dark" else ""   # magenta top (unchanged), dark heroes only
+    content = CSS + "\n" + body + "\n" + NOSCRIPT + "\n" + JS + "\n" + top_smoke + "\n" + WHITE_SMOKE_SCRIPT + "\n" + schema(d, pid)
     return content
 
 for pid, d in PAGES.items():

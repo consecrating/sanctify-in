@@ -120,7 +120,7 @@ def grid(cards, cols=3):
         out.append(f'{tag_o}<span class="sf-ic">{svg(ic)}</span><span class="sf-card-b"><h3>{e(h3)}</h3><p>{e(p)}</p>{more}</span>{tag_c}')
     return f'<div class="sf-grid">{"".join(out)}</div>'
 
-def dark_services(eb, h2, p, cards):
+def dark_services(eb, h2, p, cards, smoke_img):
     out = []
     for i,(ic,h3,txt,href) in enumerate(cards):
         d = (i % 3) * 90
@@ -132,8 +132,8 @@ def dark_services(eb, h2, p, cards):
             f'<span class="sf-dhead"><span class="sf-dline"></span><h3>{e(h3)}</h3><span class="sf-dline"></span></span>'
             f'<p>{e(txt)}</p>{tag_c}')
     return f'''<section class="sf-dark">
- <div class="sf-dark-bg"></div>
- <canvas id="sf-smoke-white" class="sf-smoke" aria-hidden="true"></canvas>
+ <div class="sf-dark-bg" style="background-image:url('{smoke_img}')"></div>
+ <div class="sf-dark-ov"></div>
  <div class="sf-dark-in">
   <div class="sf-sec-head sf-reveal sf-sec-head-lt">
    <span class="sf-eyebrow sf-eyebrow-lt">{e(eb)}</span>
@@ -154,10 +154,10 @@ def chips(items):
     out = "".join(f'<span class="sf-chip sf-reveal" style="--d:{i*45}ms">{e(x)}</span>' for i,x in enumerate(items))
     return f'<div class="sf-chips">{out}</div>'
 
-def band(stats):
+def band(stats, smoke_img):
     inner = "".join(f'<div><b data-count="{n}" data-suf="{suf}">0</b><span>{e(lbl)}</span></div>' for n,suf,lbl in stats)
     return f'''<section class="sf-px sf-px-band" data-px>
- <div class="sf-px-bg" style="background-image:url('{BG_ABSTRACT}')"></div>
+ <div class="sf-px-bg" style="background-image:url('{smoke_img}')"></div>
  <div class="sf-px-ov sf-px-ov-d"></div>
  <div class="sf-px-inner"><div class="sf-stats sf-stats-lt">{inner}</div></div>
 </section>'''
@@ -523,11 +523,12 @@ CSS = r"""<style id="sf-facility-css">
 /* SMOKE: header = site WebGL mouse-fluid (magenta, unchanged) via screen blend; section 2 = natural white ambient */
 .sf-smoke{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
 .sf-px-hero .sf-smoke{z-index:2;mix-blend-mode:screen;}
-.sf-dark .sf-smoke{z-index:1;mix-blend-mode:screen;opacity:.2;}
+
 @property --sfa{syntax:"<angle>";inherits:false;initial-value:0deg;}
 /* DARK GLOW-CARD SERVICES (new layout) */
 .sf-dark{position:relative;overflow:hidden;border-radius:26px;margin:56px 0;padding:62px 40px;}
-.sf-dark-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(125% 130% at 18% 0%,#5a1e6e 0%,#43206f 50%,#2f1656 100%);}
+.sf-dark-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;}
+.sf-dark-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,4,22,.5),rgba(46,10,52,.55) 55%,rgba(24,6,32,.62));}
 .sf-dark-in{position:relative;z-index:3;}
 .sf-sec-head-lt h2{color:#fff;}
 .sf-sec-head-lt p{color:rgba(255,255,255,.72);}
@@ -607,17 +608,19 @@ def render(pid, d):
     hero = hero_dark(d) if d["hero"]=="dark" else hero_light(d)
     parts = [f'<div class="sf-page sf-facility">', hero]
     # order sections for variety
+    # same magenta smoke image as the hero (block 1) used across all dark blocks
+    smoke_img = d["img"] if d["hero"] == "dark" else BG_ABSTRACT
     parts.append(two(*d["two"]))
-    parts.append(dark_services(*d["grid_head"], d["grid"]))
+    parts.append(dark_services(*d["grid_head"], d["grid"], smoke_img))
     parts.append(services_section(*d["chips_head"], chips(d["chips"])))
-    parts.append(band(BRAND_BAND))
+    parts.append(band(BRAND_BAND, smoke_img))
     parts.append(services_section(*d["steps_head"], steps(d["steps"])))
     parts.append(services_section("FAQ","Frequently asked questions","Answers to the questions Goa businesses ask us most.", faq(d["faq"])))
     parts.append(cta(*d["cta"]))
     parts.append('</div>')
     body = "\n".join(parts)
-    top_smoke = SMOKE_SCRIPT if d["hero"] == "dark" else ""   # magenta top (unchanged), dark heroes only
-    content = CSS + "\n" + body + "\n" + NOSCRIPT + "\n" + JS + "\n" + top_smoke + "\n" + WHITE_SMOKE_SCRIPT + "\n" + schema(d, pid)
+    top_smoke = SMOKE_SCRIPT if d["hero"] == "dark" else ""   # magenta hero fluid (block 1), unchanged
+    content = CSS + "\n" + body + "\n" + NOSCRIPT + "\n" + JS + "\n" + top_smoke + "\n" + schema(d, pid)
     return content
 
 for pid, d in PAGES.items():

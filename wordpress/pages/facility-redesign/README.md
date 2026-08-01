@@ -1,6 +1,17 @@
-# Facility / Landing pages — v2 premium redesign (DEPLOYED)
+# Facility / Landing pages — v3 "Editorial Ink" redesign (DEPLOYED — current live version)
 
 Applied **2026-08-01** to https://www.sanctify.in via WordPress REST API (user `kiara`, admin, `unfiltered_html`).
+
+**v3 supersedes v2.** v2 was rejected as repetitive (one template reused across 6 pages). v3 gives every page a **distinct layout**:
+- **SMM (6977):** feed-wall reel hero + numbered service index + proof band + reel strip
+- **Local SEO (6978):** Map Pack card hero + "with Sanctify vs unmanaged" compare columns
+- **PPC (6979):** ROAS dashboard hero + impressions→booked funnel viz
+- **Content (6980):** SERP-snippet hero + topic-cluster pillar map
+- **North/South Goa (6981/6982):** Map Pack hero + coverage grid
+
+Design system: Editorial Ink — near-black + warm off-white (`#f6f3ee`), magenta `#ff0066` accent, Space Grotesk + Inter, sticky numbered section labels. Reveal uses a pure on-load CSS keyframe (`sfy3rv`) that **always ends visible** (no IntersectionObserver → no blank-for-crawler bug). All hero mockups are CSS/SVG (no raster → no full-width blur). Generator: `build3.py` → `build3/*.content.html` + `build3/*.payload.json` + `preview3/*.html`. Deployed payloads archived in `_after_v3/`.
+
+<details><summary>v2 (superseded) notes</summary>
 
 ## Pages redesigned (live)
 | Page | ID | Live URL |
@@ -20,6 +31,7 @@ Applied **2026-08-01** to https://www.sanctify.in via WordPress REST API (user `
 - **Schema per page:** `Service` + `FAQPage` + `BreadcrumbList` JSON-LD.
 - **SEOPress meta** updated per page (`_seopress_titles_title`, `_seopress_titles_desc`).
 - Internal links between all six + to SEO / influencer / contact.
+</details>
 
 ## Files
 - `build.py` — generator (design system + per-page content model). `python3 build.py` → `build/*.content.html` + `preview/*.html`.

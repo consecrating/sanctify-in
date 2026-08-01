@@ -120,20 +120,20 @@ def grid(cards, cols=3):
         out.append(f'{tag_o}<span class="sf-ic">{svg(ic)}</span><span class="sf-card-b"><h3>{e(h3)}</h3><p>{e(p)}</p>{more}</span>{tag_c}')
     return f'<div class="sf-grid">{"".join(out)}</div>'
 
-def dark_services(eb, h2, p, cards, smoke_id="sf-smoke"):
+def dark_services(eb, h2, p, cards):
     out = []
     for i,(ic,h3,txt,href) in enumerate(cards):
         d = (i % 3) * 90
         tag_o = f'<a class="sf-dcard sf-reveal" style="--d:{d}ms" href="{href}">' if href else f'<div class="sf-dcard sf-reveal" style="--d:{d}ms">'
         tag_c = "</a>" if href else "</div>"
         out.append(
-            f'{tag_o}<span class="sf-dcard-fx"><i></i></span>'
+            f'{tag_o}<span class="sf-dcard-fx"></span>'
             f'<span class="sf-dic">{svg(ic)}</span>'
             f'<span class="sf-dhead"><span class="sf-dline"></span><h3>{e(h3)}</h3><span class="sf-dline"></span></span>'
             f'<p>{e(txt)}</p>{tag_c}')
     return f'''<section class="sf-dark">
  <div class="sf-dark-bg"></div>
- <canvas id="{smoke_id}" class="sf-smoke" aria-hidden="true"></canvas>
+ <canvas class="sf-smoke" data-smoke aria-hidden="true"></canvas>
  <div class="sf-dark-in">
   <div class="sf-sec-head sf-reveal sf-sec-head-lt">
    <span class="sf-eyebrow sf-eyebrow-lt">{e(eb)}</span>
@@ -154,11 +154,10 @@ def chips(items):
     out = "".join(f'<span class="sf-chip sf-reveal" style="--d:{i*45}ms">{e(x)}</span>' for i,x in enumerate(items))
     return f'<div class="sf-chips">{out}</div>'
 
-def band(stats, smoke_id=None):
+def band(stats):
     inner = "".join(f'<div><b data-count="{n}" data-suf="{suf}">0</b><span>{e(lbl)}</span></div>' for n,suf,lbl in stats)
-    smk = f'\n <canvas id="{smoke_id}" class="sf-smoke" aria-hidden="true"></canvas>' if smoke_id else ''
     return f'''<section class="sf-px sf-px-band" data-px>
- <div class="sf-px-bg" style="background-image:url('{BG_ABSTRACT}')"></div>{smk}
+ <div class="sf-px-bg" style="background-image:url('{BG_ABSTRACT}')"></div>
  <div class="sf-px-ov sf-px-ov-d"></div>
  <div class="sf-px-inner"><div class="sf-stats sf-stats-lt">{inner}</div></div>
 </section>'''
@@ -521,8 +520,11 @@ CSS = r"""<style id="sf-facility-css">
  .sf-dgrid{grid-template-columns:1fr !important;}
  .sf-dark{padding:46px 18px !important;}
 }
-/* SMOKE CANVAS (WebGL mouse-fluid, driven site-wide by sanctify-smoke.js) */
-.sf-smoke{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;mix-blend-mode:screen;}
+/* SMOKE: header = site WebGL mouse-fluid (magenta, unchanged) via screen blend; section 2 = natural white ambient */
+.sf-smoke{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.sf-px-hero .sf-smoke{z-index:2;mix-blend-mode:screen;}
+.sf-dark .sf-smoke{z-index:1;}
+@property --sfa{syntax:"<angle>";inherits:false;initial-value:0deg;}
 /* DARK GLOW-CARD SERVICES (new layout) */
 .sf-dark{position:relative;overflow:hidden;border-radius:26px;margin:56px 0;padding:62px 40px;}
 .sf-dark-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(125% 130% at 18% 0%,#5a1e6e 0%,#43206f 50%,#2f1656 100%);}
@@ -532,10 +534,9 @@ CSS = r"""<style id="sf-facility-css">
 .sf-dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .sf-dcard{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:34px 26px 30px;text-decoration:none;color:inherit;overflow:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),background .3s;}
 .sf-dcard:hover{transform:translateY(-6px);background:rgba(255,255,255,.055);}
-.sf-dcard-fx{position:absolute;inset:0;padding:1.5px;border-radius:20px;overflow:hidden;pointer-events:none;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;z-index:1;}
-.sf-dcard-fx:before{content:"";position:absolute;inset:0;border-radius:20px;border:1.5px solid rgba(255,255,255,.1);}
-.sf-dcard-fx i{position:absolute;top:50%;inset-inline-start:50%;aspect-ratio:1/1;min-width:100%;min-height:100%;border-radius:20px;background:conic-gradient(from 290deg at 50%,#7a00df,transparent 0%,#c20b58,#ff2ea6 20%,#fff,transparent 25%);animation:sf-boxlight 5s linear infinite;}
-@keyframes sf-boxlight{0%{transform:translate(-88%,-50%) rotate(0deg)}33%{transform:translate(-12%,-50%) rotate(0deg)}50%{transform:translate(-12%,-50%) rotate(180deg)}83%{transform:translate(-88%,-50%) rotate(180deg)}100%{transform:translate(-88%,-50%) rotate(360deg)}}
+.sf-dcard-fx{position:absolute;inset:0;border-radius:20px;padding:2px;pointer-events:none;z-index:1;background:conic-gradient(from var(--sfa),transparent 0deg,transparent 225deg,#c20b58 280deg,#ff2ea6 315deg,#ffffff 338deg,#ff2ea6 352deg,#c79bff 360deg);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;filter:drop-shadow(0 0 5px rgba(255,70,165,.65));animation:sf-beam 4.2s linear infinite;}
+.sf-dcard-fx:after{content:"";position:absolute;inset:0;border-radius:20px;border:1px solid rgba(255,255,255,.1);}
+@keyframes sf-beam{to{--sfa:360deg;}}
 .sf-dcard>*{position:relative;z-index:2;}
 .sf-dic{width:66px;height:66px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(140deg,#c20b58,#7a00df);color:#fff;box-shadow:0 12px 30px -10px rgba(194,11,88,.7);margin-bottom:12px;transition:transform .3s;}
 .sf-dic svg{width:28px;height:28px;}
@@ -546,7 +547,7 @@ CSS = r"""<style id="sf-facility-css">
 .sf-dcard:hover .sf-dline{width:34px;opacity:1;}
 .sf-dcard h3{font-size:19px;font-weight:700;margin:0;color:#fff;font-family:Georgia,serif;letter-spacing:.01em;}
 .sf-dcard p{font-size:13.6px;line-height:1.66;color:rgba(255,255,255,.66);font-weight:300;margin:0;}
-@media(prefers-reduced-motion:reduce){.sf-dcard-fx i{animation:none !important;}.sf-smoke{display:none !important;}}
+@media(prefers-reduced-motion:reduce){.sf-dcard-fx{animation:none !important;}.sf-smoke{display:none !important;}}
 @media(max-width:960px){.sf-dgrid{grid-template-columns:repeat(2,1fr);}}
 </style>"""
 
@@ -572,6 +573,20 @@ JS = r"""<script>
    function upd(){ticking=false;var vh=window.innerHeight;pxs.forEach(function(bg){var s=bg.parentNode.getBoundingClientRect();var center=s.top+s.height/2;var off=((vh/2)-center)*0.18;bg.style.transform='translate3d(0,'+off.toFixed(1)+'px,0)';});}
    function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(upd);}}
    window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);upd();
+  }
+  // natural white ambient smoke (section 2 only)
+  if(!reduce){
+   [].slice.call(root.querySelectorAll('canvas[data-smoke]')).forEach(function(cv){
+    var ctx=cv.getContext&&cv.getContext('2d');if(!ctx)return;
+    var host=cv.parentNode,w=0,h=0,dpr=Math.min(window.devicePixelRatio||1,2),parts=[],raf,run=true;
+    function rnd(a,b){return a+Math.random()*(b-a);}
+    function resize(){var r=host.getBoundingClientRect();w=r.width;h=r.height;cv.width=Math.max(1,w*dpr);cv.height=Math.max(1,h*dpr);cv.style.width=w+'px';cv.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);}
+    function spawn(){return{x:rnd(-0.1*w,1.1*w),y:rnd(h*0.62,h*1.25),r:rnd(110,240),vx:rnd(-0.14,0.26),vy:rnd(-0.18,-0.55),ma:rnd(0.06,0.17),life:rnd(0,320),max:rnd(460,900)};}
+    for(var i=0;i<22;i++)parts.push(spawn());
+    function frame(){if(!run)return;ctx.clearRect(0,0,w,h);for(var i=0;i<parts.length;i++){var p=parts[i];p.life++;p.x+=p.vx;p.y+=p.vy;var t=p.life/p.max;var a=(t<0.5?t*2:(1-t)*2)*p.ma;if(p.life>=p.max||p.y<-p.r){parts[i]=spawn();continue;}var g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r);g.addColorStop(0,'rgba(244,240,248,'+a+')');g.addColorStop(1,'rgba(244,240,248,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.2832);ctx.fill();}raf=requestAnimationFrame(frame);}
+    resize();frame();window.addEventListener('resize',resize);
+    if('IntersectionObserver' in window){new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){if(!run){run=true;frame();}}else{run=false;cancelAnimationFrame(raf);}});},{threshold:0}).observe(host);}
+   });
   }
  });
 })();
@@ -604,21 +619,17 @@ def render(pid, d):
     hero = hero_dark(d) if d["hero"]=="dark" else hero_light(d)
     parts = [f'<div class="sf-page sf-facility">', hero]
     # order sections for variety
-    # WebGL mouse-smoke ids (site mu-plugin sanctify-smoke.js hooks #sf-smoke & #sf-smoke2)
-    if d["hero"] == "dark":
-        ds_smoke, band_smoke = "sf-smoke2", None   # hero already uses #sf-smoke
-    else:
-        ds_smoke, band_smoke = "sf-smoke", "sf-smoke2"
     parts.append(two(*d["two"]))
-    parts.append(dark_services(*d["grid_head"], d["grid"], smoke_id=ds_smoke))
+    parts.append(dark_services(*d["grid_head"], d["grid"]))
     parts.append(services_section(*d["chips_head"], chips(d["chips"])))
-    parts.append(band(BRAND_BAND, smoke_id=band_smoke))
+    parts.append(band(BRAND_BAND))
     parts.append(services_section(*d["steps_head"], steps(d["steps"])))
     parts.append(services_section("FAQ","Frequently asked questions","Answers to the questions Goa businesses ask us most.", faq(d["faq"])))
     parts.append(cta(*d["cta"]))
     parts.append('</div>')
     body = "\n".join(parts)
-    content = CSS + "\n" + body + "\n" + NOSCRIPT + "\n" + JS + "\n" + SMOKE_SCRIPT + "\n" + schema(d, pid)
+    smoke_js = SMOKE_SCRIPT if d["hero"] == "dark" else ""   # load site WebGL smoke for #sf-smoke header
+    content = CSS + "\n" + body + "\n" + NOSCRIPT + "\n" + JS + "\n" + smoke_js + "\n" + schema(d, pid)
     return content
 
 for pid, d in PAGES.items():

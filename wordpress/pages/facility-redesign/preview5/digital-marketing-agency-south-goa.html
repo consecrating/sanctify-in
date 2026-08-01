@@ -135,8 +135,11 @@
  .sf-dgrid{grid-template-columns:1fr !important;}
  .sf-dark{padding:46px 18px !important;}
 }
-/* SMOKE CANVAS (WebGL mouse-fluid, driven site-wide by sanctify-smoke.js) */
-.sf-smoke{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;mix-blend-mode:screen;}
+/* SMOKE: header = site WebGL mouse-fluid (magenta, unchanged) via screen blend; section 2 = natural white ambient */
+.sf-smoke{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.sf-px-hero .sf-smoke{z-index:2;mix-blend-mode:screen;}
+.sf-dark .sf-smoke{z-index:1;}
+@property --sfa{syntax:"<angle>";inherits:false;initial-value:0deg;}
 /* DARK GLOW-CARD SERVICES (new layout) */
 .sf-dark{position:relative;overflow:hidden;border-radius:26px;margin:56px 0;padding:62px 40px;}
 .sf-dark-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(125% 130% at 18% 0%,#5a1e6e 0%,#43206f 50%,#2f1656 100%);}
@@ -146,10 +149,9 @@
 .sf-dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .sf-dcard{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:34px 26px 30px;text-decoration:none;color:inherit;overflow:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),background .3s;}
 .sf-dcard:hover{transform:translateY(-6px);background:rgba(255,255,255,.055);}
-.sf-dcard-fx{position:absolute;inset:0;padding:1.5px;border-radius:20px;overflow:hidden;pointer-events:none;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;z-index:1;}
-.sf-dcard-fx:before{content:"";position:absolute;inset:0;border-radius:20px;border:1.5px solid rgba(255,255,255,.1);}
-.sf-dcard-fx i{position:absolute;top:50%;inset-inline-start:50%;aspect-ratio:1/1;min-width:100%;min-height:100%;border-radius:20px;background:conic-gradient(from 290deg at 50%,#7a00df,transparent 0%,#c20b58,#ff2ea6 20%,#fff,transparent 25%);animation:sf-boxlight 5s linear infinite;}
-@keyframes sf-boxlight{0%{transform:translate(-88%,-50%) rotate(0deg)}33%{transform:translate(-12%,-50%) rotate(0deg)}50%{transform:translate(-12%,-50%) rotate(180deg)}83%{transform:translate(-88%,-50%) rotate(180deg)}100%{transform:translate(-88%,-50%) rotate(360deg)}}
+.sf-dcard-fx{position:absolute;inset:0;border-radius:20px;padding:2px;pointer-events:none;z-index:1;background:conic-gradient(from var(--sfa),transparent 0deg,transparent 225deg,#c20b58 280deg,#ff2ea6 315deg,#ffffff 338deg,#ff2ea6 352deg,#c79bff 360deg);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;filter:drop-shadow(0 0 5px rgba(255,70,165,.65));animation:sf-beam 4.2s linear infinite;}
+.sf-dcard-fx:after{content:"";position:absolute;inset:0;border-radius:20px;border:1px solid rgba(255,255,255,.1);}
+@keyframes sf-beam{to{--sfa:360deg;}}
 .sf-dcard>*{position:relative;z-index:2;}
 .sf-dic{width:66px;height:66px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(140deg,#c20b58,#7a00df);color:#fff;box-shadow:0 12px 30px -10px rgba(194,11,88,.7);margin-bottom:12px;transition:transform .3s;}
 .sf-dic svg{width:28px;height:28px;}
@@ -160,7 +162,7 @@
 .sf-dcard:hover .sf-dline{width:34px;opacity:1;}
 .sf-dcard h3{font-size:19px;font-weight:700;margin:0;color:#fff;font-family:Georgia,serif;letter-spacing:.01em;}
 .sf-dcard p{font-size:13.6px;line-height:1.66;color:rgba(255,255,255,.66);font-weight:300;margin:0;}
-@media(prefers-reduced-motion:reduce){.sf-dcard-fx i{animation:none !important;}.sf-smoke{display:none !important;}}
+@media(prefers-reduced-motion:reduce){.sf-dcard-fx{animation:none !important;}.sf-smoke{display:none !important;}}
 @media(max-width:960px){.sf-dgrid{grid-template-columns:repeat(2,1fr);}}
 </style>
 <div class="sf-page sf-facility">
@@ -192,14 +194,14 @@
 </section>
 <section class="sf-dark">
  <div class="sf-dark-bg"></div>
- <canvas id="sf-smoke2" class="sf-smoke" aria-hidden="true"></canvas>
+ <canvas class="sf-smoke" data-smoke aria-hidden="true"></canvas>
  <div class="sf-dark-in">
   <div class="sf-sec-head sf-reveal sf-sec-head-lt">
    <span class="sf-eyebrow sf-eyebrow-lt">What we do</span>
    <h2 class="sf-h2">Everything your brand needs, under one roof</h2>
    <p>A complete digital marketing suite tailored to South Goa businesses.</p>
   </div>
-  <div class="sf-dgrid"><a class="sf-dcard sf-reveal" style="--d:0ms" href="https://www.sanctify.in/sanctify-facility/best-search-engine-optimization-seo-company-in-goa-india/"><span class="sf-dcard-fx"><i></i></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Search Engine Optimization</h3><span class="sf-dline"></span></span><p>Rank higher on Google with technical, on-page and content SEO.</p></a><a class="sf-dcard sf-reveal" style="--d:90ms" href="https://www.sanctify.in/sanctify-facility/social-media-marketing-agency-goa/"><span class="sf-dcard-fx"><i></i></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Social Media Marketing</h3><span class="sf-dline"></span></span><p>Instagram, Facebook &amp; reels content that grows and engages your audience.</p></a><a class="sf-dcard sf-reveal" style="--d:180ms" href="https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/"><span class="sf-dcard-fx"><i></i></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Google &amp; Meta Ads</h3><span class="sf-dline"></span></span><p>Search, Performance Max &amp; social ads managed for qualified enquiries.</p></a><a class="sf-dcard sf-reveal" style="--d:0ms" href="https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/"><span class="sf-dcard-fx"><i></i></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M9 9v11"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Web Design &amp; Development</h3><span class="sf-dline"></span></span><p>Fast, responsive, conversion-focused websites that sell around the clock.</p></a><a class="sf-dcard sf-reveal" style="--d:90ms" href="https://www.sanctify.in/sanctify-facility/local-seo-services-goa/"><span class="sf-dcard-fx"><i></i></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 1114 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Local SEO &amp; Map Pack</h3><span class="sf-dline"></span></span><p>Google Business Profile and local rankings that bring nearby customers.</p></a><a class="sf-dcard sf-reveal" style="--d:180ms" href="https://www.sanctify.in/sanctify-facility/content-marketing-agency-goa/"><span class="sf-dcard-fx"><i></i></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Content &amp; Branding</h3><span class="sf-dline"></span></span><p>Strategy-led content and visual identity that build authority.</p></a></div>
+  <div class="sf-dgrid"><a class="sf-dcard sf-reveal" style="--d:0ms" href="https://www.sanctify.in/sanctify-facility/best-search-engine-optimization-seo-company-in-goa-india/"><span class="sf-dcard-fx"></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Search Engine Optimization</h3><span class="sf-dline"></span></span><p>Rank higher on Google with technical, on-page and content SEO.</p></a><a class="sf-dcard sf-reveal" style="--d:90ms" href="https://www.sanctify.in/sanctify-facility/social-media-marketing-agency-goa/"><span class="sf-dcard-fx"></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Social Media Marketing</h3><span class="sf-dline"></span></span><p>Instagram, Facebook &amp; reels content that grows and engages your audience.</p></a><a class="sf-dcard sf-reveal" style="--d:180ms" href="https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/"><span class="sf-dcard-fx"></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Google &amp; Meta Ads</h3><span class="sf-dline"></span></span><p>Search, Performance Max &amp; social ads managed for qualified enquiries.</p></a><a class="sf-dcard sf-reveal" style="--d:0ms" href="https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/"><span class="sf-dcard-fx"></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M9 9v11"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Web Design &amp; Development</h3><span class="sf-dline"></span></span><p>Fast, responsive, conversion-focused websites that sell around the clock.</p></a><a class="sf-dcard sf-reveal" style="--d:90ms" href="https://www.sanctify.in/sanctify-facility/local-seo-services-goa/"><span class="sf-dcard-fx"></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 1114 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Local SEO &amp; Map Pack</h3><span class="sf-dline"></span></span><p>Google Business Profile and local rankings that bring nearby customers.</p></a><a class="sf-dcard sf-reveal" style="--d:180ms" href="https://www.sanctify.in/sanctify-facility/content-marketing-agency-goa/"><span class="sf-dcard-fx"></span><span class="sf-dic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/></svg></span><span class="sf-dhead"><span class="sf-dline"></span><h3>Content &amp; Branding</h3><span class="sf-dline"></span></span><p>Strategy-led content and visual identity that build authority.</p></a></div>
  </div>
 </section>
 <section class="sf-services">
@@ -264,6 +266,20 @@
    function upd(){ticking=false;var vh=window.innerHeight;pxs.forEach(function(bg){var s=bg.parentNode.getBoundingClientRect();var center=s.top+s.height/2;var off=((vh/2)-center)*0.18;bg.style.transform='translate3d(0,'+off.toFixed(1)+'px,0)';});}
    function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(upd);}}
    window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);upd();
+  }
+  // natural white ambient smoke (section 2 only)
+  if(!reduce){
+   [].slice.call(root.querySelectorAll('canvas[data-smoke]')).forEach(function(cv){
+    var ctx=cv.getContext&&cv.getContext('2d');if(!ctx)return;
+    var host=cv.parentNode,w=0,h=0,dpr=Math.min(window.devicePixelRatio||1,2),parts=[],raf,run=true;
+    function rnd(a,b){return a+Math.random()*(b-a);}
+    function resize(){var r=host.getBoundingClientRect();w=r.width;h=r.height;cv.width=Math.max(1,w*dpr);cv.height=Math.max(1,h*dpr);cv.style.width=w+'px';cv.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);}
+    function spawn(){return{x:rnd(-0.1*w,1.1*w),y:rnd(h*0.62,h*1.25),r:rnd(110,240),vx:rnd(-0.14,0.26),vy:rnd(-0.18,-0.55),ma:rnd(0.06,0.17),life:rnd(0,320),max:rnd(460,900)};}
+    for(var i=0;i<22;i++)parts.push(spawn());
+    function frame(){if(!run)return;ctx.clearRect(0,0,w,h);for(var i=0;i<parts.length;i++){var p=parts[i];p.life++;p.x+=p.vx;p.y+=p.vy;var t=p.life/p.max;var a=(t<0.5?t*2:(1-t)*2)*p.ma;if(p.life>=p.max||p.y<-p.r){parts[i]=spawn();continue;}var g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r);g.addColorStop(0,'rgba(244,240,248,'+a+')');g.addColorStop(1,'rgba(244,240,248,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.2832);ctx.fill();}raf=requestAnimationFrame(frame);}
+    resize();frame();window.addEventListener('resize',resize);
+    if('IntersectionObserver' in window){new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){if(!run){run=true;frame();}}else{run=false;cancelAnimationFrame(raf);}});},{threshold:0}).observe(host);}
+   });
   }
  });
 })();

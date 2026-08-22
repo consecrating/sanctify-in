@@ -88,10 +88,20 @@
 .sf-dma .bcg-h1 a,.sf-dma .bcg-h1 a:hover{color:#fff!important;text-decoration:none!important;border:none!important;}
 .sf-dma .bcg-h1 span{color:#fff;}
 .sf-dma .bcg-h1 em{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;background:linear-gradient(100deg,#ff8fc0,#c79bff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;padding-bottom:.2em;margin-bottom:-.2em;line-height:1;}
+/* Services marquee */
+@keyframes sfmRun{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.sf-dma .sfm{background:linear-gradient(0deg,rgba(10,4,14,.6),rgba(10,4,14,.1));-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);}
+.sf-dma .sfm-track{animation:sfmRun 60s linear infinite;will-change:transform;}
+.sf-dma .sfm:hover .sfm-track,.sf-dma .sfm:focus-within .sfm-track{animation-play-state:paused;}
+.sf-dma .sfm a{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;white-space:nowrap;color:rgba(255,255,255,.66)!important;text-decoration:none!important;border:none!important;transition:color .2s;}
+.sf-dma .sfm a:hover,.sf-dma .sfm a:focus{color:#fff!important;text-decoration:none!important;}
+.sf-dma .sfm i{font-style:normal;color:#c20b58;font-size:11px;padding:0 17px;opacity:.9;}
+@media(prefers-reduced-motion:reduce){.sf-dma .sfm-track{animation:none!important;}}
 @media(max-width:900px){
  .sf-dma .bcg-bd{display:none!important;}
- .sf-dma .bcg{padding:56px 20px 24px!important;min-height:auto!important;}
- .sf-dma .bcg-strip{position:static!important;margin-top:30px;padding:14px 0 0!important;}
+ .sf-dma .bcg{padding:52px 0 0!important;min-height:auto!important;}
+ .sf-dma .bcg-in{padding:0 20px 4px!important;}
+ .sf-dma .sfm{margin-top:30px!important;}
 }
 /* Hero buttons - override theme link defaults */
 .sf-dma .sf-hero-btn{display:inline-flex!important;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:14px 28px;border-radius:10px;text-decoration:none!important;line-height:1.4;cursor:pointer;transition:transform .2s,box-shadow .2s;}
@@ -107,7 +117,7 @@
 <div class="sf-page sf-dma">
 
 <!-- HERO — BADGE COLLAGE -->
-<section class="sf-px sf-px-hero bcg" data-px style="position:relative; overflow:hidden; min-height:calc(100vh - 128px); margin-left:calc(-50vw + 50%); margin-right:calc(-50vw + 50%); width:100vw; border-radius:0; margin-top:0; margin-bottom:44px; background:#100916; display:grid; place-items:center; text-align:center; padding:74px 42px 62px;">
+<section class="sf-px sf-px-hero bcg" data-px style="position:relative; overflow:hidden; min-height:calc(100vh - 128px); margin-left:calc(-50vw + 50%); margin-right:calc(-50vw + 50%); width:100vw; border-radius:0; margin-top:0; margin-bottom:44px; background:#100916; display:flex; flex-direction:column; text-align:center; padding:74px 0 0;">
 
   <div class="sf-px-bg" style="position:absolute; left:0; right:0; top:-16%; height:132%; background-image:url('https://www.sanctify.in/wp-content/uploads/2026/08/digital-marketing-agency-goa-hero-banner.jpeg'); background-size:cover; background-position:center; opacity:.44; z-index:0; will-change:transform;"></div>
   <div style="position:absolute; inset:0; z-index:1; background:radial-gradient(ellipse at 30% 38%,rgba(194,11,88,.34),transparent 58%),radial-gradient(ellipse at 74% 66%,rgba(122,0,223,.34),transparent 58%);"></div>
@@ -129,7 +139,7 @@
     <span style="font-size:9.5px; letter-spacing:.09em; text-transform:uppercase; color:#7a7085; font-weight:600;">Keywords</span>
   </div>
 
-  <div style="position:relative; z-index:3; max-width:860px;">
+  <div class="bcg-in" style="position:relative; z-index:3; width:100%; max-width:860px; margin:auto; padding:0 42px 6px;">
     <span style="display:inline-flex; align-items:center; gap:9px; font-size:10.5px; letter-spacing:.2em; color:#fff; text-transform:uppercase; font-weight:600; border:1px solid rgba(255,255,255,.24); padding:8px 17px; border-radius:99px; backdrop-filter:blur(8px);">
       <s style="width:6px; height:6px; border-radius:50%; background:#c20b58; text-decoration:none; display:block;"></s>Award-winning agency · Established 2012 · Goa
     </span>
@@ -141,16 +151,53 @@
     </div>
   </div>
 
-  <div class="bcg-strip" style="position:absolute; z-index:4; bottom:0; left:0; right:0; padding:14px 42px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.1);">
-    <span style="font-size:10.5px; color:rgba(255,255,255,.62); letter-spacing:.12em; font-weight:500;">SEO</span>
-    <span style="font-size:10.5px; color:#c20b58;">/</span>
-    <span style="font-size:10.5px; color:rgba(255,255,255,.62); letter-spacing:.12em; font-weight:500;">GOOGLE ADS</span>
-    <span style="font-size:10.5px; color:#c20b58;">/</span>
-    <span style="font-size:10.5px; color:rgba(255,255,255,.62); letter-spacing:.12em; font-weight:500;">SOCIAL</span>
-    <span style="font-size:10.5px; color:#c20b58;">/</span>
-    <span style="font-size:10.5px; color:rgba(255,255,255,.62); letter-spacing:.12em; font-weight:500;">WEB DESIGN</span>
-    <span style="font-size:10.5px; color:#c20b58;">/</span>
-    <span style="font-size:10.5px; color:rgba(255,255,255,.62); letter-spacing:.12em; font-weight:500;">AI VISIBILITY</span>
+  <div class="sfm" role="navigation" aria-label="Sanctify services in Goa" style="position:relative; z-index:5; margin-top:auto; overflow:hidden; padding:13px 0; border-top:1px solid rgba(255,255,255,.12);">
+    <div class="sfm-track" style="display:flex; width:max-content;">
+      <span class="sfm-set" style="display:flex; align-items:center;">
+        <a href="https://www.sanctify.in/sanctify-facility/search-engine-optimization-seo-company-in-goa-india/" title="SEO Company in Goa - Search Engine Optimization Services by Sanctify">SEO Services in Goa</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/local-seo-services-goa/" title="Local SEO Services in Goa - Google Business Profile &amp; Map Pack Ranking">Local SEO</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/" title="PPC &amp; Google Ads Agency in Goa - Paid Search Management">Google Ads &amp; PPC</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/social-media-marketing-agency-goa/" title="Social Media Marketing Agency in Goa - Meta, Instagram &amp; LinkedIn">Social Media Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/content-marketing-agency-goa/" title="Content Marketing Agency in Goa - Blog, Video &amp; Email Content">Content Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/" title="Best Web Designing Company in Goa - Custom SEO-Friendly Websites">Web Design &amp; Development</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/influencer-marketing-agency-goa/" title="Influencer Marketing Agency in Goa - Local Creator Campaigns">Influencer Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/hotel-resort-influencer-marketing-goa/" title="Hotel &amp; Resort Influencer Marketing in Goa - Hospitality Campaigns">Hotel &amp; Resort Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/best-pr-agency-goa/" title="Best PR Agency in Goa - Public Relations &amp; Media Services">PR &amp; Public Relations</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/graphic-designing-company-in-goa-india/" title="Graphic Designing Company in Goa - Brand &amp; Print Design">Graphic Design</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/graphic-designing-company-in-goa-india/logo-designing-agency-company-vasco-goa/" title="Logo Designing Agency in Vasco, Goa - Brand Identity Design">Logo Design</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/top-ads-media-in-goa-india/" title="Advertising Media in Goa - Print, Outdoor &amp; Digital Ad Placement">Advertising Media</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/top-ads-media-in-goa-india/media-campaign-in-goa-india/" title="Media Campaign Management in Goa - Multi-Channel Ad Campaigns">Media Campaigns</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/top-ads-media-in-goa-india/online-classifieds-in-goa-india/" title="Online Classifieds in Goa - Business Listing &amp; Directory Promotion">Online Classifieds</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/marketing-media-company-in-goa-india/" title="Marketing Media Company in Goa - Integrated Marketing Services">Marketing Media</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/marketing-media-company-in-goa-india/direct-marketing-agency-company-in-goa-india/" title="Direct Marketing Agency in Goa - Email, SMS &amp; Outreach Campaigns">Direct Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/marketing-media-company-in-goa-india/visual-marketing-agency-company-in-goa-india/" title="Visual Marketing Agency in Goa - Visual Merchandising &amp; Branding">Visual Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/film-tv-promotions/" title="Film &amp; TV Promotions - Movie Marketing Agency in India">Film &amp; TV Promotions</a><i>/</i>
+        <a href="https://www.sanctify.in/digital-marketing-agency-north-goa/" title="Digital Marketing Agency in North Goa - Panjim, Mapusa &amp; Calangute">North Goa</a><i>/</i>
+        <a href="https://www.sanctify.in/digital-marketing-agency-south-goa/" title="Digital Marketing Agency in South Goa - Vasco, Margao &amp; Ponda">South Goa</a><i>/</i>
+      </span>
+      <span class="sfm-set" aria-hidden="true" style="display:flex; align-items:center;">
+        <a href="https://www.sanctify.in/sanctify-facility/search-engine-optimization-seo-company-in-goa-india/" tabindex="-1">SEO Services in Goa</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/local-seo-services-goa/" tabindex="-1">Local SEO</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/" tabindex="-1">Google Ads &amp; PPC</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/social-media-marketing-agency-goa/" tabindex="-1">Social Media Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/content-marketing-agency-goa/" tabindex="-1">Content Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/" tabindex="-1">Web Design &amp; Development</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/influencer-marketing-agency-goa/" tabindex="-1">Influencer Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/hotel-resort-influencer-marketing-goa/" tabindex="-1">Hotel &amp; Resort Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/best-pr-agency-goa/" tabindex="-1">PR &amp; Public Relations</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/graphic-designing-company-in-goa-india/" tabindex="-1">Graphic Design</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/graphic-designing-company-in-goa-india/logo-designing-agency-company-vasco-goa/" tabindex="-1">Logo Design</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/top-ads-media-in-goa-india/" tabindex="-1">Advertising Media</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/top-ads-media-in-goa-india/media-campaign-in-goa-india/" tabindex="-1">Media Campaigns</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/top-ads-media-in-goa-india/online-classifieds-in-goa-india/" tabindex="-1">Online Classifieds</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/marketing-media-company-in-goa-india/" tabindex="-1">Marketing Media</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/marketing-media-company-in-goa-india/direct-marketing-agency-company-in-goa-india/" tabindex="-1">Direct Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/marketing-media-company-in-goa-india/visual-marketing-agency-company-in-goa-india/" tabindex="-1">Visual Marketing</a><i>/</i>
+        <a href="https://www.sanctify.in/sanctify-facility/film-tv-promotions/" tabindex="-1">Film &amp; TV Promotions</a><i>/</i>
+        <a href="https://www.sanctify.in/digital-marketing-agency-north-goa/" tabindex="-1">North Goa</a><i>/</i>
+        <a href="https://www.sanctify.in/digital-marketing-agency-south-goa/" tabindex="-1">South Goa</a><i>/</i>
+      </span>
+    </div>
   </div>
 </section>
 
@@ -394,7 +441,7 @@
  function ready(fn){if(document.readyState!=='loading'){fn();}else{document.addEventListener('DOMContentLoaded',fn);}}
  ready(function(){
   var root=document.querySelector('.sf-dma');if(!root)return;
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var reduce=false;if(window.matchMedia){reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;}
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('sf-in');io.unobserve(x.target);}});},{threshold:.16,rootMargin:'0px 0px -6% 0px'}):null;
   var rev=root.querySelectorAll('.sf-reveal');
   if(io){rev.forEach(function(e){io.observe(e);});}else{rev.forEach(function(e){e.classList.add('sf-in');});}
@@ -406,6 +453,33 @@
     else{counters.forEach(function(b){b.textContent=b.getAttribute('data-count')+(b.getAttribute('data-suf')||'');});}
   }
   function countTo(b,tgt,suf){if(reduce){b.textContent=tgt+suf;return;}var st=null;function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/1200,1);b.textContent=Math.floor(p*tgt)+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+  // services marquee: pause on hover/focus + rAF fallback if keyframes are stripped
+  var mq=root.querySelector('.sfm'), tr=root.querySelector('.sfm-track');
+  if(mq){if(tr){
+   var held=false;
+   function hold(){held=true;tr.style.animationPlayState='paused';}
+   function free(){held=false;if(!reduce)tr.style.animationPlayState='running';}
+   mq.addEventListener('mouseenter',hold);
+   mq.addEventListener('mouseleave',free);
+   mq.addEventListener('focusin',hold);
+   mq.addEventListener('focusout',free);
+   mq.addEventListener('touchstart',hold,{passive:true});
+   mq.addEventListener('touchend',free,{passive:true});
+   if(reduce){tr.style.animationPlayState='paused';}
+   setTimeout(function(){
+    if(reduce)return;
+    var cs=window.getComputedStyle(tr);
+    if(cs.animationName){if(cs.animationName!=='none'){return;}}
+    var x=0,half=tr.scrollWidth/2,prev=null;
+    function tick(ts){
+     if(prev===null)prev=ts;
+     var dt=ts-prev;prev=ts;
+     if(!held){if(half>0){x-=dt*0.05;if(-x>=half){x+=half;}tr.style.transform='translate3d('+x.toFixed(2)+'px,0,0)';}}
+     requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+   },400);
+  }}
   // parallax
   if(!reduce){
    var pxs=[].slice.call(root.querySelectorAll('[data-px] .sf-px-bg'));

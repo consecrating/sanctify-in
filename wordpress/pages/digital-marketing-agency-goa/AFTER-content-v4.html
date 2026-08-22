@@ -87,6 +87,24 @@
 .sf-dma .bcg-h1{font-family:'Poppins',sans-serif;}
 .sf-dma .bcg-h1 a,.sf-dma .bcg-h1 a:hover{color:#fff!important;text-decoration:none!important;border:none!important;}
 .sf-dma .bcg-h1 span{color:#fff;}
+/* testimonial slider */
+.sf-dma .tst-in{background:linear-gradient(150deg,#fdeef6,#f4ecff);border:1px solid #f0e0ec;padding:44px 46px 38px;height:100%;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.sf-dma .tst-in:before{content:"\201C";position:absolute;top:16px;right:32px;font-family:Georgia,serif;font-size:92px;line-height:.7;color:#e39bc4;opacity:.45;}
+.sf-dma .tst-tag{display:inline-block;align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c20b58;background:#fff;border:1px solid #f0dfea;padding:6px 13px;border-radius:999px;margin-bottom:22px;}
+.sf-dma .tst-q{font-size:19px;line-height:1.72;color:#3a2340;margin:0 0 28px;position:relative;z-index:1;font-weight:400;}
+.sf-dma .tst-by{display:flex;align-items:center;gap:14px;}
+.sf-dma .tst-av{flex:0 0 46px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:14.5px;font-weight:800;color:#fff;background:linear-gradient(135deg,#c20b58,#7a00df);box-shadow:0 10px 22px -12px rgba(122,0,223,.7);}
+.sf-dma .tst-by b{display:block;font-size:15px;font-weight:700;color:#241c2b;line-height:1.3;}
+.sf-dma .tst-st{display:inline-flex;gap:3px;margin-top:3px;}
+.sf-dma .tst-st i{font-size:10.5px;color:#f5a623;}
+.sf-dma .tst-nav{width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid #f0dfea;cursor:pointer;display:grid;place-items:center;padding:0;transition:border-color .2s,box-shadow .2s,transform .2s;}
+.sf-dma .tst-nav:hover{border-color:#c20b58;box-shadow:0 14px 26px -16px rgba(122,0,223,.55);transform:translateY(-2px);}
+.sf-dma .tst-ch{display:block;width:8px;height:8px;border-top:2px solid #c20b58;border-right:2px solid #c20b58;}
+.sf-dma .tst-ch-r{transform:rotate(45deg);margin-left:-3px;}
+.sf-dma .tst-ch-l{transform:rotate(-135deg);margin-right:-3px;}
+.sf-dma .tst-dot{width:8px;height:8px;padding:0;border:none;border-radius:999px;background:#e6d9e6;cursor:pointer;transition:width .3s,background .3s;}
+.sf-dma .tst-dot[aria-current="true"]{width:26px;background:linear-gradient(90deg,#c20b58,#7a00df);}
+@media(max-width:700px){.sf-dma .tst-in{padding:32px 24px 26px;}.sf-dma .tst-q{font-size:16.5px;}.sf-dma .tst-in:before{font-size:70px;right:20px;}}
 /* typewriter caret */
 @keyframes twBlink{0%,100%{opacity:1}50%{opacity:0}}
 .sf-dma .tw-line{min-height:1.06em;}
@@ -372,29 +390,76 @@
 </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIALS - SLIDER -->
 <section class="sf-services">
 <div class="sf-sec-head sf-reveal">
   <span class="sf-eyebrow">Client words</span>
   <h2 class="sf-h2">What they say about us</h2>
+  <p>4.8 out of 5 across 143 verified reviews from businesses across Goa.</p>
 </div>
-<div class="sf-testi">
-  <div class="sf-testi-card sf-reveal">
-    <p>Their team is highly skilled and knowledgeable in all aspects of digital marketing, from SEO to social media. I highly recommend this Digital Marketing Agency in Goa.</p>
-    <span class="sf-testi-author">Shreya Dutta</span><span class="sf-testi-stars">★★★★★</span>
+
+<div class="tst sf-reveal" role="region" aria-roledescription="carousel" aria-label="Client testimonials" style="position:relative; max-width:880px; margin:0 auto;">
+
+  <div class="tst-view" style="overflow:hidden; border-radius:20px;">
+    <div class="tst-track" style="display:flex; align-items:stretch; transition:transform .6s cubic-bezier(.22,.7,.2,1); will-change:transform;">
+
+      <article class="tst-slide" role="group" aria-roledescription="slide" aria-label="1 of 6" style="flex:0 0 100%; min-width:100%;">
+        <div class="tst-in">
+          <span class="tst-tag">Digital Marketing</span>
+          <p class="tst-q">As a satisfied client, I highly recommend this Digital Marketing Agency in Goa to anyone looking for top-notch services. Their team is highly skilled and knowledgeable in every aspect of digital marketing, from SEO to social media.</p>
+          <div class="tst-by"><span class="tst-av">SD</span><span><b>Shreya Dutta</b><span class="tst-st" role="img" aria-label="Rated 5 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></span></div>
+        </div>
+      </article>
+
+      <article class="tst-slide" role="group" aria-roledescription="slide" aria-label="2 of 6" style="flex:0 0 100%; min-width:100%;">
+        <div class="tst-in">
+          <span class="tst-tag">Web Design + Social</span>
+          <p class="tst-q">Sanctify is one of the best digital marketing agencies. They built our website and now run our social media marketing, and we are very happy with the results. The team responds to our queries with great patience.</p>
+          <div class="tst-by"><span class="tst-av">PR</span><span><b>Pawan Raj</b><span class="tst-st" role="img" aria-label="Rated 5 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></span></div>
+        </div>
+      </article>
+
+      <article class="tst-slide" role="group" aria-roledescription="slide" aria-label="3 of 6" style="flex:0 0 100%; min-width:100%;">
+        <div class="tst-in">
+          <span class="tst-tag">SEO + Social Media</span>
+          <p class="tst-q">Sanctify is the go-to Digital Marketing Agency in Goa. Their expertise in SEO, social media and online strategy helped my business rank higher and attract more customers. They truly understand the local market.</p>
+          <div class="tst-by"><span class="tst-av">BN</span><span><b>Benz Nx</b><span class="tst-st" role="img" aria-label="Rated 5 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></span></div>
+        </div>
+      </article>
+
+      <article class="tst-slide" role="group" aria-roledescription="slide" aria-label="4 of 6" style="flex:0 0 100%; min-width:100%;">
+        <div class="tst-in">
+          <span class="tst-tag">Digital Marketing</span>
+          <p class="tst-q">I am so lucky to have found Sanctify to manage our digital marketing. I am impressed with the professionalism and effectiveness of the team. I highly recommend them to any company that needs help with digital marketing.</p>
+          <div class="tst-by"><span class="tst-av">AH</span><span><b>Ashutosh Hazare</b><span class="tst-st" role="img" aria-label="Rated 5 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></span></div>
+        </div>
+      </article>
+
+      <article class="tst-slide" role="group" aria-roledescription="slide" aria-label="5 of 6" style="flex:0 0 100%; min-width:100%;">
+        <div class="tst-in">
+          <span class="tst-tag">Branding</span>
+          <p class="tst-q">Enthusiastic members and great for luxury brands. They are fast to learn about the business need and strategise digital marketing accordingly. I would highly recommend them to others.</p>
+          <div class="tst-by"><span class="tst-av">M</span><span><b>Moin</b><span class="tst-st" role="img" aria-label="Rated 5 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></span></div>
+        </div>
+      </article>
+
+      <article class="tst-slide" role="group" aria-roledescription="slide" aria-label="6 of 6" style="flex:0 0 100%; min-width:100%;">
+        <div class="tst-in">
+          <span class="tst-tag">SEO Services</span>
+          <p class="tst-q">Quite happy with the Google visibility provided by Sanctify. Our business now appears prominently in local search results.</p>
+          <div class="tst-by"><span class="tst-av">TB</span><span><b>TVS Bela Auto</b><span class="tst-st" role="img" aria-label="Rated 5 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></span></div>
+        </div>
+      </article>
+
+    </div>
   </div>
-  <div class="sf-testi-card sf-reveal" style="--d:80ms">
-    <p>Impressed with the team's professionalism and effectiveness. I highly recommend Sanctify to any company that needs help with digital marketing.</p>
-    <span class="sf-testi-author">Ashutosh Hazare</span><span class="sf-testi-stars">★★★★★</span>
+
+  <div style="display:flex; align-items:center; justify-content:center; gap:18px; margin-top:24px;">
+    <button type="button" class="tst-nav tst-prev" aria-label="Previous testimonial"><s class="tst-ch tst-ch-l"></s></button>
+    <div class="tst-dots" style="display:flex; align-items:center; gap:8px;"></div>
+    <button type="button" class="tst-nav tst-next" aria-label="Next testimonial"><s class="tst-ch tst-ch-r"></s></button>
   </div>
-  <div class="sf-testi-card sf-reveal" style="--d:160ms">
-    <p>Their expertise in SEO and online strategies helped my business rank higher and attract more customers. The team truly understands the local Goa market.</p>
-    <span class="sf-testi-author">Benz Nx</span><span class="sf-testi-stars">★★★★★</span>
-  </div>
-  <div class="sf-testi-card sf-reveal" style="--d:240ms">
-    <p>Quite happy with the Google visibility provided by Sanctify. Our business now appears prominently in local search results.</p>
-    <span class="sf-testi-author">TVS Bela Auto</span><span class="sf-testi-stars">★★★★★</span>
-  </div>
+
 </div>
 </section>
 
@@ -413,7 +478,7 @@
 <aside class="sf-quote sf-reveal" style="--d:120ms">
   <span class="sf-qmark">&ldquo;</span>
   <p>Sanctify is the go-to agency in Goa. They understand the local market deeply.</p>
-  <span class="sf-qby">4.8★ Average Rating · 143+ Reviews</span>
+  <span class="sf-qby">4.8 <i class="fas fa-star" aria-hidden="true" style="color:#f5a623;font-size:10px;"></i> Average Rating · 143+ Reviews</span>
 </aside>
 </section>
 
@@ -490,6 +555,78 @@
     });
     setTimeout(function(){twDel=true;twTick();},2000);
    }
+  }
+  // testimonial slider: one at a time, autoplay, swipe, keyboard
+  var ts=root.querySelector('.tst');
+  if(ts){
+   var trk=ts.querySelector('.tst-track');
+   var sl=ts.querySelectorAll('.tst-slide');
+   var dw=ts.querySelector('.tst-dots');
+   var N=sl.length,cur=0,hold=false,tmr=null;
+   function paint(i,anim){
+    cur=(i+N)%N;
+    trk.style.transition=(anim===false||reduce)?'none':'transform .6s cubic-bezier(.22,.7,.2,1)';
+    trk.style.transform='translate3d(-'+(cur*100)+'%,0,0)';
+    for(var k=0;k<N;k++){
+     sl[k].setAttribute('aria-hidden',k===cur?'false':'true');
+     var d=dw.children[k];
+     if(d){d.setAttribute('aria-current',k===cur?'true':'false');}
+    }
+   }
+   function stopAuto(){if(tmr){clearInterval(tmr);tmr=null;}}
+   function startAuto(){
+    if(reduce){return;}
+    if(hold){return;}
+    stopAuto();
+    tmr=setInterval(function(){paint(cur+1,true);},6000);
+   }
+   function restart(){stopAuto();startAuto();}
+   for(var i=0;i<N;i++){
+    var b=document.createElement('button');
+    b.type='button';
+    b.className='tst-dot';
+    b.setAttribute('data-i',i);
+    b.setAttribute('aria-label','Go to testimonial '+(i+1));
+    b.addEventListener('click',function(e){
+     paint(parseInt(e.currentTarget.getAttribute('data-i'),10),true);restart();
+    });
+    dw.appendChild(b);
+   }
+   ts.querySelector('.tst-next').addEventListener('click',function(){paint(cur+1,true);restart();});
+   ts.querySelector('.tst-prev').addEventListener('click',function(){paint(cur-1,true);restart();});
+   ts.addEventListener('mouseenter',function(){hold=true;stopAuto();});
+   ts.addEventListener('mouseleave',function(){hold=false;startAuto();});
+   ts.addEventListener('focusin',function(){hold=true;stopAuto();});
+   ts.addEventListener('focusout',function(){hold=false;startAuto();});
+   ts.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'){paint(cur+1,true);restart();}
+    if(e.key==='ArrowLeft'){paint(cur-1,true);restart();}
+   });
+   var tsx=0,tsy=0,tsw=false;
+   ts.addEventListener('touchstart',function(e){
+    tsx=e.touches[0].clientX;tsy=e.touches[0].clientY;tsw=true;stopAuto();
+   },{passive:true});
+   ts.addEventListener('touchend',function(e){
+    if(!tsw){return;}
+    tsw=false;
+    var dx=e.changedTouches[0].clientX-tsx,dy=e.changedTouches[0].clientY-tsy;
+    if(Math.abs(dx)>44){
+     if(Math.abs(dx)>Math.abs(dy)){
+      if(dx>0){paint(cur-1,true);}else{paint(cur+1,true);}
+     }
+    }
+    startAuto();
+   },{passive:true});
+   paint(0,false);
+   if('IntersectionObserver' in window){
+    var tio=new IntersectionObserver(function(en){
+     en.forEach(function(x){if(x.isIntersecting){startAuto();}else{stopAuto();}});
+    },{threshold:.2});
+    tio.observe(ts);
+   }else{startAuto();}
+   document.addEventListener('visibilitychange',function(){
+    if(document.hidden){stopAuto();}else{startAuto();}
+   });
   }
   // services marquee: pause on hover/focus + rAF fallback if keyframes are stripped
   var mq=root.querySelector('.sfm'), tr=root.querySelector('.sfm-track');

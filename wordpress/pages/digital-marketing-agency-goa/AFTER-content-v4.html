@@ -1,0 +1,367 @@
+<style>
+.sf-page{font-family:'Poppins',-apple-system,Segoe UI,Roboto,sans-serif;color:#241c2b;max-width:1180px;margin:0 auto;padding:0 20px 10px;overflow:hidden;}
+.sf-page *{box-sizing:border-box;}
+.sf-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c20b58;background:linear-gradient(135deg,#ffe3ef,#f4e0ff);padding:7px 14px;border-radius:999px;margin-bottom:16px;}
+.sf-eyebrow-lt{color:#fff;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);}
+.sf-h2{font-size:33px;font-weight:800;margin:6px 0 12px;letter-spacing:-.01em;color:#1f1526;line-height:1.12;}
+.sf-sec-head{text-align:center;max-width:660px;margin:0 auto 34px;}
+.sf-sec-head p{color:#7a6e83;font-size:15px;line-height:1.65;font-weight:300;margin:0;}
+.sf-px{position:relative;overflow:hidden;border-radius:26px;margin:22px 0;display:grid;place-items:center;text-align:center;}
+.sf-px-hero{min-height:58vh;}
+.sf-px-band{min-height:300px;}
+.sf-px-bg{position:absolute;left:0;right:0;top:-16%;height:132%;background-size:cover;background-position:center;will-change:transform;z-index:0;}
+.sf-px-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,4,22,.42),rgba(18,4,22,.28) 42%,rgba(70,6,50,.5));}
+.sf-px-ov-d{background:linear-gradient(120deg,rgba(120,0,90,.7),rgba(60,0,120,.66));}
+.sf-px-inner{position:relative;z-index:3;padding:56px 26px;max-width:820px;}
+.sf-px-h1{font-size:48px;font-weight:800;color:#fff;margin:0 0 14px;letter-spacing:-.02em;line-height:1.08;text-shadow:0 4px 26px rgba(0,0,0,.28);}
+.sf-px-h1 span{background:linear-gradient(110deg,#ff8fc0,#c79bff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.sf-px-sub{color:rgba(255,255,255,.94);font-size:17px;line-height:1.6;font-weight:300;margin:0 auto;max-width:620px;text-shadow:0 2px 14px rgba(0,0,0,.3);}
+.sf-px-inner a{color:#ffdcef !important;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);}
+.sf-two{display:grid;grid-template-columns:1.45fr .9fr;gap:40px;align-items:center;margin:50px 0;}
+.sf-two-l p{color:#5c5064;font-size:15px;line-height:1.75;font-weight:300;margin:0 0 15px;}
+.sf-two-l p strong{color:#3a2f42;font-weight:600;}
+.sf-quote{position:relative;background:linear-gradient(150deg,#fdeef6,#f4ecff);border:1px solid #f0e0ec;border-radius:20px;padding:34px 28px 30px;}
+.sf-quote:before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:4px;border-radius:4px;background:linear-gradient(#c20b58,#7a00df);}
+.sf-qmark{font-size:70px;line-height:.7;color:#e39bc4;font-family:Georgia,serif;display:block;height:34px;}
+.sf-quote p{font-size:20px;font-weight:700;font-style:italic;color:#3a2340;line-height:1.4;margin:6px 0 14px;}
+.sf-qby{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c20b58;}
+.sf-stats{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;}
+.sf-stats div{display:flex;flex-direction:column;align-items:center;min-width:120px;}
+.sf-stats b{font-size:40px;font-weight:800;line-height:1;}
+.sf-stats-lt b{color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.3);}
+.sf-stats-lt span{color:rgba(255,255,255,.9);font-size:13px;margin-top:8px;font-weight:400;letter-spacing:.03em;}
+.sf-services{margin:58px 0;}
+.sf-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.sf-step{position:relative;background:#fff;border:1px solid #eee3ec;border-radius:18px;padding:26px 20px 22px;transition:transform .28s,box-shadow .28s,border-color .28s;}
+.sf-step:hover{transform:translateY(-6px);box-shadow:0 28px 46px -26px rgba(90,10,60,.42);border-color:#f0cfe1;}
+.sf-step-no{position:absolute;top:16px;right:18px;font-size:30px;font-weight:800;color:#f3e3ee;letter-spacing:-.02em;}
+.sf-step:hover .sf-step-no{color:#f3cfe2;}
+.sf-ic{flex:0 0 52px;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#ffe3ef,#f4e0ff);color:#c20b58;transition:.28s;margin-bottom:14px;}
+.sf-ic svg{width:25px;height:25px;}
+.sf-step:hover .sf-ic,.sf-card:hover .sf-ic{background:linear-gradient(135deg,#c20b58,#7a00df);color:#fff;transform:rotate(-6deg) scale(1.06);}
+.sf-step h3{font-size:16.5px;font-weight:700;margin:0 0 7px;color:#241c2b;}
+.sf-step p{font-size:13px;line-height:1.6;color:#7d7188;margin:0;font-weight:300;}
+.sf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.sf-grid-2{grid-template-columns:repeat(2,1fr);}
+.sf-card{display:flex;gap:16px;background:#fff;border:1px solid #eee3ec;border-radius:18px;padding:24px 22px;text-decoration:none;color:inherit;position:relative;transition:transform .28s,box-shadow .28s,border-color .28s;overflow:hidden;}
+.sf-card:before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,#c20b58,#7a00df);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.sf-card:hover{transform:translateY(-6px);box-shadow:0 30px 50px -26px rgba(90,10,60,.4);border-color:#f0cfe1;}
+.sf-card:hover:before{transform:scaleX(1);}
+.sf-card .sf-ic{margin-bottom:0;}
+.sf-card h3{font-size:17px;font-weight:700;margin:0 0 6px;color:#241c2b;}
+.sf-card p{font-size:13.4px;line-height:1.6;color:#7d7188;margin:0;font-weight:300;}
+.sf-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.sf-chip{font-size:14px;font-weight:600;color:#3a2f42;background:#fff;border:1.5px solid #f0dfea;padding:11px 20px;border-radius:999px;transition:.22s;}
+.sf-chip:hover{background:linear-gradient(135deg,#c20b58,#7a00df);color:#fff;border-color:transparent;transform:translateY(-3px);box-shadow:0 14px 26px -14px rgba(122,0,223,.6);}
+.sf-cta{margin:50px 0 26px;border-radius:26px;background:linear-gradient(135deg,#c20b58,#7a00df);padding:52px 30px;text-align:center;position:relative;overflow:hidden;}
+.sf-cta:before,.sf-cta:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.1);}
+.sf-cta:before{width:220px;height:220px;top:-90px;right:-60px;}.sf-cta:after{width:160px;height:160px;bottom:-70px;left:-40px;}
+.sf-cta-in{position:relative;z-index:1;}
+.sf-cta h2{color:#fff;font-size:31px;font-weight:800;margin:0 0 10px;}
+.sf-cta p{color:rgba(255,255,255,.92);font-size:15px;margin:0 0 24px;font-weight:300;}
+.sf-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:13px 24px;border-radius:999px;text-decoration:none;transition:transform .2s,box-shadow .2s;}
+.sf-btn-w{background:#fff;color:#c20b58 !important;}
+.sf-btn-go{background:rgba(255,255,255,.14);color:#fff !important;border:1.5px solid rgba(255,255,255,.4);}
+.sf-btn-w:hover,.sf-btn-go:hover{transform:translateY(-2px);box-shadow:0 12px 24px -10px rgba(0,0,0,.3);}
+.sf-reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms);}
+.sf-reveal.sf-in{opacity:1;transform:none;}
+.sf-faq{margin:50px 0;}.sf-faq-item{padding:22px 0;border-bottom:1px solid #f0e6ee;}
+.sf-faq-item:last-child{border-bottom:none;}
+.sf-faq-item h3{font-size:17px;font-weight:700;color:#241c2b;margin:0 0 8px;}
+.sf-faq-item p{font-size:14.5px;line-height:1.7;color:#5c5064;margin:0;font-weight:300;}
+.sf-testi{margin:50px 0;display:flex;flex-direction:column;gap:20px;}
+.sf-testi-card{background:linear-gradient(150deg,#fdeef6,#f4ecff);border:1px solid #f0e0ec;border-radius:18px;padding:24px 26px;position:relative;}
+.sf-testi-card:before{content:"\201C";position:absolute;top:12px;left:18px;font-size:50px;color:#e39bc4;font-family:Georgia,serif;line-height:.7;}
+.sf-testi-card p{font-size:15px;line-height:1.7;color:#3a2340;font-style:italic;font-weight:400;margin:0 0 12px;padding-top:20px;}
+.sf-testi-author{font-size:13px;font-weight:700;color:#c20b58;}
+.sf-testi-stars{color:#f5a623;font-size:13px;margin-left:6px;}
+@media(max-width:900px){.sf-two{grid-template-columns:1fr;gap:26px;}.sf-steps{grid-template-columns:repeat(2,1fr);}.sf-grid,.sf-grid-2{grid-template-columns:repeat(2,1fr);gap:14px;}.sf-px-h1{font-size:36px;}.sf-h2{font-size:27px;}}
+@media(max-width:560px){.sf-page{padding:0 14px;}.sf-px{border-radius:18px;}.sf-px-inner{padding:44px 20px;}.sf-px-h1{font-size:28px;}.sf-steps,.sf-grid,.sf-grid-2{grid-template-columns:1fr;}.sf-stats{gap:22px 30px;}.sf-stats b{font-size:32px;}.sf-cta h2{font-size:24px;}.sf-btn{width:100%;justify-content:center;}}
+@media(prefers-reduced-motion:reduce){.sf-reveal{opacity:1!important;transform:none!important;}.sf-px-bg{transform:none!important;}}
+</style>
+
+<div class="sf-page sf-dma">
+
+<!-- HERO PARALLAX -->
+<section class="sf-px sf-px-hero" data-px>
+<div class="sf-px-bg" style="background-image:url('https://www.sanctify.in/wp-content/uploads/2026/08/digital-marketing-agency-goa-hero-banner.jpeg')"></div>
+<div class="sf-px-ov"></div>
+<div class="sf-px-inner">
+  <span class="sf-eyebrow sf-eyebrow-lt">Award-winning · Established 2012 · Goa</span>
+  <h2 class="sf-px-h1">Digital Marketing <span>Agency in Goa</span></h2>
+  <p class="sf-px-sub">We help Goa businesses get found on Google, AI search, and social — with 13+ years of proven results. SEO, ads, social media, web design, and AI visibility under one roof.</p>
+</div>
+</section>
+
+<!-- STATS BAND -->
+<section class="sf-px sf-px-band" data-px>
+<div class="sf-px-bg" style="background-image:url('https://www.sanctify.in/wp-content/uploads/2026/08/digital-marketing-agency-goa-hero-banner.jpeg')"></div>
+<div class="sf-px-ov sf-px-ov-d"></div>
+<div class="sf-px-inner">
+<div class="sf-stats sf-stats-lt">
+  <div><b data-count="13" data-suf="+">0</b><span>Years of Excellence</span></div>
+  <div><b data-count="128" data-suf="+">0</b><span>Verified Reviews</span></div>
+  <div><b data-count="100" data-suf="+">0</b><span>Websites Built</span></div>
+  <div><b data-count="1000" data-suf="+">0</b><span>Page 1 Keywords</span></div>
+</div>
+</div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="sf-two">
+<div class="sf-two-l sf-reveal">
+  <span class="sf-eyebrow">Who we are</span>
+  <h2 class="sf-h2">Goa's longest-running digital marketing agency</h2>
+  <p>Sanctify was founded in <strong>2012</strong> on a simple conviction: Goa businesses deserve marketing built to a genuinely national standard. Today we are recognised among the region's leading <strong>digital marketing agencies</strong>, trusted by businesses that expect outcomes — not just activity.</p>
+  <p>We unite <strong>SEO</strong>, performance advertising, social media, web design, and AI visibility into one cohesive growth strategy. Every discipline works toward a single objective — converting your online visibility into real business results.</p>
+  <p>No hidden costs. No fragmented hand-offs. One team. One strategy. Complete transparency.</p>
+</div>
+<aside class="sf-quote sf-reveal" style="--d:120ms">
+  <span class="sf-qmark">&ldquo;</span>
+  <p>Their team is highly skilled in all aspects of digital marketing. I highly recommend this agency.</p>
+  <span class="sf-qby">Shreya Dutta · Client</span>
+</aside>
+</section>
+
+<!-- SERVICES -->
+<section class="sf-services">
+<div class="sf-sec-head sf-reveal">
+  <span class="sf-eyebrow">What we do</span>
+  <h2 class="sf-h2">Full-stack digital marketing services</h2>
+  <p>Every service is connected. SEO feeds content. Content feeds social. Social feeds trust. Trust feeds AI recommendations.</p>
+</div>
+
+<div class="sf-grid sf-grid-2">
+  <div class="sf-card sf-reveal" style="--d:0ms">
+    <div class="sf-ic"><i class="fas fa-search" style="font-size:22px;"></i></div>
+    <div>
+      <h3>Search Engine Optimization</h3>
+      <p>Technical SEO, local SEO, content strategy. Hotels, clinics, and dealerships ranked in Google's top 3 and Map Pack across Goa. <a href="https://www.sanctify.in/sanctify-facility/local-seo-services-goa/" style="color:#c20b58;font-weight:600;text-decoration:none;">Learn more →</a></p>
+    </div>
+  </div>
+  <div class="sf-card sf-reveal" style="--d:80ms">
+    <div class="sf-ic"><i class="fas fa-bolt" style="font-size:22px;"></i></div>
+    <div>
+      <h3>Google Ads &amp; PPC</h3>
+      <p>Targeted campaigns on Search, Display, and Performance Max. Every rupee drives qualified enquiries with data-driven optimisation. <a href="https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/" style="color:#c20b58;font-weight:600;text-decoration:none;">Learn more →</a></p>
+    </div>
+  </div>
+  <div class="sf-card sf-reveal" style="--d:160ms">
+    <div class="sf-ic"><i class="fas fa-share-nodes" style="font-size:22px;"></i></div>
+    <div>
+      <h3>Social Media Marketing</h3>
+      <p>Meta, LinkedIn, YouTube. Content that earns attention, paid campaigns that convert, community building that compounds into brand recall. <a href="https://www.sanctify.in/sanctify-facility/social-media-marketing-agency-goa/" style="color:#c20b58;font-weight:600;text-decoration:none;">Learn more →</a></p>
+    </div>
+  </div>
+  <div class="sf-card sf-reveal" style="--d:240ms">
+    <div class="sf-ic"><i class="fas fa-code" style="font-size:22px;"></i></div>
+    <div>
+      <h3>Website Design &amp; Development</h3>
+      <p>Fast, mobile-first, SEO-ready from day one. 100+ websites built for Goa businesses — designed to convert, not just look pretty. <a href="https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/" style="color:#c20b58;font-weight:600;text-decoration:none;">Learn more →</a></p>
+    </div>
+  </div>
+  <div class="sf-card sf-reveal" style="--d:320ms">
+    <div class="sf-ic"><i class="fas fa-pen-nib" style="font-size:22px;"></i></div>
+    <div>
+      <h3>Content Marketing</h3>
+      <p>Blog writing, video, email — all tied to search intent. Builds topical authority that compounds and gives AI systems reason to cite you. <a href="https://www.sanctify.in/sanctify-facility/content-marketing-agency-goa/" style="color:#c20b58;font-weight:600;text-decoration:none;">Learn more →</a></p>
+    </div>
+  </div>
+  <div class="sf-card sf-reveal" style="--d:400ms">
+    <div class="sf-ic"><i class="fas fa-user-group" style="font-size:22px;"></i></div>
+    <div>
+      <h3>Influencer Marketing</h3>
+      <p>Trusted Goa creators × your brand. Authentic reach for hotels, restaurants, and lifestyle brands that ad budgets can't replicate. <a href="https://www.sanctify.in/sanctify-facility/influencer-marketing-agency-goa/" style="color:#c20b58;font-weight:600;text-decoration:none;">Learn more →</a></p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section class="sf-services">
+<div class="sf-sec-head sf-reveal">
+  <span class="sf-eyebrow">How we work</span>
+  <h2 class="sf-h2">The Sanctify approach</h2>
+  <p>A results-driven, research-first methodology — transparent from day one.</p>
+</div>
+<div class="sf-steps">
+  <div class="sf-step sf-reveal" style="--d:0ms">
+    <span class="sf-step-no">01</span>
+    <div class="sf-ic"><i class="fas fa-magnifying-glass" style="font-size:22px;"></i></div>
+    <h3>Audit &amp; Research</h3>
+    <p>Full digital health check — SEO, competitors, local visibility, content gaps, and opportunity mapping.</p>
+  </div>
+  <div class="sf-step sf-reveal" style="--d:100ms">
+    <span class="sf-step-no">02</span>
+    <div class="sf-ic"><i class="fas fa-route" style="font-size:22px;"></i></div>
+    <h3>Strategy &amp; Roadmap</h3>
+    <p>Custom plan with clear timelines, KPIs, budget allocation, and measurable milestones.</p>
+  </div>
+  <div class="sf-step sf-reveal" style="--d:200ms">
+    <span class="sf-step-no">03</span>
+    <div class="sf-ic"><i class="fas fa-rocket" style="font-size:22px;"></i></div>
+    <h3>Creative &amp; Execution</h3>
+    <p>One team delivers across SEO, ads, social, content, and design — all coordinated under one strategy.</p>
+  </div>
+  <div class="sf-step sf-reveal" style="--d:300ms">
+    <span class="sf-step-no">04</span>
+    <div class="sf-ic"><i class="fas fa-chart-line" style="font-size:22px;"></i></div>
+    <h3>Measure &amp; Optimise</h3>
+    <p>Monthly reports with real numbers. Continuous improvement. Every rupee accounted for.</p>
+  </div>
+</div>
+</section>
+
+<!-- RESULTS -->
+<section class="sf-services">
+<div class="sf-sec-head sf-reveal">
+  <span class="sf-eyebrow">Results</span>
+  <h2 class="sf-h2">Work that moved the needle</h2>
+  <p>Not claims. Outcomes for real Goa businesses.</p>
+</div>
+<div class="sf-grid sf-grid-2">
+  <div class="sf-card sf-reveal" style="--d:0ms">
+    <div>
+      <h3 style="color:#c20b58;">The Supreme Grande</h3>
+      <p><strong>SEO + Google Business Profile</strong> — Google Map Pack top 3 for hospitality keywords in South Goa.</p>
+    </div>
+  </div>
+  <div class="sf-card sf-reveal" style="--d:80ms">
+    <div>
+      <h3 style="color:#c20b58;">CIDIF</h3>
+      <p><strong>Website Design + SEO</strong> — Organic visibility across 40+ institutional keywords from zero.</p>
+    </div>
+  </div>
+  <div class="sf-card sf-reveal" style="--d:160ms">
+    <div>
+      <h3 style="color:#c20b58;">Auto Dealership · Goa</h3>
+      <p><strong>PPC + Local SEO</strong> — 3× increase in monthly test drive bookings via Google Ads.</p>
+    </div>
+  </div>
+  <div class="sf-card sf-reveal" style="--d:240ms">
+    <div>
+      <h3 style="color:#c20b58;">Restaurant Chain · Goa</h3>
+      <p><strong>Social + Influencer</strong> — 200% follower growth and measurable footfall increase in 3 months.</p>
+    </div>
+  </div>
+</div>
+<p style="text-align:center;margin-top:20px;"><a href="https://www.sanctify.in/case-studies/" style="color:#c20b58;font-weight:700;text-decoration:none;font-size:14px;">View all case studies →</a></p>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="sf-services">
+<div class="sf-sec-head sf-reveal">
+  <span class="sf-eyebrow">Industries</span>
+  <h2 class="sf-h2">Who we work with</h2>
+  <p>Deep local market understanding with world-class digital practice.</p>
+</div>
+<div class="sf-chips sf-reveal">
+  <span class="sf-chip">Hotels &amp; Resorts</span>
+  <span class="sf-chip">Restaurants &amp; Cafes</span>
+  <span class="sf-chip">Healthcare &amp; Clinics</span>
+  <span class="sf-chip">Real Estate</span>
+  <span class="sf-chip">Automotive</span>
+  <span class="sf-chip">Retail &amp; E-commerce</span>
+  <span class="sf-chip">Education</span>
+  <span class="sf-chip">Professional Services</span>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sf-services">
+<div class="sf-sec-head sf-reveal">
+  <span class="sf-eyebrow">Client words</span>
+  <h2 class="sf-h2">What they say about us</h2>
+</div>
+<div class="sf-testi">
+  <div class="sf-testi-card sf-reveal">
+    <p>Their team is highly skilled and knowledgeable in all aspects of digital marketing, from SEO to social media. I highly recommend this Digital Marketing Agency in Goa.</p>
+    <span class="sf-testi-author">Shreya Dutta</span><span class="sf-testi-stars">★★★★★</span>
+  </div>
+  <div class="sf-testi-card sf-reveal" style="--d:80ms">
+    <p>Impressed with the team's professionalism and effectiveness. I highly recommend Sanctify to any company that needs help with digital marketing.</p>
+    <span class="sf-testi-author">Ashutosh Hazare</span><span class="sf-testi-stars">★★★★★</span>
+  </div>
+  <div class="sf-testi-card sf-reveal" style="--d:160ms">
+    <p>Their expertise in SEO and online strategies helped my business rank higher and attract more customers. The team truly understands the local Goa market.</p>
+    <span class="sf-testi-author">Benz Nx</span><span class="sf-testi-stars">★★★★★</span>
+  </div>
+  <div class="sf-testi-card sf-reveal" style="--d:240ms">
+    <p>Quite happy with the Google visibility provided by Sanctify. Our business now appears prominently in local search results.</p>
+    <span class="sf-testi-author">TVS Bela Auto</span><span class="sf-testi-stars">★★★★★</span>
+  </div>
+</div>
+</section>
+
+<!-- LOCAL SEO -->
+<section class="sf-two">
+<div class="sf-two-l sf-reveal">
+  <span class="sf-eyebrow">Local focus</span>
+  <h2 class="sf-h2">Built for Goa's local market</h2>
+  <p>Most agencies optimise for generic keywords. We optimise for the customer standing 2km from your door, searching right now.</p>
+  <p><strong>Google Business Profile</strong> — optimised, posted weekly, review-managed.</p>
+  <p><strong>Location pages</strong> — Vasco, Panjim, Margao, Mapusa, Calangute.</p>
+  <p><strong>NAP consistency</strong> — across 50+ directories and citation sources.</p>
+  <p><strong>AI visibility</strong> — structured so ChatGPT, Gemini, and Perplexity recommend you.</p>
+  <p><a href="https://www.sanctify.in/digital-marketing-agency-south-goa/" style="color:#c20b58;font-weight:600;text-decoration:none;">South Goa →</a> &nbsp; <a href="https://www.sanctify.in/digital-marketing-agency-north-goa/" style="color:#c20b58;font-weight:600;text-decoration:none;">North Goa →</a></p>
+</div>
+<aside class="sf-quote sf-reveal" style="--d:120ms">
+  <span class="sf-qmark">&ldquo;</span>
+  <p>Sanctify is the go-to agency in Goa. They understand the local market deeply.</p>
+  <span class="sf-qby">4.8★ Average Rating · 128+ Reviews</span>
+</aside>
+</section>
+
+<!-- FAQ -->
+<section class="sf-faq">
+<div class="sf-sec-head sf-reveal">
+  <span class="sf-eyebrow">Questions</span>
+  <h2 class="sf-h2">Frequently asked</h2>
+</div>
+<div class="sf-faq-item sf-reveal"><h3>Which is the best digital marketing agency in Goa?</h3><p>Sanctify is widely recognised as Goa's best — operating since 2012 with 128+ verified reviews, a 4.8-star rating, and recognition from iide.co, Crunchbase, and MuckRack. Full suite: SEO, PPC, social media, web design, content marketing.</p></div>
+<div class="sf-faq-item sf-reveal"><h3>How much does digital marketing cost in Goa?</h3><p>Typically ₹15,000 to ₹1,00,000+ per month depending on services and goals. Custom packages from ₹15,000/month with transparent pricing.</p></div>
+<div class="sf-faq-item sf-reveal"><h3>How long does SEO take to show results?</h3><p>8–12 weeks for local keywords. 4–6 months for significant improvements. Monthly progress reports from week one.</p></div>
+<div class="sf-faq-item sf-reveal"><h3>Do you work with businesses outside Goa?</h3><p>Yes. HQ in Vasco, South Goa — but we serve clients across India and internationally.</p></div>
+<div class="sf-faq-item sf-reveal"><h3>Can you help my restaurant rank on Google Maps?</h3><p>Absolutely. Maps ranking is a core strength. GBP optimisation, review generation, citations, location content. Multiple Goa restaurants in Map Pack top 3.</p></div>
+<div class="sf-faq-item sf-reveal"><h3>How is Sanctify different from other agencies?</h3><p>Longevity (13+ years), local proof (128+ verified reviews), and full-service under one roof — one team, one strategy, one point of accountability.</p></div>
+<div class="sf-faq-item sf-reveal"><h3>What industries do you specialise in?</h3><p>Hospitality, healthcare, real estate, automotive, retail, education, and professional services.</p></div>
+<div class="sf-faq-item sf-reveal"><h3>Do you offer monthly reporting?</h3><p>Yes. Rankings, traffic, ad performance, leads, ROI — every month. Quarterly strategy reviews.</p></div>
+</section>
+
+<!-- CTA -->
+<section class="sf-cta sf-reveal">
+<div class="sf-cta-in">
+  <h2>Ready to lead your market?</h2>
+  <p>Get a free digital marketing audit — we'll show you exactly where the opportunities are.</p>
+  <div class="sf-hero-cta">
+    <a href="https://www.sanctify.in/contact/" class="sf-btn sf-btn-w">Get Free Audit <span class="sf-arw">→</span></a>
+    <a href="tel:+919923352923" class="sf-btn sf-btn-go">Call +91 99233 52923</a>
+  </div>
+</div>
+</section>
+
+</div>
+
+<script>
+(function(){
+ function ready(fn){if(document.readyState!=='loading'){fn();}else{document.addEventListener('DOMContentLoaded',fn);}}
+ ready(function(){
+  var root=document.querySelector('.sf-dma');if(!root)return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('sf-in');io.unobserve(x.target);}});},{threshold:.16,rootMargin:'0px 0px -6% 0px'}):null;
+  var rev=root.querySelectorAll('.sf-reveal');
+  if(io){rev.forEach(function(e){io.observe(e);});}else{rev.forEach(function(e){e.classList.add('sf-in');});}
+  var band=root.querySelector('.sf-px-band');
+  if(band&&io){var io2=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.querySelectorAll('b[data-count]').forEach(function(b){countTo(b,+b.getAttribute('data-count'),b.getAttribute('data-suf')||'');});io2.unobserve(x.target);}});},{threshold:.3});io2.observe(band);}
+  else if(band){band.querySelectorAll('b[data-count]').forEach(function(b){b.textContent=b.getAttribute('data-count')+(b.getAttribute('data-suf')||'');});}
+  function countTo(b,tgt,suf){if(reduce){b.textContent=tgt+suf;return;}var st=null;function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/1200,1);b.textContent=Math.floor(p*tgt)+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+  if(!reduce){
+   var pxs=[].slice.call(root.querySelectorAll('[data-px] .sf-px-bg'));
+   var ticking=false;
+   function upd(){ticking=false;var vh=window.innerHeight;pxs.forEach(function(bg){var s=bg.parentNode.getBoundingClientRect();var center=s.top+s.height/2;var off=((vh/2)-center)*0.22;bg.style.transform='translate3d(0,'+off.toFixed(1)+'px,0)';});}
+   function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(upd);}}
+   window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);upd();
+  }
+ });
+})();
+</script>

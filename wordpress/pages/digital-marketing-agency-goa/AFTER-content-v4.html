@@ -78,32 +78,37 @@
 @media(max-width:900px){.sf-two{grid-template-columns:1fr;gap:26px;}.sf-steps{grid-template-columns:repeat(2,1fr);}.sf-grid,.sf-grid-2{grid-template-columns:repeat(2,1fr);gap:14px;}.sf-px-h1{font-size:36px;}.sf-h2{font-size:27px;}}
 @media(max-width:560px){.sf-page{padding:0 14px;}.sf-px{border-radius:18px;}.sf-px-inner{padding:44px 20px;}.sf-px-h1{font-size:28px;}.sf-steps,.sf-grid,.sf-grid-2{grid-template-columns:1fr;}.sf-stats{gap:22px 30px;}.sf-stats b{font-size:32px;}.sf-cta h2{font-size:24px;}.sf-btn{width:100%;justify-content:center;}}
 @media(prefers-reduced-motion:reduce){.sf-reveal{opacity:1!important;transform:none!important;}.sf-px-bg{transform:none!important;}}
+/* Hero buttons - override theme link defaults */
+.sf-dma .sf-hero-btn{display:inline-flex!important;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:14px 28px;border-radius:10px;text-decoration:none!important;line-height:1.4;cursor:pointer;transition:transform .2s,box-shadow .2s;}
+.sf-dma .sf-hero-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.25);}
+.sf-dma .sf-btn-primary{background:#fff!important;color:#c20b58!important;box-shadow:0 4px 14px rgba(0,0,0,.2);border:none!important;}
+.sf-dma .sf-btn-ghost{background:rgba(255,255,255,.1)!important;color:#fff!important;border:1.5px solid rgba(255,255,255,.4)!important;backdrop-filter:blur(4px);}
+.sf-dma .sf-btn-primary:hover{background:#fff!important;color:#c20b58!important;}
+.sf-dma .sf-btn-ghost:hover{background:rgba(255,255,255,.2)!important;color:#fff!important;}
+/* CTA buttons */
+.sf-cta .sf-hero-btn.sf-btn-primary{box-shadow:0 4px 14px rgba(0,0,0,.15);}
 </style>
 
 <div class="sf-page sf-dma">
 
-<!-- HERO PARALLAX -->
-<section class="sf-px sf-px-hero" data-px>
+<!-- HERO PARALLAX (single section: hero + stats merged) -->
+<section class="sf-px sf-px-hero" data-px style="min-height:72vh;">
 <div class="sf-px-bg" style="background-image:url('https://www.sanctify.in/wp-content/uploads/2026/08/digital-marketing-agency-goa-hero-banner.jpeg')"></div>
 <div class="sf-px-ov"></div>
-<div class="sf-px-inner">
-  <span class="sf-eyebrow sf-eyebrow-lt">Award-winning · Established 2012 · Goa</span>
+<div class="sf-px-inner" style="padding:56px 26px 40px;">
+  <span class="sf-eyebrow sf-eyebrow-lt">Award-winning agency · Established 2012 · Goa</span>
   <h2 class="sf-px-h1">Digital Marketing <span>Agency in Goa</span></h2>
-  <p class="sf-px-sub">We help Goa businesses get found on Google, AI search, and social — with 13+ years of proven results. SEO, ads, social media, web design, and AI visibility under one roof.</p>
-</div>
-</section>
-
-<!-- STATS BAND -->
-<section class="sf-px sf-px-band" data-px>
-<div class="sf-px-bg" style="background-image:url('https://www.sanctify.in/wp-content/uploads/2026/08/digital-marketing-agency-goa-hero-banner.jpeg')"></div>
-<div class="sf-px-ov sf-px-ov-d"></div>
-<div class="sf-px-inner">
-<div class="sf-stats sf-stats-lt">
-  <div><b data-count="13" data-suf="+">0</b><span>Years of Excellence</span></div>
-  <div><b data-count="128" data-suf="+">0</b><span>Verified Reviews</span></div>
-  <div><b data-count="100" data-suf="+">0</b><span>Websites Built</span></div>
-  <div><b data-count="1000" data-suf="+">0</b><span>Page 1 Keywords</span></div>
-</div>
+  <p class="sf-px-sub">We help Goa businesses get found on Google, AI search, and social - with 13+ years of proven results. SEO, ads, social media, web design, and AI visibility under one roof.</p>
+  <div style="margin-top:40px; display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+    <a href="https://www.sanctify.in/contact/" class="sf-hero-btn sf-btn-primary">Get Free Audit →</a>
+    <a href="tel:+919923352923" class="sf-hero-btn sf-btn-ghost">+91 99233 52923</a>
+  </div>
+  <div class="sf-stats sf-stats-lt" style="margin-top:50px;">
+    <div><b data-count="13" data-suf="+">0</b><span>Years of Excellence</span></div>
+    <div><b data-count="128" data-suf="+">0</b><span>Verified Reviews</span></div>
+    <div><b data-count="100" data-suf="+">0</b><span>Websites Built</span></div>
+    <div><b data-count="1000" data-suf="+">0</b><span>Page 1 Keywords</span></div>
+  </div>
 </div>
 </section>
 
@@ -112,8 +117,8 @@
 <div class="sf-two-l sf-reveal">
   <span class="sf-eyebrow">Who we are</span>
   <h2 class="sf-h2">Goa's longest-running digital marketing agency</h2>
-  <p>Sanctify was founded in <strong>2012</strong> on a simple conviction: Goa businesses deserve marketing built to a genuinely national standard. Today we are recognised among the region's leading <strong>digital marketing agencies</strong>, trusted by businesses that expect outcomes — not just activity.</p>
-  <p>We unite <strong>SEO</strong>, performance advertising, social media, web design, and AI visibility into one cohesive growth strategy. Every discipline works toward a single objective — converting your online visibility into real business results.</p>
+  <p>Sanctify was founded in <strong>2012</strong> on a simple conviction: Goa businesses deserve marketing built to a genuinely national standard. Today we are recognised among the region's leading <strong>digital marketing agencies</strong>, trusted by businesses that expect outcomes - not just activity.</p>
+  <p>We unite <strong>SEO</strong>, performance advertising, social media, web design, and AI visibility into one cohesive growth strategy. Every discipline works toward a single objective - converting your online visibility into real business results.</p>
   <p>No hidden costs. No fragmented hand-offs. One team. One strategy. Complete transparency.</p>
 </div>
 <aside class="sf-quote sf-reveal" style="--d:120ms">
@@ -157,14 +162,14 @@
     <div class="sf-ic"><i class="fas fa-code" style="font-size:22px;"></i></div>
     <div>
       <h3>Website Design &amp; Development</h3>
-      <p>Fast, mobile-first, SEO-ready from day one. 100+ websites built for Goa businesses — designed to convert, not just look pretty. <a href="https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/" style="color:#c20b58;font-weight:600;text-decoration:none;">Learn more →</a></p>
+      <p>Fast, mobile-first, SEO-ready from day one. 100+ websites built for Goa businesses - designed to convert, not just look pretty. <a href="https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/" style="color:#c20b58;font-weight:600;text-decoration:none;">Learn more →</a></p>
     </div>
   </div>
   <div class="sf-card sf-reveal" style="--d:320ms">
     <div class="sf-ic"><i class="fas fa-pen-nib" style="font-size:22px;"></i></div>
     <div>
       <h3>Content Marketing</h3>
-      <p>Blog writing, video, email — all tied to search intent. Builds topical authority that compounds and gives AI systems reason to cite you. <a href="https://www.sanctify.in/sanctify-facility/content-marketing-agency-goa/" style="color:#c20b58;font-weight:600;text-decoration:none;">Learn more →</a></p>
+      <p>Blog writing, video, email - all tied to search intent. Builds topical authority that compounds and gives AI systems reason to cite you. <a href="https://www.sanctify.in/sanctify-facility/content-marketing-agency-goa/" style="color:#c20b58;font-weight:600;text-decoration:none;">Learn more →</a></p>
     </div>
   </div>
   <div class="sf-card sf-reveal" style="--d:400ms">
@@ -182,14 +187,14 @@
 <div class="sf-sec-head sf-reveal">
   <span class="sf-eyebrow">How we work</span>
   <h2 class="sf-h2">The Sanctify approach</h2>
-  <p>A results-driven, research-first methodology — transparent from day one.</p>
+  <p>A results-driven, research-first methodology - transparent from day one.</p>
 </div>
 <div class="sf-steps">
   <div class="sf-step sf-reveal" style="--d:0ms">
     <span class="sf-step-no">01</span>
     <div class="sf-ic"><i class="fas fa-magnifying-glass" style="font-size:22px;"></i></div>
     <h3>Audit &amp; Research</h3>
-    <p>Full digital health check — SEO, competitors, local visibility, content gaps, and opportunity mapping.</p>
+    <p>Full digital health check - SEO, competitors, local visibility, content gaps, and opportunity mapping.</p>
   </div>
   <div class="sf-step sf-reveal" style="--d:100ms">
     <span class="sf-step-no">02</span>
@@ -201,7 +206,7 @@
     <span class="sf-step-no">03</span>
     <div class="sf-ic"><i class="fas fa-rocket" style="font-size:22px;"></i></div>
     <h3>Creative &amp; Execution</h3>
-    <p>One team delivers across SEO, ads, social, content, and design — all coordinated under one strategy.</p>
+    <p>One team delivers across SEO, ads, social, content, and design - all coordinated under one strategy.</p>
   </div>
   <div class="sf-step sf-reveal" style="--d:300ms">
     <span class="sf-step-no">04</span>
@@ -223,25 +228,25 @@
   <div class="sf-card sf-reveal" style="--d:0ms">
     <div>
       <h3 style="color:#c20b58;">The Supreme Grande</h3>
-      <p><strong>SEO + Google Business Profile</strong> — Google Map Pack top 3 for hospitality keywords in South Goa.</p>
+      <p><strong>SEO + Google Business Profile</strong> - Google Map Pack top 3 for hospitality keywords in South Goa.</p>
     </div>
   </div>
   <div class="sf-card sf-reveal" style="--d:80ms">
     <div>
       <h3 style="color:#c20b58;">CIDIF</h3>
-      <p><strong>Website Design + SEO</strong> — Organic visibility across 40+ institutional keywords from zero.</p>
+      <p><strong>Website Design + SEO</strong> - Organic visibility across 40+ institutional keywords from zero.</p>
     </div>
   </div>
   <div class="sf-card sf-reveal" style="--d:160ms">
     <div>
       <h3 style="color:#c20b58;">Auto Dealership · Goa</h3>
-      <p><strong>PPC + Local SEO</strong> — 3× increase in monthly test drive bookings via Google Ads.</p>
+      <p><strong>PPC + Local SEO</strong> - 3× increase in monthly test drive bookings via Google Ads.</p>
     </div>
   </div>
   <div class="sf-card sf-reveal" style="--d:240ms">
     <div>
       <h3 style="color:#c20b58;">Restaurant Chain · Goa</h3>
-      <p><strong>Social + Influencer</strong> — 200% follower growth and measurable footfall increase in 3 months.</p>
+      <p><strong>Social + Influencer</strong> - 200% follower growth and measurable footfall increase in 3 months.</p>
     </div>
   </div>
 </div>
@@ -299,10 +304,10 @@
   <span class="sf-eyebrow">Local focus</span>
   <h2 class="sf-h2">Built for Goa's local market</h2>
   <p>Most agencies optimise for generic keywords. We optimise for the customer standing 2km from your door, searching right now.</p>
-  <p><strong>Google Business Profile</strong> — optimised, posted weekly, review-managed.</p>
-  <p><strong>Location pages</strong> — Vasco, Panjim, Margao, Mapusa, Calangute.</p>
-  <p><strong>NAP consistency</strong> — across 50+ directories and citation sources.</p>
-  <p><strong>AI visibility</strong> — structured so ChatGPT, Gemini, and Perplexity recommend you.</p>
+  <p><strong>Google Business Profile</strong> - optimised, posted weekly, review-managed.</p>
+  <p><strong>Location pages</strong> - Vasco, Panjim, Margao, Mapusa, Calangute.</p>
+  <p><strong>NAP consistency</strong> - across 50+ directories and citation sources.</p>
+  <p><strong>AI visibility</strong> - structured so ChatGPT, Gemini, and Perplexity recommend you.</p>
   <p><a href="https://www.sanctify.in/digital-marketing-agency-south-goa/" style="color:#c20b58;font-weight:600;text-decoration:none;">South Goa →</a> &nbsp; <a href="https://www.sanctify.in/digital-marketing-agency-north-goa/" style="color:#c20b58;font-weight:600;text-decoration:none;">North Goa →</a></p>
 </div>
 <aside class="sf-quote sf-reveal" style="--d:120ms">
@@ -318,24 +323,24 @@
   <span class="sf-eyebrow">Questions</span>
   <h2 class="sf-h2">Frequently asked</h2>
 </div>
-<div class="sf-faq-item sf-reveal"><h3>Which is the best digital marketing agency in Goa?</h3><p>Sanctify is widely recognised as Goa's best — operating since 2012 with 128+ verified reviews, a 4.8-star rating, and recognition from iide.co, Crunchbase, and MuckRack. Full suite: SEO, PPC, social media, web design, content marketing.</p></div>
+<div class="sf-faq-item sf-reveal"><h3>Which is the best digital marketing agency in Goa?</h3><p>Sanctify is widely recognised as Goa's best - operating since 2012 with 128+ verified reviews, a 4.8-star rating, and recognition from iide.co, Crunchbase, and MuckRack. Full suite: SEO, PPC, social media, web design, content marketing.</p></div>
 <div class="sf-faq-item sf-reveal"><h3>How much does digital marketing cost in Goa?</h3><p>Typically ₹15,000 to ₹1,00,000+ per month depending on services and goals. Custom packages from ₹15,000/month with transparent pricing.</p></div>
 <div class="sf-faq-item sf-reveal"><h3>How long does SEO take to show results?</h3><p>8–12 weeks for local keywords. 4–6 months for significant improvements. Monthly progress reports from week one.</p></div>
-<div class="sf-faq-item sf-reveal"><h3>Do you work with businesses outside Goa?</h3><p>Yes. HQ in Vasco, South Goa — but we serve clients across India and internationally.</p></div>
+<div class="sf-faq-item sf-reveal"><h3>Do you work with businesses outside Goa?</h3><p>Yes. HQ in Vasco, South Goa - but we serve clients across India and internationally.</p></div>
 <div class="sf-faq-item sf-reveal"><h3>Can you help my restaurant rank on Google Maps?</h3><p>Absolutely. Maps ranking is a core strength. GBP optimisation, review generation, citations, location content. Multiple Goa restaurants in Map Pack top 3.</p></div>
-<div class="sf-faq-item sf-reveal"><h3>How is Sanctify different from other agencies?</h3><p>Longevity (13+ years), local proof (128+ verified reviews), and full-service under one roof — one team, one strategy, one point of accountability.</p></div>
+<div class="sf-faq-item sf-reveal"><h3>How is Sanctify different from other agencies?</h3><p>Longevity (13+ years), local proof (128+ verified reviews), and full-service under one roof - one team, one strategy, one point of accountability.</p></div>
 <div class="sf-faq-item sf-reveal"><h3>What industries do you specialise in?</h3><p>Hospitality, healthcare, real estate, automotive, retail, education, and professional services.</p></div>
-<div class="sf-faq-item sf-reveal"><h3>Do you offer monthly reporting?</h3><p>Yes. Rankings, traffic, ad performance, leads, ROI — every month. Quarterly strategy reviews.</p></div>
+<div class="sf-faq-item sf-reveal"><h3>Do you offer monthly reporting?</h3><p>Yes. Rankings, traffic, ad performance, leads, ROI - every month. Quarterly strategy reviews.</p></div>
 </section>
 
 <!-- CTA -->
 <section class="sf-cta sf-reveal">
 <div class="sf-cta-in">
   <h2>Ready to lead your market?</h2>
-  <p>Get a free digital marketing audit — we'll show you exactly where the opportunities are.</p>
-  <div class="sf-hero-cta">
-    <a href="https://www.sanctify.in/contact/" class="sf-btn sf-btn-w">Get Free Audit <span class="sf-arw">→</span></a>
-    <a href="tel:+919923352923" class="sf-btn sf-btn-go">Call +91 99233 52923</a>
+  <p>Get a free digital marketing audit. We'll show you exactly where the growth opportunities are.</p>
+  <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px;">
+    <a href="https://www.sanctify.in/contact/" class="sf-hero-btn sf-btn-primary">Get Free Audit →</a>
+    <a href="tel:+919923352923" class="sf-hero-btn sf-btn-ghost">Call +91 99233 52923</a>
   </div>
 </div>
 </section>
@@ -351,10 +356,15 @@
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('sf-in');io.unobserve(x.target);}});},{threshold:.16,rootMargin:'0px 0px -6% 0px'}):null;
   var rev=root.querySelectorAll('.sf-reveal');
   if(io){rev.forEach(function(e){io.observe(e);});}else{rev.forEach(function(e){e.classList.add('sf-in');});}
-  var band=root.querySelector('.sf-px-band');
-  if(band&&io){var io2=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.querySelectorAll('b[data-count]').forEach(function(b){countTo(b,+b.getAttribute('data-count'),b.getAttribute('data-suf')||'');});io2.unobserve(x.target);}});},{threshold:.3});io2.observe(band);}
-  else if(band){band.querySelectorAll('b[data-count]').forEach(function(b){b.textContent=b.getAttribute('data-count')+(b.getAttribute('data-suf')||'');});}
+  // Counter animation - observe the hero section which contains stats
+  var hero=root.querySelector('.sf-px-hero');
+  if(hero){
+    var counters=hero.querySelectorAll('b[data-count]');
+    if(io){var io2=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){counters.forEach(function(b){countTo(b,+b.getAttribute('data-count'),b.getAttribute('data-suf')||'');});io2.unobserve(x.target);}});},{threshold:.3});io2.observe(hero);}
+    else{counters.forEach(function(b){b.textContent=b.getAttribute('data-count')+(b.getAttribute('data-suf')||'');});}
+  }
   function countTo(b,tgt,suf){if(reduce){b.textContent=tgt+suf;return;}var st=null;function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/1200,1);b.textContent=Math.floor(p*tgt)+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+  // parallax
   if(!reduce){
    var pxs=[].slice.call(root.querySelectorAll('[data-px] .sf-px-bg'));
    var ticking=false;

@@ -119,7 +119,13 @@
 <!-- HERO — BADGE COLLAGE -->
 <section class="sf-px sf-px-hero bcg" data-px style="position:relative; overflow:hidden; min-height:calc(100vh - 128px); margin-left:calc(-50vw + 50%); margin-right:calc(-50vw + 50%); width:100vw; border-radius:0; margin-top:0; margin-bottom:44px; background:#100916; display:flex; flex-direction:column; text-align:center; padding:74px 0 0;">
 
-  <div class="sf-px-bg" style="position:absolute; left:0; right:0; top:-16%; height:132%; background-image:url('https://www.sanctify.in/wp-content/uploads/2026/08/digital-marketing-agency-goa-hero-banner.jpeg'); background-size:cover; background-position:center; opacity:.44; z-index:0; will-change:transform;"></div>
+  <div class="sf-px-bg" style="position:absolute; left:0; right:0; top:-16%; height:132%; z-index:0; will-change:transform; overflow:hidden; opacity:.5; background-image:url('https://www.sanctify.in/wp-content/uploads/2026/08/digital-marketing-agency-goa-hero-banner.jpeg'); background-size:cover; background-position:center;">
+    <video class="bcg-vid" playsinline muted loop autoplay preload="metadata" aria-hidden="true" tabindex="-1"
+           style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; pointer-events:none;">
+      <source src="https://www.sanctify.in/wp-content/uploads/2026/08/digital-marketing-goa-hero-loop.webm" type="video/webm">
+      <source src="https://www.sanctify.in/wp-content/uploads/2026/08/digital-marketing-goa-hero-loop.mp4" type="video/mp4">
+    </video>
+  </div>
   <div style="position:absolute; inset:0; z-index:1; background:radial-gradient(ellipse at 30% 38%,rgba(194,11,88,.34),transparent 58%),radial-gradient(ellipse at 74% 66%,rgba(122,0,223,.34),transparent 58%);"></div>
 
   <div class="bcg-bd" style="position:absolute; z-index:4; top:9%; left:5%; transform:rotate(-7deg); background:#fff; border-radius:5px; padding:12px 17px; box-shadow:0 20px 44px -20px rgba(0,0,0,.6);">
@@ -480,6 +486,31 @@
     requestAnimationFrame(tick);
    },400);
   }}
+  // hero video: honour reduced-motion, pause when off-screen, poster fallback on failure
+  var vid=root.querySelector('.bcg-vid');
+  if(vid){
+   if(reduce){
+    try{vid.pause();}catch(e){}
+    vid.removeAttribute('autoplay');
+    vid.style.display='none';
+   }else{
+    var play=function(){var p=vid.play();if(p){if(p.catch){p.catch(function(){});}}};
+    play();
+    vid.addEventListener('canplay',play,{once:true});
+    if('IntersectionObserver' in window){
+     var vio=new IntersectionObserver(function(en){
+      en.forEach(function(x){
+       if(x.isIntersecting){play();}else{try{vid.pause();}catch(e){}}
+      });
+     },{threshold:.01});
+     vio.observe(vid);
+    }
+    document.addEventListener('visibilitychange',function(){
+     if(document.hidden){try{vid.pause();}catch(e){}}else{play();}
+    });
+   }
+   vid.addEventListener('error',function(){vid.style.display='none';});
+  }
   // parallax
   if(!reduce){
    var pxs=[].slice.call(root.querySelectorAll('[data-px] .sf-px-bg'));

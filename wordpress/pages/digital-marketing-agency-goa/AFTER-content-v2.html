@@ -1,0 +1,515 @@
+<style>
+/* DMA Page — Modern Layout (WP Rocket safe — grid on inline, visuals in CSS) */
+.dma-page { font-family: 'Poppins', sans-serif; color: #1a1a2e; }
+.dma-page * { box-sizing: border-box; }
+
+/* Hero */
+.dma-hero {
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.dma-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(194,11,88,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.dma-hero h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 3px; color: #e94560; margin-bottom: 15px; font-weight: 600; }
+.dma-hero p { font-size: 19px; line-height: 1.6; max-width: 700px; color: rgba(255,255,255,0.9); }
+.dma-hero .dma-hero-title { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 20px; color: #fff; }
+
+/* Stat Cards */
+.dma-stat-card {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.dma-stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+.dma-stat-number { font-size: 32px; font-weight: 800; color: #c20b58; display: block; }
+.dma-stat-label { font-size: 14px; color: #666; margin-top: 5px; font-weight: 500; }
+
+/* Section Title */
+.dma-section-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 30px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #e94560;
+  display: inline-block;
+}
+
+/* Service Cards */
+.dma-service-card {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 14px;
+  padding: 30px 25px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.dma-service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+.dma-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, #c20b58, #e94560);
+}
+.dma-service-card i {
+  font-size: 28px;
+  color: #c20b58;
+  margin-bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  background: rgba(194,11,88,0.08);
+  border-radius: 12px;
+}
+.dma-service-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; color: #1a1a2e; }
+.dma-service-card p { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 12px; }
+.dma-service-card a { color: #c20b58; font-weight: 600; font-size: 14px; text-decoration: none; }
+.dma-service-card a:hover { text-decoration: underline; }
+
+/* Results Table */
+.dma-results-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+}
+.dma-results-table thead { background: linear-gradient(135deg, #1a1a2e, #0f3460); }
+.dma-results-table thead th {
+  padding: 16px 20px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+.dma-results-table tbody tr { transition: background 0.15s; }
+.dma-results-table tbody tr:hover { background: #f8f0f4; }
+.dma-results-table tbody td {
+  padding: 16px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+.dma-results-table tbody tr:last-child td { border-bottom: none; }
+
+/* Process Steps */
+.dma-step {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px 25px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.dma-step-num {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #c20b58, #e94560);
+  color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.dma-step h4 { font-size: 17px; font-weight: 600; margin-bottom: 10px; color: #1a1a2e; }
+.dma-step p { font-size: 14px; line-height: 1.6; color: #666; }
+
+/* Testimonials */
+.dma-testimonial {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px 25px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+.dma-testimonial::before {
+  content: '\201C';
+  font-size: 60px;
+  color: rgba(194,11,88,0.15);
+  position: absolute;
+  top: 10px; left: 20px;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+.dma-testimonial p { font-size: 15px; line-height: 1.7; color: #444; padding-top: 25px; font-style: italic; }
+.dma-testimonial .dma-author { font-weight: 600; color: #1a1a2e; font-style: normal; margin-top: 15px; font-size: 14px; }
+.dma-testimonial .dma-stars { color: #f5a623; margin-top: 8px; font-size: 14px; }
+
+/* FAQ */
+.dma-faq-item {
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.dma-faq-item h3 {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 18px 24px;
+  margin: 0;
+  background: #fafafa;
+  color: #1a1a2e;
+}
+.dma-faq-item p { padding: 0 24px 18px; font-size: 15px; line-height: 1.7; color: #555; margin: 0; }
+
+/* Industry Tags */
+.dma-industry-tag {
+  background: #f8f8fa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.dma-industry-tag:hover { background: #fff0f5; border-color: #c20b58; }
+
+/* Area Cards */
+.dma-area-card {
+  background: linear-gradient(135deg, #f8f8fa, #fff);
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+.dma-area-card a { color: #c20b58; font-weight: 600; text-decoration: none; font-size: 16px; }
+.dma-area-card a:hover { text-decoration: underline; }
+.dma-area-card span { display: block; font-size: 13px; color: #777; margin-top: 6px; }
+
+/* CTA */
+.dma-cta h2 { font-size: 28px; font-weight: 700; margin-bottom: 15px; color: #fff; border: none; }
+.dma-cta p { font-size: 17px; color: rgba(255,255,255,0.85); margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.dma-cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #c20b58, #e94560);
+  color: #fff !important;
+  padding: 14px 36px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.dma-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(194,11,88,0.3); color: #fff !important; }
+.dma-cta-contact { margin-top: 25px; font-size: 15px; color: rgba(255,255,255,0.7); }
+.dma-cta-contact a { color: #fff; font-weight: 500; }
+
+/* Local box */
+.dma-local-box ul { list-style: none; padding: 0; }
+.dma-local-box ul li { padding: 8px 0 8px 28px; font-size: 16px; color: #333; position: relative; }
+.dma-local-box ul li::before { content: '\f3c5'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: #c20b58; font-size: 14px; top: 10px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dma-hero .dma-hero-title { font-size: 24px; }
+}
+</style>
+
+<div class="dma-page">
+
+<!-- HERO -->
+<div class="dma-hero" style="background: linear-gradient(135deg, rgba(26,26,46,0.92) 0%, rgba(15,52,96,0.88) 100%), url('https://www.sanctify.in/wp-content/uploads/2026/08/digital-marketing-agency-goa-hero-banner.jpeg') center/cover no-repeat; padding: 60px 30px; border-radius: 16px; margin-bottom: 50px; position: relative; overflow: hidden;">
+  <h2>Goa's Longest-Running Digital Marketing Agency</h2>
+  <div class="dma-hero-title">We help Goa businesses get found on Google, AI search, and social — since 2012.</div>
+  <p>128+ verified reviews. 100+ websites built. 1000+ keywords on page 1. From Vasco to Panjim, Margao to Calangute — local businesses trust Sanctify to drive real growth.</p>
+</div>
+
+<!-- STATS -->
+<div class="dma-stats" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-bottom: 50px;">
+  <div class="dma-stat-card">
+    <span class="dma-stat-number">13+</span>
+    <span class="dma-stat-label">Years in Business</span>
+  </div>
+  <div class="dma-stat-card">
+    <span class="dma-stat-number">128+</span>
+    <span class="dma-stat-label">Verified Reviews</span>
+  </div>
+  <div class="dma-stat-card">
+    <span class="dma-stat-number">100+</span>
+    <span class="dma-stat-label">Websites Built</span>
+  </div>
+  <div class="dma-stat-card">
+    <span class="dma-stat-number">4.8★</span>
+    <span class="dma-stat-label">Average Rating</span>
+  </div>
+  <div class="dma-stat-card">
+    <span class="dma-stat-number">1000+</span>
+    <span class="dma-stat-label">Keywords on Page 1</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div style="margin-bottom: 50px;">
+  <h2 class="dma-section-title">Digital Marketing Services in Goa</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+
+    <div class="dma-service-card">
+      <i class="fas fa-search"></i>
+      <h3>Search Engine Optimization</h3>
+      <p>Rank in Google's top 3 and Map Pack for local searches. We've put hotels, clinics, dealerships and restaurants across Goa on page 1 through technical SEO, content strategy, and local optimisation.</p>
+      <a href="https://www.sanctify.in/sanctify-facility/local-seo-services-goa/">Learn more →</a>
+    </div>
+
+    <div class="dma-service-card">
+      <i class="fas fa-ad"></i>
+      <h3>Google Ads &amp; PPC</h3>
+      <p>Targeted campaigns on Google Search, Display, and Performance Max — built for Goa's market. Every rupee drives qualified enquiries with keyword bidding, ad copy testing, and landing page alignment.</p>
+      <a href="https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/">Learn more →</a>
+    </div>
+
+    <div class="dma-service-card">
+      <i class="fas fa-share-alt"></i>
+      <h3>Social Media Marketing</h3>
+      <p>Content creation, community management, and paid campaigns on Meta, LinkedIn, and YouTube. We build your audience with content that engages — backed by performance data, not guesswork.</p>
+      <a href="https://www.sanctify.in/sanctify-facility/social-media-marketing-agency-goa/">Learn more →</a>
+    </div>
+
+    <div class="dma-service-card">
+      <i class="fas fa-laptop-code"></i>
+      <h3>Website Design &amp; Development</h3>
+      <p>Mobile-first, fast-loading websites designed to convert visitors into leads. Every site includes on-page SEO, structured data, and analytics from day one. 100+ businesses trust us.</p>
+      <a href="https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/">Learn more →</a>
+    </div>
+
+    <div class="dma-service-card">
+      <i class="fas fa-pen-fancy"></i>
+      <h3>Content Marketing</h3>
+      <p>Blog writing, video production, email campaigns and brand storytelling — all tied to search intent and audience needs. Builds topical authority that compounds over time.</p>
+      <a href="https://www.sanctify.in/sanctify-facility/content-marketing-agency-goa/">Learn more →</a>
+    </div>
+
+    <div class="dma-service-card">
+      <i class="fas fa-users"></i>
+      <h3>Influencer Marketing</h3>
+      <p>Connect your Goa brand with trusted local creators for authentic, high-engagement campaigns. From hotel collaborations to food and lifestyle — we handle strategy, outreach, and tracking.</p>
+      <a href="https://www.sanctify.in/sanctify-facility/influencer-marketing-agency-goa/">Learn more →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div style="margin-bottom: 50px;">
+  <h2 class="dma-section-title">Results for Goa Businesses</h2>
+  <table class="dma-results-table">
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>Service</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>The Supreme Grande</strong></td>
+        <td>SEO + Google Business Profile</td>
+        <td>Google Map Pack top 3 for hospitality keywords in South Goa</td>
+      </tr>
+      <tr>
+        <td><strong>CIDIF</strong></td>
+        <td>Website Design + SEO</td>
+        <td>Organic visibility across 40+ institutional keywords</td>
+      </tr>
+      <tr>
+        <td><strong>Local Automotive Dealership</strong></td>
+        <td>PPC + Local SEO</td>
+        <td>3× increase in monthly test drive bookings via Google Ads</td>
+      </tr>
+      <tr>
+        <td><strong>Goa Restaurant Chain</strong></td>
+        <td>Social Media + Influencer</td>
+        <td>200% follower growth and measurable footfall increase in 3 months</td>
+      </tr>
+      <tr>
+        <td><strong>Medical Clinic (Vasco)</strong></td>
+        <td>Local SEO + GBP</td>
+        <td>Ranked in Map Pack for 12 high-intent health queries</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:15px; color:#666;">See the full breakdown on our <a href="https://www.sanctify.in/case-studies/" style="color:#c20b58; font-weight:600;">case studies page →</a></p>
+</div>
+
+<!-- PROCESS -->
+<div style="margin-bottom: 50px;">
+  <h2 class="dma-section-title">How We Work</h2>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+    <div class="dma-step">
+      <span class="dma-step-num">1</span>
+      <h4>Discovery &amp; Audit</h4>
+      <p>We analyse your current digital presence — website health, keyword positions, competitor gaps, and local visibility.</p>
+    </div>
+    <div class="dma-step">
+      <span class="dma-step-num">2</span>
+      <h4>Strategy</h4>
+      <p>A custom plan built around your goals, budget, and Goa market context. Clear timelines and KPIs before work begins.</p>
+    </div>
+    <div class="dma-step">
+      <span class="dma-step-num">3</span>
+      <h4>Execution</h4>
+      <p>SEO, content, ads, social, and design — all coordinated under one roof by one accountable team.</p>
+    </div>
+    <div class="dma-step">
+      <span class="dma-step-num">4</span>
+      <h4>Report &amp; Optimise</h4>
+      <p>Monthly reports with real numbers — traffic, leads, rankings, ad spend vs. returns. Continuous optimisation.</p>
+    </div>
+  </div>
+</div>
+
+<!-- LOCAL BUSINESSES -->
+<div class="dma-local-box" style="background: linear-gradient(135deg, #fff5f8, #fff); border: 1px solid #fce4ec; border-radius: 14px; padding: 35px 30px; margin-bottom: 50px;">
+  <h2 class="dma-section-title" style="color: #c20b58; border-color: #c20b58;">Digital Marketing for Local Businesses in Goa</h2>
+  <p style="font-size:17px; line-height:1.7; color:#444; margin-bottom:20px;">Most of our clients are local businesses — hotels, clinics, dealerships, restaurants, and service providers across Goa. For a local business, digital marketing is about being found at the exact moment a nearby customer searches.</p>
+  <ul>
+    <li>Google Business Profile optimisation and regular posting</li>
+    <li>Location-specific landing pages for each area you serve</li>
+    <li>Consistent NAP citations across 50+ directories</li>
+    <li>Review generation strategies to build social proof</li>
+    <li>Google Maps ranking for "near me" and local intent searches</li>
+    <li>AI visibility — appear in ChatGPT, Gemini, and Perplexity recommendations</li>
+  </ul>
+</div>
+
+<!-- INDUSTRIES -->
+<div style="margin-bottom: 50px;">
+  <h2 class="dma-section-title">Industries We Serve</h2>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+    <div class="dma-industry-tag"><i class="fas fa-hotel" style="color:#c20b58; margin-right:8px;"></i> Hotels &amp; Resorts</div>
+    <div class="dma-industry-tag"><i class="fas fa-utensils" style="color:#c20b58; margin-right:8px;"></i> Restaurants &amp; Cafes</div>
+    <div class="dma-industry-tag"><i class="fas fa-heartbeat" style="color:#c20b58; margin-right:8px;"></i> Healthcare &amp; Clinics</div>
+    <div class="dma-industry-tag"><i class="fas fa-building" style="color:#c20b58; margin-right:8px;"></i> Real Estate &amp; Builders</div>
+    <div class="dma-industry-tag"><i class="fas fa-car" style="color:#c20b58; margin-right:8px;"></i> Automotive Dealerships</div>
+    <div class="dma-industry-tag"><i class="fas fa-shopping-bag" style="color:#c20b58; margin-right:8px;"></i> Retail &amp; E-commerce</div>
+    <div class="dma-industry-tag"><i class="fas fa-graduation-cap" style="color:#c20b58; margin-right:8px;"></i> Education &amp; Training</div>
+    <div class="dma-industry-tag"><i class="fas fa-briefcase" style="color:#c20b58; margin-right:8px;"></i> Professional Services</div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div style="margin-bottom: 50px;">
+  <h2 class="dma-section-title">What Our Clients Say</h2>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+    <div class="dma-testimonial">
+      <p>Their team is highly skilled and knowledgeable in all aspects of digital marketing, from SEO to social media marketing. I highly recommend this Digital Marketing Agency in Goa.</p>
+      <div class="dma-author">— Shreya Dutta</div>
+      <div class="dma-stars">★★★★★</div>
+    </div>
+    <div class="dma-testimonial">
+      <p>I am impressed with the team's professionalism and effectiveness. I highly recommend Sanctify to any company that needs help with digital marketing.</p>
+      <div class="dma-author">— Ashutosh Hazare</div>
+      <div class="dma-stars">★★★★★</div>
+    </div>
+    <div class="dma-testimonial">
+      <p>Their expertise in SEO, social media, and online strategies helped my business rank higher on search engines and attract more customers. The team truly understands the local market.</p>
+      <div class="dma-author">— Benz Nx</div>
+      <div class="dma-stars">★★★★★</div>
+    </div>
+    <div class="dma-testimonial">
+      <p>Quite happy with the Google visibility provided by Sanctify. Our business now appears prominently in local search results.</p>
+      <div class="dma-author">— TVS Bela Auto</div>
+      <div class="dma-stars">★★★★★</div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div style="margin-bottom: 50px;">
+  <h2 class="dma-section-title">Frequently Asked Questions</h2>
+
+  <div class="dma-faq-item">
+    <h3>Which is the best digital marketing agency in Goa?</h3>
+    <p>Sanctify is widely recognised as Goa's best digital marketing agency — operating since 2012 with 128+ verified reviews, a 4.8-star rating, and recognition from iide.co, Crunchbase, and MuckRack. We offer the full suite: SEO, PPC, social media, web design, and content marketing.</p>
+  </div>
+
+  <div class="dma-faq-item">
+    <h3>How much does digital marketing cost in Goa?</h3>
+    <p>Digital marketing costs in Goa typically range from ₹15,000 to ₹1,00,000+ per month depending on services, competition level, and business goals. Sanctify offers custom packages starting from ₹15,000/month for local businesses with transparent pricing.</p>
+  </div>
+
+  <div class="dma-faq-item">
+    <h3>How long does SEO take to show results in Goa?</h3>
+    <p>For most Goa businesses, SEO results begin showing within 8–12 weeks for local keywords, with significant ranking improvements by 4–6 months. We provide monthly progress reports so you can track improvement from week one.</p>
+  </div>
+
+  <div class="dma-faq-item">
+    <h3>Does Sanctify work with businesses outside Goa?</h3>
+    <p>Yes. While our headquarters is in Vasco, South Goa, we serve clients across India and internationally — Mumbai, Bangalore, Delhi, and global markets. Our local expertise combined with national reach gives us a unique advantage.</p>
+  </div>
+
+  <div class="dma-faq-item">
+    <h3>What industries does Sanctify specialise in?</h3>
+    <p>We specialise in hospitality (hotels, resorts, restaurants), healthcare, real estate, automotive, retail, and professional services. Our 13+ years across these sectors in Goa means deep understanding of the local customer journey.</p>
+  </div>
+
+  <div class="dma-faq-item">
+    <h3>Can you help my restaurant rank on Google Maps?</h3>
+    <p>Absolutely. Google Maps and local pack ranking is one of our core strengths. We optimise your Google Business Profile, manage review generation, build local citations, and create location-specific content. Multiple Goa restaurants have reached Map Pack top 3.</p>
+  </div>
+
+  <div class="dma-faq-item">
+    <h3>How is Sanctify different from other agencies in Goa?</h3>
+    <p>Three things: (1) Longevity — 13+ years through every algorithm change. (2) Local proof — 128+ verified reviews from real Goa businesses. (3) Full-service under one roof — SEO, ads, social, design, content, influencer with one team and one point of accountability.</p>
+  </div>
+
+  <div class="dma-faq-item">
+    <h3>Do you offer monthly reporting?</h3>
+    <p>Yes. Every client receives monthly reports covering keyword rankings, organic traffic, ad performance, leads generated, and ROI metrics. Quarterly strategy reviews adjust campaigns based on results and market changes.</p>
+  </div>
+
+</div>
+
+<!-- AREAS -->
+<div style="margin-bottom: 50px;">
+  <h2 class="dma-section-title">Areas We Serve Across Goa</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+    <div class="dma-area-card">
+      <a href="https://www.sanctify.in/digital-marketing-agency-south-goa/">South Goa</a>
+      <span>Vasco, Margao, Ponda, Cuncolim</span>
+    </div>
+    <div class="dma-area-card">
+      <a href="https://www.sanctify.in/digital-marketing-agency-north-goa/">North Goa</a>
+      <span>Panjim, Mapusa, Calangute, Candolim</span>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="dma-cta" style="background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); color: #fff; padding: 50px 35px; border-radius: 16px; text-align: center; margin-bottom: 30px;">
+  <h2>Get a Free Digital Marketing Audit</h2>
+  <p>We'll analyse your current digital presence and show you exactly where the growth opportunities are — free, no obligation.</p>
+  <a href="https://www.sanctify.in/contact/" class="dma-cta-btn">Get Your Free Audit →</a>
+  <div class="dma-cta-contact">
+    <a href="tel:+919923352923">+91 99233 52923</a> &nbsp;|&nbsp; <a href="mailto:mail@sanctify.in">mail@sanctify.in</a><br>
+    #176/1-A, MES College Road, Zuarinagar, Vasco-da-Gama, Goa 403726
+  </div>
+</div>
+
+</div>

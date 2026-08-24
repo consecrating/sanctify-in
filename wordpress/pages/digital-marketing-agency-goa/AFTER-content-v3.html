@@ -1,0 +1,385 @@
+<style>
+.s-page{font-family:'Poppins',sans-serif;color:#111;line-height:1.6;--accent:#c20b58;--dark:#0a0a0f;--glass:rgba(255,255,255,0.04)}
+.s-page *{box-sizing:border-box}
+
+/* Hero — full-bleed dark with animated gradient orbs */
+.s-hero{background:var(--dark);color:#fff;padding:80px 0 70px;margin:-30px -30px 0 -30px;position:relative;overflow:hidden}
+.s-hero::before{content:'';position:absolute;top:-120px;right:-80px;width:450px;height:450px;background:radial-gradient(circle,rgba(194,11,88,0.25),transparent 70%);border-radius:50%;animation:s-pulse 6s ease-in-out infinite alternate}
+.s-hero::after{content:'';position:absolute;bottom:-100px;left:-60px;width:350px;height:350px;background:radial-gradient(circle,rgba(233,69,96,0.15),transparent 70%);border-radius:50%;animation:s-pulse 8s ease-in-out infinite alternate-reverse}
+@keyframes s-pulse{0%{transform:scale(1);opacity:0.6}100%{transform:scale(1.15);opacity:1}}
+.s-hero-inner{max-width:900px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
+.s-hero-tag{font-size:12px;text-transform:uppercase;letter-spacing:4px;color:var(--accent);font-weight:600;margin-bottom:20px;display:inline-block;border:1px solid rgba(194,11,88,0.4);padding:6px 16px;border-radius:30px}
+.s-hero h2{font-size:clamp(28px,5vw,46px);font-weight:800;line-height:1.15;margin-bottom:24px;background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,0.8) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.s-hero-sub{font-size:18px;color:rgba(255,255,255,0.7);max-width:640px;line-height:1.7}
+
+/* Metrics strip */
+.s-metrics{display:flex;gap:0;margin:60px auto 0;max-width:800px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden}
+.s-metric{flex:1;padding:28px 16px;text-align:center;border-right:1px solid rgba(255,255,255,0.06)}
+.s-metric:last-child{border-right:none}
+.s-metric-val{font-size:28px;font-weight:800;color:#fff;display:block}
+.s-metric-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.45);margin-top:6px;display:block}
+
+/* Sections */
+.s-section{padding:70px 0;border-bottom:1px solid #f0f0f0}
+.s-section:last-child{border-bottom:none}
+.s-section-tag{font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--accent);font-weight:600;margin-bottom:12px;font-family:'Source Sans 3',monospace}
+.s-section h2{font-size:clamp(24px,3.5vw,36px);font-weight:700;line-height:1.2;margin-bottom:20px;color:var(--dark)}
+.s-section-desc{font-size:17px;color:#555;max-width:680px;line-height:1.8;margin-bottom:40px}
+
+/* Service blocks — stacked left-aligned, clean */
+.s-services{display:flex;flex-direction:column;gap:0}
+.s-svc{display:flex;align-items:flex-start;gap:24px;padding:32px 0;border-bottom:1px solid #f5f5f5}
+.s-svc:last-child{border-bottom:none}
+.s-svc-icon{min-width:48px;height:48px;background:linear-gradient(135deg,rgba(194,11,88,0.08),rgba(233,69,96,0.05));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--accent)}
+.s-svc-content h3{font-size:18px;font-weight:600;margin-bottom:6px;color:var(--dark)}
+.s-svc-content p{font-size:15px;color:#666;line-height:1.7;margin-bottom:8px}
+.s-svc-content a{font-size:13px;color:var(--accent);text-decoration:none;font-weight:600;letter-spacing:0.3px}
+.s-svc-content a:hover{text-decoration:underline}
+
+/* Results — dark section */
+.s-results-section{background:var(--dark);color:#fff;padding:70px 40px;margin:0 -30px;position:relative}
+.s-results-section .s-section-tag{color:var(--accent)}
+.s-results-section h2{color:#fff}
+.s-results-section .s-section-desc{color:rgba(255,255,255,0.6)}
+.s-result-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:28px;margin-bottom:16px;transition:border-color 0.3s}
+.s-result-card:hover{border-color:rgba(194,11,88,0.4)}
+.s-result-client{font-size:14px;font-weight:600;color:var(--accent);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
+.s-result-service{font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:10px}
+.s-result-outcome{font-size:16px;color:rgba(255,255,255,0.9);line-height:1.5}
+
+/* Process — horizontal timeline */
+.s-process{display:flex;gap:0;position:relative}
+.s-process::before{content:'';position:absolute;top:24px;left:24px;right:24px;height:2px;background:linear-gradient(90deg,var(--accent),rgba(194,11,88,0.1));z-index:0}
+.s-process-step{flex:1;text-align:center;position:relative;z-index:1;padding:0 12px}
+.s-process-num{width:48px;height:48px;background:var(--dark);border:2px solid var(--accent);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--accent);margin-bottom:16px}
+.s-process-step h4{font-size:15px;font-weight:600;color:var(--dark);margin-bottom:8px}
+.s-process-step p{font-size:13px;color:#777;line-height:1.6}
+
+/* Testimonials — large quote style */
+.s-testimonials{display:flex;flex-direction:column;gap:32px}
+.s-quote{position:relative;padding:32px 32px 32px 48px;background:#fafafa;border-radius:12px;border-left:3px solid var(--accent)}
+.s-quote::before{content:'\201C';position:absolute;top:16px;left:16px;font-size:40px;color:var(--accent);opacity:0.3;font-family:Georgia,serif;line-height:1}
+.s-quote p{font-size:16px;color:#333;line-height:1.7;font-style:italic;margin-bottom:12px}
+.s-quote-author{font-size:13px;font-weight:600;color:var(--dark)}
+.s-quote-stars{color:#f5a623;font-size:13px;margin-left:8px}
+
+/* FAQ — minimal */
+.s-faq-item{padding:20px 0;border-bottom:1px solid #f0f0f0}
+.s-faq-item:last-child{border-bottom:none}
+.s-faq-item h3{font-size:16px;font-weight:600;color:var(--dark);margin-bottom:8px}
+.s-faq-item p{font-size:15px;color:#555;line-height:1.7}
+
+/* Industries — pill tags */
+.s-pills{display:flex;flex-wrap:wrap;gap:10px}
+.s-pill{background:var(--dark);color:#fff;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:500;letter-spacing:0.3px;transition:background 0.2s}
+.s-pill:hover{background:var(--accent)}
+
+/* CTA */
+.s-cta{background:linear-gradient(135deg,var(--dark) 0%,#16213e 100%);color:#fff;padding:60px 40px;border-radius:16px;text-align:center;position:relative;overflow:hidden;margin-top:50px}
+.s-cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(194,11,88,0.12),transparent 60%);border-radius:50%}
+.s-cta h2{font-size:clamp(24px,3.5vw,32px);font-weight:700;margin-bottom:16px;position:relative;z-index:1;color:#fff}
+.s-cta p{font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:30px;position:relative;z-index:1;max-width:500px;margin-left:auto;margin-right:auto}
+.s-cta-btn{display:inline-block;background:var(--accent);color:#fff !important;padding:16px 40px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;position:relative;z-index:1;transition:transform 0.2s,box-shadow 0.2s}
+.s-cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(194,11,88,0.35);color:#fff !important}
+.s-cta-contact{margin-top:28px;font-size:14px;color:rgba(255,255,255,0.5);position:relative;z-index:1}
+.s-cta-contact a{color:rgba(255,255,255,0.8)}
+
+/* Local highlight */
+.s-local{background:linear-gradient(180deg,#fef8fa 0%,#fff 100%);border-radius:16px;padding:40px;border:1px solid #fce4ec}
+.s-local h3{font-size:20px;font-weight:600;color:var(--dark);margin-bottom:16px}
+.s-local ul{list-style:none;padding:0;margin:0}
+.s-local li{padding:10px 0 10px 24px;font-size:15px;color:#444;position:relative;border-bottom:1px solid #fef0f3}
+.s-local li:last-child{border-bottom:none}
+.s-local li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:700}
+
+/* Responsive */
+@media(max-width:768px){
+.s-hero{padding:50px 0 40px;margin:-20px -15px 0}
+.s-hero-inner{padding:0 20px}
+.s-metrics{flex-direction:column}
+.s-metric{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);padding:18px}
+.s-process{flex-direction:column;gap:20px}
+.s-process::before{display:none}
+.s-results-section{padding:50px 20px;margin:0 -15px}
+.s-svc{flex-direction:column;gap:12px}
+.s-pills{gap:8px}
+.s-cta{padding:40px 20px}
+}
+</style>
+
+<div class="s-page">
+
+<!-- HERO -->
+<div class="s-hero" style="background:#0a0a0f; color:#fff; padding:70px 40px; border-radius:16px; margin-bottom:50px; position:relative; overflow:hidden;">
+  <div class="s-hero-inner" style="max-width:900px; position:relative; z-index:2;">
+    <span class="s-hero-tag" style="font-size:12px; text-transform:uppercase; letter-spacing:4px; color:#c20b58; font-weight:600; margin-bottom:20px; display:inline-block; border:1px solid rgba(194,11,88,0.4); padding:6px 16px; border-radius:30px;">Est. 2012 · Vasco, Goa</span>
+    <h2 style="font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.15; margin-bottom:24px; color:#fff;">Your customers are searching.<br>On Google. On Maps. On AI.<br>Are they finding you?</h2>
+    <p class="s-hero-sub" style="font-size:18px; color:rgba(255,255,255,0.7); max-width:640px; line-height:1.7;">Sanctify is the digital marketing agency Goa businesses have trusted for 13+ years to turn invisible brands into discoverable ones — through SEO, paid ads, social, and AI visibility.</p>
+
+    <div class="s-metrics" style="display:flex; gap:0; margin:50px 0 0; max-width:800px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; overflow:hidden;">
+      <div class="s-metric" style="flex:1; padding:24px 16px; text-align:center; border-right:1px solid rgba(255,255,255,0.08);">
+        <span style="font-size:28px; font-weight:800; color:#fff; display:block;">13+</span>
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.45); margin-top:4px; display:block;">Years</span>
+      </div>
+      <div class="s-metric" style="flex:1; padding:24px 16px; text-align:center; border-right:1px solid rgba(255,255,255,0.08);">
+        <span style="font-size:28px; font-weight:800; color:#fff; display:block;">128+</span>
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.45); margin-top:4px; display:block;">Reviews</span>
+      </div>
+      <div class="s-metric" style="flex:1; padding:24px 16px; text-align:center; border-right:1px solid rgba(255,255,255,0.08);">
+        <span style="font-size:28px; font-weight:800; color:#fff; display:block;">100+</span>
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.45); margin-top:4px; display:block;">Websites</span>
+      </div>
+      <div class="s-metric" style="flex:1; padding:24px 16px; text-align:center; border-right:1px solid rgba(255,255,255,0.08);">
+        <span style="font-size:28px; font-weight:800; color:#fff; display:block;">4.8★</span>
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.45); margin-top:4px; display:block;">Rating</span>
+      </div>
+      <div class="s-metric" style="flex:1; padding:24px 16px; text-align:center;">
+        <span style="font-size:28px; font-weight:800; color:#fff; display:block;">1000+</span>
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.45); margin-top:4px; display:block;">Page 1 Keywords</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="s-section" style="padding:70px 0;border-bottom:1px solid #f0f0f0">
+  <span class="s-section-tag">// services</span>
+  <h2>What we build for you</h2>
+  <p class="s-section-desc">Every service is connected. SEO feeds content. Content feeds social. Social feeds trust. Trust feeds AI recommendations. We build the system, not isolated tactics.</p>
+
+  <div class="s-services" style="display:flex;flex-direction:column;gap:0">
+    <div class="s-svc" style="display:flex;align-items:flex-start;gap:24px;padding:32px 0;border-bottom:1px solid #f5f5f5">
+      <div class="s-svc-icon" style="min-width:48px;height:48px;background:linear-gradient(135deg,rgba(194,11,88,0.08),rgba(233,69,96,0.05));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#c20b58"><i class="fas fa-search"></i></div>
+      <div class="s-svc-content">
+        <h3>Search Engine Optimization</h3>
+        <p>Technical SEO, local SEO, content strategy. We've ranked hotels, clinics, and dealerships in Google's top 3 and Map Pack across Goa — not with tricks, but with structure that lasts.</p>
+        <a href="https://www.sanctify.in/sanctify-facility/local-seo-services-goa/">SEO Services →</a>
+      </div>
+    </div>
+    <div class="s-svc" style="display:flex;align-items:flex-start;gap:24px;padding:32px 0;border-bottom:1px solid #f5f5f5">
+      <div class="s-svc-icon" style="min-width:48px;height:48px;background:linear-gradient(135deg,rgba(194,11,88,0.08),rgba(233,69,96,0.05));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#c20b58"><i class="fas fa-bolt"></i></div>
+      <div class="s-svc-content">
+        <h3>Google Ads &amp; Paid Performance</h3>
+        <p>Search, Display, Performance Max. We don't spray budgets — we build targeted campaigns around the moment your customer is most ready to act. Every click is accounted for.</p>
+        <a href="https://www.sanctify.in/sanctify-facility/ppc-google-ads-agency-goa/">PPC Services →</a>
+      </div>
+    </div>
+    <div class="s-svc" style="display:flex;align-items:flex-start;gap:24px;padding:32px 0;border-bottom:1px solid #f5f5f5">
+      <div class="s-svc-icon" style="min-width:48px;height:48px;background:linear-gradient(135deg,rgba(194,11,88,0.08),rgba(233,69,96,0.05));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#c20b58"><i class="fas fa-share-nodes"></i></div>
+      <div class="s-svc-content">
+        <h3>Social Media Marketing</h3>
+        <p>Meta, LinkedIn, YouTube. Content that earns attention. Paid campaigns that convert. Community building that compounds into brand recall — so you're the name they think of before they even search.</p>
+        <a href="https://www.sanctify.in/sanctify-facility/social-media-marketing-agency-goa/">Social Media →</a>
+      </div>
+    </div>
+    <div class="s-svc" style="display:flex;align-items:flex-start;gap:24px;padding:32px 0;border-bottom:1px solid #f5f5f5">
+      <div class="s-svc-icon" style="min-width:48px;height:48px;background:linear-gradient(135deg,rgba(194,11,88,0.08),rgba(233,69,96,0.05));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#c20b58"><i class="fas fa-code"></i></div>
+      <div class="s-svc-content">
+        <h3>Website Design &amp; Development</h3>
+        <p>Fast, mobile-first, SEO-ready from day one. We've built 100+ websites for Goa businesses — each designed to convert visitors, not just look pretty.</p>
+        <a href="https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/">Web Design →</a>
+      </div>
+    </div>
+    <div class="s-svc" style="display:flex;align-items:flex-start;gap:24px;padding:32px 0;border-bottom:1px solid #f5f5f5">
+      <div class="s-svc-icon" style="min-width:48px;height:48px;background:linear-gradient(135deg,rgba(194,11,88,0.08),rgba(233,69,96,0.05));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#c20b58"><i class="fas fa-pen-nib"></i></div>
+      <div class="s-svc-content">
+        <h3>Content Marketing</h3>
+        <p>Blog writing, video, email — all tied to search intent. Content that builds topical authority and gives AI systems reason to cite you.</p>
+        <a href="https://www.sanctify.in/sanctify-facility/content-marketing-agency-goa/">Content Marketing →</a>
+      </div>
+    </div>
+    <div class="s-svc" style="display:flex;align-items:flex-start;gap:24px;padding:32px 0">
+      <div class="s-svc-icon" style="min-width:48px;height:48px;background:linear-gradient(135deg,rgba(194,11,88,0.08),rgba(233,69,96,0.05));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#c20b58"><i class="fas fa-user-group"></i></div>
+      <div class="s-svc-content">
+        <h3>Influencer Marketing</h3>
+        <p>Trusted Goa creators × your brand. From resort collaborations to food reviews — authentic reach that ad budgets can't replicate.</p>
+        <a href="https://www.sanctify.in/sanctify-facility/influencer-marketing-agency-goa/">Influencer Marketing →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS — DARK SECTION -->
+<div class="s-results-section" style="background:#0a0a0f;color:#fff;padding:70px 40px;margin:0 -30px;position:relative">
+  <span class="s-section-tag">// results</span>
+  <h2 style="color:#fff">Work that moved the needle.</h2>
+  <p class="s-section-desc" style="color:rgba(255,255,255,0.6)">Not claims. Outcomes.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:30px">
+    <div class="s-result-card" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:28px">
+      <div class="s-result-client">The Supreme Grande</div>
+      <div class="s-result-service" style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:10px">SEO + Google Business Profile</div>
+      <div class="s-result-outcome" style="font-size:16px;color:rgba(255,255,255,0.9)">Google Map Pack top 3 for hospitality keywords in South Goa.</div>
+    </div>
+    <div class="s-result-card" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:28px">
+      <div class="s-result-client">CIDIF</div>
+      <div class="s-result-service" style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:10px">Website Design + SEO</div>
+      <div class="s-result-outcome" style="font-size:16px;color:rgba(255,255,255,0.9)">Organic visibility across 40+ institutional keywords from zero.</div>
+    </div>
+    <div class="s-result-card" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:28px">
+      <div class="s-result-client">Auto Dealership · Goa</div>
+      <div class="s-result-service" style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:10px">PPC + Local SEO</div>
+      <div class="s-result-outcome" style="font-size:16px;color:rgba(255,255,255,0.9)">3× increase in monthly test drive bookings via Google Ads.</div>
+    </div>
+    <div class="s-result-card" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:28px">
+      <div class="s-result-client">Restaurant Chain · Goa</div>
+      <div class="s-result-service" style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:10px">Social + Influencer</div>
+      <div class="s-result-outcome" style="font-size:16px;color:rgba(255,255,255,0.9)">200% follower growth. Measurable footfall increase in 3 months.</div>
+    </div>
+    <div class="s-result-card" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:28px">
+      <div class="s-result-client">Medical Clinic · Vasco</div>
+      <div class="s-result-service" style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:10px">Local SEO + GBP</div>
+      <div class="s-result-outcome" style="font-size:16px;color:rgba(255,255,255,0.9)">Map Pack for 12 high-intent health queries in Goa.</div>
+    </div>
+  </div>
+  <p style="margin-top:24px;font-size:14px"><a href="https://www.sanctify.in/case-studies/" style="color:var(--accent);text-decoration:none;font-weight:600">View all case studies →</a></p>
+</div>
+
+<!-- PROCESS -->
+<div class="s-section" style="padding:70px 0;border-bottom:1px solid #f0f0f0">
+  <span class="s-section-tag">// process</span>
+  <h2>How we work</h2>
+  <p class="s-section-desc">No surprises. No vanishing acts. Four stages, fully transparent.</p>
+
+  <div class="s-process" style="display:flex;gap:0;position:relative;margin-top:40px">
+    <div class="s-process-step" style="flex:1;text-align:center;position:relative;z-index:1;padding:0 12px">
+      <span class="s-process-num" style="width:48px;height:48px;background:#0a0a0f;border:2px solid #c20b58;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#c20b58;margin-bottom:16px">01</span>
+      <h4>Audit</h4>
+      <p>Full digital health check — SEO, competitors, local visibility, content gaps.</p>
+    </div>
+    <div class="s-process-step" style="flex:1;text-align:center;position:relative;z-index:1;padding:0 12px">
+      <span class="s-process-num" style="width:48px;height:48px;background:#0a0a0f;border:2px solid #c20b58;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#c20b58;margin-bottom:16px">02</span>
+      <h4>Strategy</h4>
+      <p>Custom plan with timelines, KPIs, and clear budget allocation.</p>
+    </div>
+    <div class="s-process-step" style="flex:1;text-align:center;position:relative;z-index:1;padding:0 12px">
+      <span class="s-process-num" style="width:48px;height:48px;background:#0a0a0f;border:2px solid #c20b58;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#c20b58;margin-bottom:16px">03</span>
+      <h4>Execute</h4>
+      <p>One team. All channels. Coordinated delivery across SEO, ads, social, design.</p>
+    </div>
+    <div class="s-process-step" style="flex:1;text-align:center;position:relative;z-index:1;padding:0 12px">
+      <span class="s-process-num" style="width:48px;height:48px;background:#0a0a0f;border:2px solid #c20b58;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#c20b58;margin-bottom:16px">04</span>
+      <h4>Optimise</h4>
+      <p>Monthly reports. Real numbers. Continuous improvement based on data.</p>
+    </div>
+  </div>
+</div>
+
+<!-- LOCAL BUSINESSES -->
+<div class="s-section" style="padding:70px 0;border-bottom:1px solid #f0f0f0">
+  <span class="s-section-tag">// local focus</span>
+  <h2>Built for Goa's local market</h2>
+  <p class="s-section-desc">Most agencies optimise for generic keywords. We optimise for the customer standing 2km from your door, searching right now.</p>
+
+  <div class="s-local" style="background:linear-gradient(180deg,#fef8fa 0%,#fff 100%);border-radius:16px;padding:40px;border:1px solid #fce4ec">
+    <h3>What local SEO means at Sanctify:</h3>
+    <ul>
+      <li>Google Business Profile — optimised, posted weekly, review-managed</li>
+      <li>Location pages for every area you serve — Vasco, Panjim, Margao, Mapusa, Calangute</li>
+      <li>NAP consistency across 50+ directories and citation sources</li>
+      <li>Review generation systems that build social proof on autopilot</li>
+      <li>"Near me" and map pack ranking for high-intent local searches</li>
+      <li>AI visibility — structured so ChatGPT, Gemini, and Perplexity recommend you</li>
+    </ul>
+  </div>
+
+  <div style="display:flex;gap:16px;margin-top:24px;flex-wrap:wrap">
+    <a href="https://www.sanctify.in/digital-marketing-agency-south-goa/" style="flex:1;min-width:200px;background:#f8f8fa;border:1px solid #eee;border-radius:10px;padding:20px;text-align:center;text-decoration:none;color:#111;font-weight:600;font-size:15px;transition:border-color 0.2s">South Goa<br><span style="font-weight:400;font-size:12px;color:#777">Vasco · Margao · Ponda</span></a>
+    <a href="https://www.sanctify.in/digital-marketing-agency-north-goa/" style="flex:1;min-width:200px;background:#f8f8fa;border:1px solid #eee;border-radius:10px;padding:20px;text-align:center;text-decoration:none;color:#111;font-weight:600;font-size:15px;transition:border-color 0.2s">North Goa<br><span style="font-weight:400;font-size:12px;color:#777">Panjim · Mapusa · Calangute</span></a>
+  </div>
+</div>
+
+<!-- INDUSTRIES -->
+<div class="s-section" style="padding:70px 0;border-bottom:1px solid #f0f0f0">
+  <span class="s-section-tag">// industries</span>
+  <h2>Who we work with</h2>
+  <div class="s-pills" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px">
+    <span class="s-pill" style="background:#0a0a0f;color:#fff;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:500">Hotels &amp; Resorts</span>
+    <span class="s-pill" style="background:#0a0a0f;color:#fff;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:500">Restaurants &amp; Cafes</span>
+    <span class="s-pill" style="background:#0a0a0f;color:#fff;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:500">Healthcare &amp; Clinics</span>
+    <span class="s-pill" style="background:#0a0a0f;color:#fff;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:500">Real Estate</span>
+    <span class="s-pill" style="background:#0a0a0f;color:#fff;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:500">Automotive</span>
+    <span class="s-pill" style="background:#0a0a0f;color:#fff;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:500">Retail &amp; E-commerce</span>
+    <span class="s-pill" style="background:#0a0a0f;color:#fff;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:500">Education</span>
+    <span class="s-pill" style="background:#0a0a0f;color:#fff;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:500">Professional Services</span>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="s-section" style="padding:70px 0;border-bottom:1px solid #f0f0f0">
+  <span class="s-section-tag">// client words</span>
+  <h2>What they say</h2>
+
+  <div class="s-testimonials" style="display:flex;flex-direction:column;gap:24px;margin-top:30px">
+    <div class="s-quote" style="position:relative;padding:32px 32px 32px 48px;background:#fafafa;border-radius:12px;border-left:3px solid #c20b58">
+      <p>Their team is highly skilled and knowledgeable in all aspects of digital marketing, from SEO to social media. I highly recommend this Digital Marketing Agency in Goa.</p>
+      <span class="s-quote-author">Shreya Dutta</span><span class="s-quote-stars"> ★★★★★</span>
+    </div>
+    <div class="s-quote" style="position:relative;padding:32px 32px 32px 48px;background:#fafafa;border-radius:12px;border-left:3px solid #c20b58">
+      <p>Impressed with the team's professionalism and effectiveness. I highly recommend Sanctify to any company that needs help with digital marketing.</p>
+      <span class="s-quote-author">Ashutosh Hazare</span><span class="s-quote-stars"> ★★★★★</span>
+    </div>
+    <div class="s-quote" style="position:relative;padding:32px 32px 32px 48px;background:#fafafa;border-radius:12px;border-left:3px solid #c20b58">
+      <p>Their expertise in SEO and online strategies helped my business rank higher and attract more customers. The team truly understands the local market.</p>
+      <span class="s-quote-author">Benz Nx</span><span class="s-quote-stars"> ★★★★★</span>
+    </div>
+    <div class="s-quote" style="position:relative;padding:32px 32px 32px 48px;background:#fafafa;border-radius:12px;border-left:3px solid #c20b58">
+      <p>Quite happy with the Google visibility provided by Sanctify.</p>
+      <span class="s-quote-author">TVS Bela Auto</span><span class="s-quote-stars"> ★★★★★</span>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="s-section" style="padding:70px 0;border-bottom:1px solid #f0f0f0">
+  <span class="s-section-tag">// questions</span>
+  <h2>Frequently asked</h2>
+
+  <div style="margin-top:30px">
+    <div class="s-faq-item" style="padding:20px 0;border-bottom:1px solid #f0f0f0">
+      <h3>Which is the best digital marketing agency in Goa?</h3>
+      <p>Sanctify is widely recognised as Goa's best digital marketing agency — operating since 2012 with 128+ verified reviews, a 4.8-star rating, and recognition from iide.co, Crunchbase, and MuckRack. Full suite: SEO, PPC, social media, web design, content marketing.</p>
+    </div>
+    <div class="s-faq-item" style="padding:20px 0;border-bottom:1px solid #f0f0f0">
+      <h3>How much does digital marketing cost in Goa?</h3>
+      <p>Typically ₹15,000 to ₹1,00,000+ per month depending on services, competition, and goals. We offer custom packages starting from ₹15,000/month with transparent pricing and no hidden charges.</p>
+    </div>
+    <div class="s-faq-item" style="padding:20px 0;border-bottom:1px solid #f0f0f0">
+      <h3>How long does SEO take to show results?</h3>
+      <p>8–12 weeks for local keywords. 4–6 months for significant ranking improvements. Monthly progress reports track movement from week one.</p>
+    </div>
+    <div class="s-faq-item" style="padding:20px 0;border-bottom:1px solid #f0f0f0">
+      <h3>Do you work with businesses outside Goa?</h3>
+      <p>Yes. HQ in Vasco, South Goa — but we serve clients across India and internationally. Mumbai, Bangalore, Delhi, and global markets.</p>
+    </div>
+    <div class="s-faq-item" style="padding:20px 0;border-bottom:1px solid #f0f0f0">
+      <h3>Can you help my restaurant rank on Google Maps?</h3>
+      <p>Absolutely. Maps and local pack ranking is a core strength. GBP optimisation, review generation, local citations, location-specific content. Multiple Goa restaurants in Map Pack top 3.</p>
+    </div>
+    <div class="s-faq-item" style="padding:20px 0;border-bottom:1px solid #f0f0f0">
+      <h3>How is Sanctify different from other agencies in Goa?</h3>
+      <p>Longevity (13+ years through every algorithm change), local proof (128+ verified reviews from real Goa businesses), and full-service under one roof — one team, one strategy, one point of accountability.</p>
+    </div>
+    <div class="s-faq-item" style="padding:20px 0;border-bottom:1px solid #f0f0f0">
+      <h3>What industries do you specialise in?</h3>
+      <p>Hospitality, healthcare, real estate, automotive, retail, education, and professional services. Deep understanding of Goa's local competitive landscape across all these sectors.</p>
+    </div>
+    <div class="s-faq-item" style="padding:20px 0">
+      <h3>Do you offer monthly reporting?</h3>
+      <p>Yes. Keyword rankings, organic traffic, ad performance, leads, ROI — every month. Plus quarterly strategy reviews to adjust based on data.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="s-cta" style="background:linear-gradient(135deg,#0a0a0f 0%,#16213e 100%);color:#fff;padding:60px 40px;border-radius:16px;text-align:center;position:relative;overflow:hidden;margin-top:50px">
+  <h2 style="color:#fff">Get your free audit.</h2>
+  <p>We'll tell you exactly where you stand and what needs to change. No pitch. No obligation.</p>
+  <a href="https://www.sanctify.in/contact/" class="s-cta-btn" style="display:inline-block;background:#c20b58;color:#fff;padding:16px 40px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none">Get Started →</a>
+  <div class="s-cta-contact" style="margin-top:28px;font-size:14px;color:rgba(255,255,255,0.5)">
+    <a href="tel:+919923352923" style="color:rgba(255,255,255,0.8)">+91 99233 52923</a> · <a href="mailto:mail@sanctify.in" style="color:rgba(255,255,255,0.8)">mail@sanctify.in</a><br>
+    Zuarinagar, Vasco-da-Gama, Goa 403726
+  </div>
+</div>
+
+</div>
